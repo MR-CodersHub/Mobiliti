@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobiliti | Role-Based Portal Access (Login / Register)</title>
+  <meta name="description" content="Secure role-based portal login for HR Directors and relocating employees. Real-time status tracking, document management, and specialist chat.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  
+  <style>
+    .role-select-card {
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+    .role-select-card.selected {
+      border-color: var(--accent-blue);
+      background: rgba(37, 99, 235, 0.05);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+    .role-select-card i {
+      font-size: 2.25rem;
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon"><i class="ri-global-line"></i></div>
+        <span>Mobiliti</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="home-2.html" class="nav-link">Home 2 (HR Focus)</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="service-details.html" class="nav-link">Service Details</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
+        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: AUTHENTICATION HERO -->
+    <section class="section-spacing" style="background-color: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-color); text-align: center;">
+      <div class="container reveal-on-scroll" style="max-width: 800px;">
+        <span class="section-tag">Role-Based Access</span>
+        <h1 class="section-title" style="font-size: 3rem;">Secure Corporate Mobility Portal</h1>
+        <p class="section-subtitle">
+          Select your role to access your dedicated workspace. High-level corporate HR management or personalized employee relocation tracking.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ROLE SELECTION (Placed prominently first!) -->
+    <section class="section-spacing" style="padding-bottom: 0;">
+      <div class="container reveal-on-scroll" style="max-width: 760px;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Step 1: Select Your Portal Role</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+          <div class="role-select-card selected" data-role="hr">
+            <i class="ri-building-4-line"></i>
+            <h4 style="font-size: 1.25rem;">ROLE 1 â€” HR CLIENT</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">Manage employee moves, review documents, and submit new requests.</p>
+          </div>
+
+          <div class="role-select-card" data-role="employee">
+            <i class="ri-user-smile-line"></i>
+            <h4 style="font-size: 1.25rem;">ROLE 2 â€” EMPLOYEE / USER</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">Track personal move progress, upload passports, and complete tasks.</p>
+          </div>
+        </div>
+
+        <!-- Quick Demo Login Bar -->
+        <div style="background: rgba(37,99,235,0.08); border: 1px solid var(--accent-blue); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; margin-bottom: 3rem;">
+          <strong style="color: var(--accent-blue); display: block; margin-bottom: 0.5rem;">âš¡ Instant Demo Portal Access:</strong>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button id="demoHrLogin" class="btn btn-sm btn-primary"><i class="ri-building-line"></i> Demo HR Director Portal</button>
+            <button id="demoEmpLogin" class="btn btn-sm btn-secondary"><i class="ri-user-line"></i> Demo Employee Portal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: LOGIN FORM -->
+    <section class="section-spacing" style="padding-top: 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 960px; margin: 0 auto;">
+          
+          <!-- LOGIN CARD -->
+          <div class="card reveal-on-scroll">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="ri-lock-line" style="color: var(--accent-blue);"></i> Sign In</h3>
+            
+            <form id="loginForm">
+              <div class="form-group">
+                <label class="form-label" for="loginEmail">Email Address</label>
+                <input type="email" id="loginEmail" class="form-control" placeholder="hr.director@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.85rem;">
+                <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                  <input type="checkbox" checked> Remember me
+                </label>
+                <a href="#" style="color: var(--accent-blue);">Forgot Password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-lg btn-primary" style="width: 100%;"><i class="ri-login-box-line"></i> Access Dashboard</button>
+            </form>
+          </div>
+
+          <!-- SECTION 3: REGISTER FORM -->
+          <div class="card reveal-on-scroll">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="ri-user-add-line" style="color: var(--teal-accent);"></i> Register Corporate Account</h3>
+            
+            <form id="registerForm">
+              <div class="form-group">
+                <label class="form-label" for="regName">Full Name</label>
+                <input type="text" id="regName" class="form-control" placeholder="e.g. Sarah Connor" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="regCompany">Company Name</label>
+                <input type="text" id="regCompany" class="form-control" placeholder="e.g. Enterprise Global Corp">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="regEmail">Corporate Email</label>
+                <input type="email" id="regEmail" class="form-control" placeholder="s.connor@cyber.com" required>
+              </div>
+
+              <button type="submit" class="btn btn-lg btn-secondary" style="width: 100%;"><i class="ri-user-shared-line"></i> Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PORTAL BENEFITS -->
+    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Portal Advantages</span>
+          <h2 class="section-title">Role-Based Security & Features</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div class="card reveal-on-scroll">
+            <h4>HR Client Dashboard Features</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+              â€¢ Submit multi-step relocation requests<br>
+              â€¢ Approve/reject employee documents<br>
+              â€¢ Live status pipeline tracking<br>
+              â€¢ Export reporting metrics
+            </p>
+          </div>
+
+          <div class="card reveal-on-scroll">
+            <h4>Employee Dashboard Features</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+              â€¢ Simplified relocation progress view<br>
+              â€¢ Interactive task checklist<br>
+              â€¢ Passport & document upload<br>
+              â€¢ Direct chat with assigned specialist
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SECURITY / SUPPORT CTA -->
+    <section class="section-spacing" style="background: linear-gradient(135deg, var(--primary-navy), var(--accent-blue)); color: #FFFFFF; text-align: center;">
+      <div class="container reveal-on-scroll" style="max-width: 800px;">
+        <i class="ri-shield-keyhole-line" style="font-size: 3rem; color: var(--sky-blue); margin-bottom: 1rem; display: block;"></i>
+        <h2 style="font-size: 2.25rem; color: #FFFFFF; margin-bottom: 1rem;">Bank-Grade Data Encryption & Compliance</h2>
+        <p style="color: var(--slate-300); margin-bottom: 2rem;">SOC2 Type II certified, GDPR compliant, and AES-256 encrypted storage for all corporate document uploads.</p>
+        <a href="contact.html" class="btn btn-lg btn-white">Contact Security Support</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
+            <div class="brand-icon"><i class="ri-global-line"></i></div>
+            <span style="color: #FFFFFF;">Mobiliti</span>
+          </a>
+          <p>Enterprise-grade corporate relocation and global employee mobility platform.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html">Home 1</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portals</h4>
+          <ul>
+            <li><a href="hr-dashboard.html">HR Client Dashboard</a></li>
+            <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
+            <li><a href="login.html">Login/Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
+

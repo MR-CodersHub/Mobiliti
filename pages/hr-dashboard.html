@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobiliti | Enterprise HR Client Portal</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-brand">
+          <div class="brand-icon"><i class="ri-global-line"></i></div>
+          <div>
+            <div class="brand-text">Mobiliti</div>
+            <div class="sidebar-role-badge">HR CLIENT PORTAL</div>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Main Workspace</div>
+        <a class="sidebar-menu-item active" data-view="overview">
+          <i class="ri-dashboard-3-line"></i> <span class="nav-text">Overview</span>
+        </a>
+        <a class="sidebar-menu-item" data-view="requests">
+          <i class="ri-plane-takeoff-line"></i> <span class="nav-text">Relocation Requests</span>
+        </a>
+        <a class="sidebar-menu-item" data-view="employees">
+          <i class="ri-team-line"></i> <span class="nav-text">Employees</span>
+        </a>
+        <a class="sidebar-menu-item" data-view="documents">
+          <i class="ri-folder-shield-2-line"></i> <span class="nav-text">Documents Vault</span>
+        </a>
+
+        <div class="nav-section-title">Communication & Insights</div>
+        <a class="sidebar-menu-item" data-view="messages">
+          <i class="ri-message-3-line"></i> <span class="nav-text">Messages</span>
+        </a>
+        <a class="sidebar-menu-item" data-view="notifications">
+          <i class="ri-notification-3-line"></i> <span class="nav-text">Notifications</span>
+        </a>
+        <a class="sidebar-menu-item" data-view="reports">
+          <i class="ri-bar-chart-box-line"></i> <span class="nav-text">Reports & Analytics</span>
+        </a>
+
+        <div class="nav-section-title">Administration</div>
+        <a class="sidebar-menu-item" data-view="company">
+          <i class="ri-building-line"></i> <span class="nav-text">Company Profile</span>
+        </a>
+        <a class="sidebar-menu-item" data-view="settings">
+          <i class="ri-settings-4-line"></i> <span class="nav-text">Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="user-avatar">HR</div>
+          <div class="user-info">
+            <h5>Amanda Vance</h5>
+            <p>Global HR Director</p>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-sm btn-outline" style="width: 100%; margin-top: 1rem; color: var(--slate-300); border-color: rgba(255,255,255,0.2);">
+          <i class="ri-logout-box-r-line"></i> <span class="nav-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT WORKSPACE -->
+    <main class="dashboard-main">
+      <!-- DASHBOARD TOPBAR -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button id="sidebarToggleBtn" class="sidebar-toggle-btn"><i class="ri-menu-fold-line"></i></button>
+          <div class="breadcrumbs">
+            <span>HR Portal</span> / <span id="dashboardPageTitle" class="current">Overview</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-search">
+            <input type="text" id="tableSearchInput" class="form-control" placeholder="Search employees, IDs...">
+            <i class="ri-search-line"></i>
+          </div>
+
+          <button class="icon-btn theme-toggle" title="Toggle Dark/Light Mode"><i class="ri-moon-line"></i></button>
+          <button class="icon-btn rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+          
+          <div class="icon-btn" title="Notifications">
+            <i class="ri-notification-3-line"></i>
+            <div class="notification-badge"></div>
+          </div>
+
+          <button class="btn btn-sm btn-primary open-new-request-btn">
+            <i class="ri-add-line"></i> Submit Relocation
+          </button>
+        </div>
+      </header>
+
+      <!-- DASHBOARD BODY CONTENT -->
+      <div class="dashboard-content">
+
+        <!-- VIEW 1: OVERVIEW -->
+        <div id="view-overview" class="dashboard-view active">
+          
+          <!-- KPI CARDS GRID -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div>
+                <div id="kpiActiveMoves" class="kpi-val">2</div>
+                <div class="kpi-title">Active Relocations</div>
+              </div>
+              <div class="kpi-icon-box kpi-blue"><i class="ri-plane-takeoff-line"></i></div>
+            </div>
+
+            <div class="kpi-card">
+              <div>
+                <div id="kpiEmpInProgress" class="kpi-val">3</div>
+                <div class="kpi-title">Employees in Progress</div>
+              </div>
+              <div class="kpi-icon-box kpi-teal"><i class="ri-team-line"></i></div>
+            </div>
+
+            <div class="kpi-card">
+              <div>
+                <div id="kpiPendingDocs" class="kpi-val">3</div>
+                <div class="kpi-title">Pending Documents</div>
+              </div>
+              <div class="kpi-icon-box kpi-amber"><i class="ri-file-warning-line"></i></div>
+            </div>
+
+            <div class="kpi-card">
+              <div>
+                <div id="kpiCompletedMoves" class="kpi-val">1</div>
+                <div class="kpi-title">Completed Moves</div>
+              </div>
+              <div class="kpi-icon-box kpi-purple"><i class="ri-checkbox-circle-line"></i></div>
+            </div>
+          </div>
+
+          <!-- RELOCATION STAGE PIPELINE OVERVIEW -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem;">Relocation Lifecycle Pipeline Stages</h3>
+            <div class="timeline-stepper" style="margin: 1rem 0 0 0;">
+              <div class="timeline-step completed">
+                <div class="step-node"><i class="ri-check-line"></i></div>
+                <div class="step-title">Submitted</div>
+              </div>
+              <div class="timeline-step completed">
+                <div class="step-node"><i class="ri-check-line"></i></div>
+                <div class="step-title">Planning</div>
+              </div>
+              <div class="timeline-step active">
+                <div class="step-node">3</div>
+                <div class="step-title">Documentation</div>
+              </div>
+              <div class="timeline-step">
+                <div class="step-node">4</div>
+                <div class="step-title">Visa / Immig.</div>
+              </div>
+              <div class="timeline-step">
+                <div class="step-node">5</div>
+                <div class="step-title">Moving</div>
+              </div>
+              <div class="timeline-step">
+                <div class="step-node">6</div>
+                <div class="step-title">Arrival</div>
+              </div>
+              <div class="timeline-step">
+                <div class="step-node">7</div>
+                <div class="step-title">Settling In</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTIVE RELOCATION TABLE -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+              <h3 style="font-size: 1.15rem;">Active Relocation Requests</h3>
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <select id="tableStatusFilter" class="form-control" style="width: auto; height: 38px; font-size: 0.85rem;">
+                  <option value="all">All Statuses</option>
+                  <option value="active">Active</option>
+                  <option value="completed">Completed</option>
+                </select>
+                <button class="btn btn-sm btn-primary open-new-request-btn"><i class="ri-add-line"></i> New Request</button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Destination</th>
+                    <th>Move Type</th>
+                    <th>Current Stage</th>
+                    <th>Progress</th>
+                    <th>Target Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="hrRelocationsTableBody">
+                  <!-- Rendered dynamically by hr-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- PENDING DOCUMENTS REVIEW TABLE & QUICK ACTIONS -->
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+            <div class="card">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.15rem;">Pending Document Verifications</h3>
+                <button class="btn btn-sm btn-outline open-upload-doc-modal"><i class="ri-upload-2-line"></i> Upload Doc</button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Document</th>
+                      <th>Employee</th>
+                      <th>Upload Date</th>
+                      <th>Required Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="hrPendingDocsTableBody">
+                    <!-- Rendered dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- QUICK ACTIONS PANEL -->
+            <div class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Quick HR Actions</h3>
+              <button class="btn btn-primary open-new-request-btn" style="justify-content: flex-start;">
+                <i class="ri-add-circle-line"></i> Submit New Relocation
+              </button>
+              <button class="btn btn-secondary open-upload-doc-modal" style="justify-content: flex-start;">
+                <i class="ri-file-upload-line"></i> Upload Documents
+              </button>
+              <a href="contact.html" class="btn btn-outline" style="justify-content: flex-start;">
+                <i class="ri-customer-service-2-line"></i> Contact Mobility Specialist
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: RELOCATION REQUESTS -->
+        <div id="view-requests" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">All Corporate Relocation Requests</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Full log of submitted employee transfers across all global destinations.</p>
+            <!-- Same table rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- VIEW 3: EMPLOYEES -->
+        <div id="view-employees" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Relocating Employees Directory</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+              <div class="card" style="padding: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                  <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.25rem;">SJ</div>
+                  <div>
+                    <h4 style="font-size: 1.1rem;">Sarah Jenkins</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Senior Software Engineer</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.85rem;"><strong>Route:</strong> San Francisco &rarr; London</p>
+                <span class="badge badge-info" style="margin-top: 0.5rem;">Visa / Immigration Stage</span>
+              </div>
+
+              <div class="card" style="padding: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                  <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.25rem; background: var(--teal-accent);">AW</div>
+                  <div>
+                    <h4 style="font-size: 1.1rem;">Alexander Wright</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">VP Global Operations</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.85rem;"><strong>Route:</strong> London &rarr; Singapore</p>
+                <span class="badge badge-pending" style="margin-top: 0.5rem;">Planning Stage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 4: DOCUMENTS VAULT -->
+        <div id="view-documents" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Encrypted Document Vault</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">GDPR compliant storage for passports, employment contracts, and visa applications.</p>
+            <button class="btn btn-primary open-upload-doc-modal"><i class="ri-upload-2-line"></i> Upload Document to Vault</button>
+          </div>
+        </div>
+
+        <!-- VIEW 5: MESSAGES -->
+        <div id="view-messages" class="dashboard-view">
+          <div class="card" style="display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; min-height: 480px;">
+            <div style="border-right: 1px solid var(--border-color); padding-right: 1rem;">
+              <h4 style="margin-bottom: 1rem;">Conversations</h4>
+              <div style="padding: 0.75rem; background: rgba(37,99,235,0.08); border-radius: var(--radius-md); font-weight: 700; cursor: pointer;">
+                Marcus Vance (Specialist)
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div id="hrChatMessagesContainer" style="flex: 1; overflow-y: auto; padding: 1rem; background: var(--bg-primary); border-radius: var(--radius-md); margin-bottom: 1rem;">
+                <div style="margin-bottom: 1rem;">
+                  <div style="display: inline-block; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 0.75rem 1.25rem; border-radius: 12px 12px 12px 0; max-width: 75%;">
+                    <strong>Marcus Vance:</strong> Hello Amanda! Sarah Jenkins' visa application was submitted to the embassy today.
+                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">09:30 AM</div>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.75rem;">
+                <input type="text" id="hrMessageInput" class="form-control" placeholder="Type message to mobility specialist...">
+                <button id="hrSendMessageBtn" class="btn btn-primary"><i class="ri-send-plane-line"></i> Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 6: NOTIFICATIONS -->
+        <div id="view-notifications" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">System Notifications</h3>
+            <div class="checklist-item">
+              <div class="checklist-info">
+                <i class="ri-notification-badge-line" style="color: var(--accent-blue); font-size: 1.25rem;"></i>
+                <div>
+                  <strong>Visa approval status updated for Sarah Jenkins</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">10 minutes ago</div>
+                </div>
+              </div>
+              <span class="badge badge-info">Unread</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 7: REPORTS -->
+        <div id="view-reports" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Corporate Mobility Reports & Analytics</h3>
+            <p style="color: var(--text-muted);">Export detailed relocation budget breakdowns and SLA adherence reports.</p>
+          </div>
+        </div>
+
+        <!-- VIEW 8: COMPANY PROFILE -->
+        <div id="view-company" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">Enterprise Company Profile</h3>
+            <p style="color: var(--text-muted);">Corporate SLA agreements, billing addresses, and authorized HR admins.</p>
+          </div>
+        </div>
+
+        <!-- VIEW 9: SETTINGS -->
+        <div id="view-settings" class="dashboard-view">
+          <div class="card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem;">HR Portal Preferences & Security Settings</h3>
+            <div class="form-group">
+              <label class="form-label">Email Notification Preferences</label>
+              <label style="display: flex; align-items: center; gap: 0.5rem;"><input type="checkbox" checked> Send instant alerts on document uploads</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MULTI-STEP NEW RELOCATION REQUEST MODAL WIZARD -->
+  <div id="newRequestModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 740px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Submit New Employee Relocation Request</h3>
+        <button id="closeNewRequestModal" class="modal-close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Step Stepper Nodes -->
+        <div class="timeline-stepper" style="margin: 0 0 2rem 0;">
+          <div class="timeline-step active wizard-step-node">
+            <div class="step-node">1</div>
+            <div class="step-title" style="font-size: 0.8rem;">Employee</div>
+          </div>
+          <div class="timeline-step wizard-step-node">
+            <div class="step-node">2</div>
+            <div class="step-title" style="font-size: 0.8rem;">Relocation</div>
+          </div>
+          <div class="timeline-step wizard-step-node">
+            <div class="step-node">3</div>
+            <div class="step-title" style="font-size: 0.8rem;">Services</div>
+          </div>
+          <div class="timeline-step wizard-step-node">
+            <div class="step-node">4</div>
+            <div class="step-title" style="font-size: 0.8rem;">Documents</div>
+          </div>
+          <div class="timeline-step wizard-step-node">
+            <div class="step-node">5</div>
+            <div class="step-title" style="font-size: 0.8rem;">Review</div>
+          </div>
+        </div>
+
+        <!-- STEP 1: Employee Information -->
+        <div class="wizard-step" style="display: block;">
+          <h4 style="margin-bottom: 1rem;">Step 1: Employee Information</h4>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Employee Full Name *</label>
+              <input type="text" id="reqEmpName" class="form-control" placeholder="e.g. Sarah Connor" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Corporate Email *</label>
+              <input type="email" id="reqEmpEmail" class="form-control" placeholder="s.connor@cyber.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" id="reqEmpPhone" class="form-control" placeholder="+1 (555) 019-2831">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Job Title</label>
+              <input type="text" id="reqEmpTitle" class="form-control" placeholder="Senior Architect">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Department</label>
+            <input type="text" id="reqEmpDept" class="form-control" placeholder="Engineering / Product">
+          </div>
+        </div>
+
+        <!-- STEP 2: Relocation Details -->
+        <div class="wizard-step" style="display: none;">
+          <h4 style="margin-bottom: 1rem;">Step 2: Relocation Route & Timing</h4>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Current Location (Origin) *</label>
+              <input type="text" id="reqOrigin" class="form-control" placeholder="San Francisco, USA" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Destination Location *</label>
+              <input type="text" id="reqDestination" class="form-control" placeholder="Tokyo, Japan" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Target Arrival Date</label>
+              <input type="date" id="reqDate" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Dependents / Family</label>
+              <select class="form-control">
+                <option>Single Employee</option>
+                <option>Employee + Spouse</option>
+                <option>Family with Children</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Services Required -->
+        <div class="wizard-step" style="display: none;">
+          <h4 style="margin-bottom: 1rem;">Step 3: Select Required Services</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <label class="checklist-item" style="cursor: pointer;">
+              <input type="checkbox" checked style="accent-color: var(--accent-blue);"> Household Moving & Cargo Logistics
+            </label>
+            <label class="checklist-item" style="cursor: pointer;">
+              <input type="checkbox" checked style="accent-color: var(--accent-blue);"> Visa & Work Permit Filing
+            </label>
+            <label class="checklist-item" style="cursor: pointer;">
+              <input type="checkbox" checked style="accent-color: var(--accent-blue);"> Temporary Corporate Housing (30 Days)
+            </label>
+            <label class="checklist-item" style="cursor: pointer;">
+              <input type="checkbox" style="accent-color: var(--accent-blue);"> International School Placement
+            </label>
+          </div>
+        </div>
+
+        <!-- STEP 4: Documents Upload -->
+        <div class="wizard-step" style="display: none;">
+          <h4 style="margin-bottom: 1rem;">Step 4: Initial Required Documents</h4>
+          <div class="form-group">
+            <label class="form-label">Upload Passport & Identity Scan</label>
+            <input type="file" class="form-control">
+          </div>
+          <div class="checklist-item">
+            <i class="ri-file-text-line" style="font-size: 1.25rem;"></i>
+            <span style="font-size: 0.9rem;">Passport Scan Required</span>
+            <span class="badge badge-warning">Pending</span>
+          </div>
+        </div>
+
+        <!-- STEP 5: Review & Submit -->
+        <div class="wizard-step" style="display: none;">
+          <h4 style="margin-bottom: 1rem;">Step 5: Review & Submit Authorization</h4>
+          <div id="wizardSummaryContent">
+            <!-- Summary populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="cancelNewRequestModal" class="btn btn-secondary">Cancel</button>
+        <button id="wizardPrevBtn" class="btn btn-secondary" style="display: none;"><i class="ri-arrow-left-line"></i> Back</button>
+        <button id="wizardNextBtn" class="btn btn-primary">Next Step <i class="ri-arrow-right-line"></i></button>
+        <button id="wizardSubmitBtn" class="btn btn-primary" style="display: none; background: var(--teal-accent); border-color: var(--teal-accent);"><i class="ri-check-double-line"></i> Submit Relocation Request</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELOCATION DETAIL MODAL -->
+  <div id="relocationDetailModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 760px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Relocation Detailed View</h3>
+        <button id="closeDetailModal" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="relocationDetailContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCUMENT UPLOAD MODAL -->
+  <div id="uploadDocModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Upload Document to Vault</h3>
+        <button id="closeUploadDocModal" class="modal-close">&times;</button>
+      </div>
+      <form id="uploadDocForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="docTitleInput">Document Title *</label>
+            <input type="text" id="docTitleInput" class="form-control" placeholder="e.g. Work Permit Filing" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select File</label>
+            <input type="file" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary"><i class="ri-upload-2-line"></i> Upload & Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="../js/store.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/hr-dashboard.js"></script>
+</body>
+</html>
+
