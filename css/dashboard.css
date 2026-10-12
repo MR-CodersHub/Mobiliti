@@ -369,6 +369,23 @@
   }
   .dashboard-wrapper.sidebar-mobile-open .dashboard-sidebar {
     transform: translateX(0);
+    width: 280px;
+  }
+  /* Never show the collapsed icon rail as a mobile overlay */
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar {
+    width: 280px;
+  }
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar .brand-text,
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar .sidebar-tagline,
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar .nav-section-title,
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar .user-info {
+    display: block;
+  }
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar .sidebar-role-badge {
+    display: inline-block;
+  }
+  .dashboard-wrapper.sidebar-mobile-open.sidebar-collapsed .dashboard-sidebar .nav-text {
+    display: inline;
   }
   .topbar-search {
     display: none;

@@ -26,10 +26,13 @@ function initSidebarToggle() {
   const wrapper = document.querySelector('.dashboard-wrapper');
   if (toggleBtn && wrapper) {
     toggleBtn.addEventListener('click', () => {
-      wrapper.classList.toggle('sidebar-collapsed');
       if (window.innerWidth <= 992) {
+        // Mobile: slide-in overlay only — never the collapsed icon rail
+        wrapper.classList.remove('sidebar-collapsed');
         const open = wrapper.classList.toggle('sidebar-mobile-open');
         document.body.classList.toggle('sidebar-locked', open);
+      } else {
+        wrapper.classList.toggle('sidebar-collapsed');
       }
     });
 
