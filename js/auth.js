@@ -100,10 +100,6 @@ function loginUser(userData) {
   showToast(`Welcome back, ${userData.name}! Redirecting...`, 'success');
 
   setTimeout(() => {
-    if (userData.role === 'hr') {
-      window.location.href = 'hr-dashboard.html';
-    } else {
-      window.location.href = 'employee-dashboard.html';
-    }
+    window.location.href = '../index.html';
   }, 800);
 }

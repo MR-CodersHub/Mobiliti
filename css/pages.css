@@ -656,3 +656,518 @@ ul.pg-sitemap li a:hover i {
   position: relative;
   z-index: 1;
 }
+
+/* ==========================================================================
+   Premium auth split — login & signup. Dark image showcase + refined form.
+   Per-page photo via --pax-bg: url(...). No navbar/footer on these pages.
+   ========================================================================== */
+.pax {
+  min-height: calc(100vh - 77px);
+  min-height: calc(100dvh - 77px);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+/* Showcase panel */
+.pax-showcase {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  color: #fff;
+  background-image:
+    linear-gradient(180deg, rgba(6, 12, 30, 0.45) 0%, rgba(6, 12, 30, 0.78) 62%, rgba(6, 12, 30, 0.93) 100%),
+    var(--pax-bg);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.pax-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 100%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 100%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.pax-showcase > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pax-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #E7CE8F;
+  margin-bottom: 1.1rem;
+}
+
+.pax-eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: #E7CE8F;
+}
+
+.pax-title {
+  color: #fff;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  max-width: 16ch;
+}
+
+.pax-title em {
+  font-style: italic;
+  color: #E7CE8F;
+}
+
+.pax-sub {
+  color: #B9C1D9;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+.pax-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.pax-stats b {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.pax-stats b span { color: #E7CE8F; }
+
+.pax-stats small {
+  color: #9AA4C2;
+  font-size: 0.76rem;
+}
+
+.pax-quote {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 520px;
+}
+
+.pax-quote p {
+  color: #EDF0F8;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.9rem;
+}
+
+.pax-quote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pax-quote .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.72rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.pax-quote figcaption strong { display: block; font-size: 0.85rem; color: #fff; }
+.pax-quote figcaption small { color: #9AA4C2; font-size: 0.74rem; }
+.pax-quote .stars { color: #E7CE8F; font-size: 0.72rem; letter-spacing: 0.2em; }
+
+/* Form panel */
+.pax-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
+  background:
+    radial-gradient(640px 340px at 90% -5%, rgba(37, 99, 235, 0.1), transparent 60%),
+    radial-gradient(560px 340px at 0% 100%, rgba(13, 148, 136, 0.09), transparent 60%),
+    var(--bg-primary);
+  overflow: hidden;
+}
+
+.pax-side::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--border-color-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color-light) 1px, transparent 1px);
+  background-size: 54px 54px;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 70%);
+  pointer-events: none;
+}
+
+.pax-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+}
+
+.pax-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 0.6rem;
+}
+
+.pax-heading {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.pax-heading .grad {
+  background: linear-gradient(120deg, var(--accent-blue), var(--teal-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pax-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.pax-form-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Role segmented cards */
+.pax-roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1.4rem;
+}
+
+.pax-roles .role-select-card {
+  position: relative;
+  padding: 1.1rem 1rem 1rem;
+  text-align: left;
+}
+
+[dir="rtl"] .pax-roles .role-select-card {
+  text-align: right;
+}
+
+.pax-roles .role-select-card h4 {
+  font-size: 0.92rem;
+}
+
+.pax-roles .role-select-card p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  line-height: 1.5;
+}
+
+.pax-roles .role-select-card.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[dir="rtl"] .pax-roles .role-select-card.selected::after {
+  right: auto;
+  left: 0.7rem;
+}
+
+/* Icon fields */
+.pax-field {
+  position: relative;
+}
+
+.pax-field > i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+[dir="rtl"] .pax-field > i {
+  left: auto;
+  right: 1rem;
+}
+
+.pax-field .form-control {
+  padding-left: 2.75rem;
+  height: 50px;
+}
+
+[dir="rtl"] .pax-field .form-control {
+  padding-left: 1.1rem;
+  padding-right: 2.75rem;
+}
+
+.pax-field .form-control:focus + i,
+.pax-field:focus-within > i {
+  color: var(--accent-blue);
+}
+
+.pax-pw-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+[dir="rtl"] .pax-pw-toggle {
+  right: auto;
+  left: 0.6rem;
+}
+
+.pax-pw-toggle:hover {
+  color: var(--accent-blue);
+}
+
+.pax-field.has-toggle .form-control {
+  padding-right: 2.75rem;
+}
+
+[dir="rtl"] .pax-field.has-toggle .form-control {
+  padding-right: 2.75rem;
+  padding-left: 2.75rem;
+}
+
+.pax-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.pax-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.pax-remember input {
+  accent-color: var(--accent-blue);
+  width: 16px;
+  height: 16px;
+}
+
+.pax-submit {
+  width: 100%;
+  height: 52px;
+  font-size: 1rem;
+}
+
+/* Divider + demo */
+.pax-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1.4rem 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pax-divider::before,
+.pax-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.pax-demo {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pax-demo .btn {
+  flex: 1;
+}
+
+.pax-switch {
+  text-align: center;
+  margin-top: 1.4rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.pax-switch a {
+  font-weight: 700;
+}
+
+.pax-back {
+  text-align: center;
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+}
+
+.pax-trust {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.pax-trust span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pax-trust i {
+  color: var(--teal-accent);
+  font-size: 0.95rem;
+}
+
+/* Signup: value steps inside showcase */
+.pax-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+  max-width: 520px;
+}
+
+.pax-steps li {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pax-steps li b {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E7CE8F, #C9A24B);
+  color: #241A05;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pax-steps li strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.pax-steps li small {
+  color: #9AA4C2;
+  font-size: 0.78rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1020px) {
+  .pax {
+    grid-template-columns: 1fr;
+  }
+  .pax-showcase {
+    min-height: 440px;
+    padding: 2.5rem 1.75rem;
+  }
+  .pax-side {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .pax-roles {
+    grid-template-columns: 1fr;
+  }
+  .pax-form-card {
+    border-radius: 16px;
+  }
+  .pax-demo {
+    flex-direction: column;
+  }
+  .pax-demo .btn {
+    width: 100%;
+  }
+  .pax-stats {
+    gap: 1.25rem;
+  }
+}
