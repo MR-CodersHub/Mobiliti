@@ -6,7 +6,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initDirection();
+  initProfileMenu();
   initMobileMenu();
+  initNewsletter();
+  initFooterTrust();
   initScrollEffects();
   initScrollReveal();
   initBackToTop();
@@ -56,20 +59,208 @@ function initDirection() {
   });
 }
 
-/* Mobile Menu */
-function initMobileMenu() {
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
+/* User Profile Dropdown (before theme toggle) */
+function initProfileMenu() {
+  // Auto-create the menu if a static one isn't in the markup, so all
+  // pages sharing app.js get the icon without duplicated HTML edits.
+  document.querySelectorAll('.header-actions').forEach((actions) => {
+    if (!actions.querySelector('.profile-menu') && actions.querySelector('.theme-toggle')) {
+      const inPagesDir = window.location.pathname.includes('/pages/');
+      const userHref = inPagesDir ? 'employee-dashboard.html' : 'pages/employee-dashboard.html';
+      const adminHref = inPagesDir ? 'hr-dashboard.html' : 'pages/hr-dashboard.html';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'profile-menu';
+      wrapper.innerHTML =
+        '<button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button>' +
+        '<div class="profile-dropdown" role="menu">' +
+        '<a href="' + userHref + '" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a>' +
+        '<a href="' + adminHref + '" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a>' +
+        '</div>';
+      actions.insertBefore(wrapper, actions.querySelector('.theme-toggle'));
+    }
+  });
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('show');
-      const icon = menuToggle.querySelector('i');
-      if (icon) {
-        icon.className = mainNav.classList.contains('show') ? 'ri-close-line' : 'ri-menu-line';
+  const menus = document.querySelectorAll('.profile-menu');
+  if (!menus.length) return;
+
+  function closeAll(except) {
+    menus.forEach((menu) => {
+      if (menu !== except) {
+        menu.classList.remove('open');
+        const btn = menu.querySelector('.profile-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     });
   }
+
+  menus.forEach((menu) => {
+    const toggle = menu.querySelector('.profile-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = !menu.classList.contains('open');
+      closeAll(menu);
+      menu.classList.toggle('open', willOpen);
+      toggle.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    menu.querySelectorAll('.profile-dropdown a').forEach((link) => {
+      link.addEventListener('click', () => closeAll());
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.profile-menu')) closeAll();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+}
+
+/* Footer Newsletter Signup */
+function initNewsletter() {
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]');
+      const value = (input.value || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        showToast('Please enter a valid work email address.', 'warning');
+        input.focus();
+        return;
+      }
+      form.reset();
+      showToast('Subscribed! Mobility insights are on the way.', 'success');
+    });
+  });
+}
+
+/* Mobile Menu — responsive dropdown with a11y + backdrop */
+function initMobileMenu() {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  const headerActions = document.querySelector('.header-actions');
+
+  if (!menuToggle || !mainNav) return;
+
+  // Ensure the nav has an id for aria-controls
+  if (!mainNav.id) mainNav.id = 'primary-navigation';
+  menuToggle.setAttribute('aria-controls', mainNav.id);
+  menuToggle.setAttribute('aria-expanded', 'false');
+
+  // Inject mobile-only action buttons (clones of header CTAs) so they
+  // stay reachable once the desktop buttons hide on small screens.
+  if (headerActions && !mainNav.querySelector('.mobile-nav-actions')) {
+    const ctas = Array.from(headerActions.querySelectorAll('a.btn'));
+    if (ctas.length) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'mobile-nav-actions';
+      wrapper.setAttribute('aria-label', 'Account actions');
+      ctas.forEach((cta) => {
+        const clone = cta.cloneNode(true);
+        clone.classList.remove('btn-sm');
+        clone.removeAttribute('id');
+        wrapper.appendChild(clone);
+      });
+      mainNav.appendChild(wrapper);
+    }
+  }
+
+  // Premium panel furniture: section label on top, contact strip at the
+  // bottom (mailto:/tel: links need no relative paths, so one block fits
+  // every page).
+  if (!mainNav.querySelector('.mobile-nav-label')) {
+    const label = document.createElement('div');
+    label.className = 'mobile-nav-label';
+    label.textContent = 'Menu';
+    mainNav.insertBefore(label, mainNav.firstChild);
+  }
+
+  if (!mainNav.querySelector('.mobile-nav-contact')) {
+    const contact = document.createElement('div');
+    contact.className = 'mobile-nav-contact';
+    contact.innerHTML =
+      '<a href="mailto:hello@mobiliti.com"><i class="ri-mail-line"></i> hello@mobiliti.com</a>' +
+      '<a href="tel:+14155550132"><i class="ri-phone-line"></i> +1 (415) 555-0132</a>';
+    mainNav.appendChild(contact);
+  }
+
+  // Shared backdrop for outside-click + focus dimming
+  let backdrop = document.querySelector('.nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(backdrop);
+  }
+
+  const icon = () => menuToggle.querySelector('i');
+  const isOpen = () => mainNav.classList.contains('show');
+
+  function setOpen(open) {
+    mainNav.classList.toggle('show', open);
+    backdrop.classList.toggle('visible', open);
+    document.body.classList.toggle('nav-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute(
+      'aria-label',
+      open ? 'Close navigation menu' : 'Open navigation menu'
+    );
+    if (icon()) {
+      icon().className = open ? 'ri-close-line' : 'ri-menu-line';
+    }
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setOpen(!isOpen());
+  });
+
+  backdrop.addEventListener('click', () => setOpen(false));
+
+  // Close when a link/CTA inside the menu is chosen
+  mainNav.addEventListener('click', (e) => {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) {
+      setOpen(false);
+      menuToggle.focus({ preventScroll: true });
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!isOpen()) return;
+    const withinNav = e.target.closest('.main-nav');
+    const withinToggle = e.target.closest('.mobile-menu-toggle');
+    if (!withinNav && !withinToggle) setOpen(false);
+  });
+
+  // Reset when resizing back to desktop so stale state never sticks
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1100 && isOpen()) setOpen(false);
+  });
+}
+
+/* Footer trust strip (auto-injected above the bottom bar) */
+function initFooterTrust() {
+  document.querySelectorAll('.site-footer').forEach((footer) => {
+    const bottom = footer.querySelector('.footer-bottom');
+    if (!bottom || footer.querySelector('.footer-trust')) return;
+    const strip = document.createElement('div');
+    strip.className = 'footer-trust';
+    strip.innerHTML =
+      '<span><i class="ri-shield-check-line"></i> SOC 2 Type II</span>' +
+      '<span><i class="ri-lock-line"></i> GDPR Ready</span>' +
+      '<span><i class="ri-award-line"></i> ISO 27001</span>' +
+      '<span><i class="ri-earth-line"></i> 140+ Countries</span>';
+    bottom.parentNode.insertBefore(strip, bottom);
+  });
 }
 
 /* Scroll Header Effects */

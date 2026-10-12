@@ -1,0 +1,446 @@
+/* ==========================================================================
+   MOBILITI - About Premium Edition
+   Light, editorial, theme-aware (works in light + dark mode).
+   Scoped under .about-page. One notch below Home2's dark edition.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.ab-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(760px 400px at 90% -10%, rgba(37, 99, 235, 0.13), transparent 60%),
+    radial-gradient(640px 400px at -10% 110%, rgba(13, 148, 136, 0.11), transparent 60%),
+    var(--bg-primary);
+  padding: 4.5rem 0 4rem;
+}
+
+.ab-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--border-color-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color-light) 1px, transparent 1px);
+  background-size: 54px 54px;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 25%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 25%, transparent 72%);
+  pointer-events: none;
+}
+
+.ab-crumbs {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.ab-crumbs a {
+  color: var(--text-muted);
+}
+
+.ab-crumbs a:hover {
+  color: var(--accent-blue);
+}
+
+.ab-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ab-hero h1 {
+  font-size: clamp(2.5rem, 4.8vw, 3.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.2rem;
+}
+
+.ab-hero h1 .grad {
+  background: linear-gradient(120deg, var(--accent-blue), var(--teal-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ab-lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 56ch;
+  margin-bottom: 1.25rem;
+}
+
+.ab-hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.75rem 0 2rem;
+}
+
+.ab-stats {
+  display: flex;
+  gap: 2.25rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ab-stats b {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  display: block;
+  line-height: 1.1;
+}
+
+.ab-stats b.teal {
+  color: var(--teal-accent);
+}
+
+.ab-stats small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.ab-visual {
+  position: relative;
+}
+
+.ab-photo {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.ab-photo img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+.ab-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow-hover);
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  z-index: 2;
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.ab-chip i {
+  color: var(--accent-blue);
+  font-size: 1.05rem;
+}
+
+.ab-chip-a {
+  top: 22px;
+  left: -14px;
+}
+
+.ab-chip-b {
+  bottom: 22px;
+  right: -12px;
+  animation-delay: 1.4s;
+}
+
+.ab-chip-b i {
+  color: var(--teal-accent);
+}
+
+/* ---------- Milestones ---------- */
+.ab-miles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.ab-mile {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--accent-blue);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.1rem;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ab-mile:nth-child(even) {
+  border-top-color: var(--teal-accent);
+}
+
+.ab-mile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.ab-mile b {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: block;
+}
+
+.ab-mile span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* ---------- Split rows ---------- */
+.ab-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.ab-split + .ab-split {
+  margin-top: 4rem;
+}
+
+.ab-check {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.ab-check li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.ab-check li i {
+  color: var(--accent-blue);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.ab-check.teal li i {
+  color: var(--teal-accent);
+}
+
+/* ---------- Leadership ---------- */
+.ab-team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ab-member {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.ab-member:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.ab-member .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.35);
+}
+
+.ab-member strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.ab-member small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ---------- Values with numerals ---------- */
+.ab-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ab-value {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ab-value:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.ab-value::before {
+  content: attr(data-n);
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--border-color);
+  pointer-events: none;
+}
+
+.ab-value h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.ab-value p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---------- Light CTA band ---------- */
+.ab-cta {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--soft-sky), #E0F2F1 60%, var(--warm-light));
+  border: 1px solid var(--border-color);
+  padding: clamp(2.75rem, 5vw, 4.5rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .ab-cta {
+  background: linear-gradient(135deg, #16224B, #123B3A 60%, #4A3A10);
+}
+
+.ab-cta h2 {
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.ab-cta p {
+  max-width: 60ch;
+  margin: 0 auto 2rem;
+}
+
+.ab-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1020px) {
+  .ab-hero-grid,
+  .ab-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ab-miles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ab-team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ab-hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .ab-miles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ab-chip-a {
+    left: 4px;
+  }
+
+  .ab-chip-b {
+    right: 4px;
+  }
+
+  .ab-photo img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 460px) {
+  .ab-miles,
+  .ab-team {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-chip {
+    display: none;
+  }
+
+  .ab-hero-ctas .btn {
+    width: 100%;
+  }
+
+  .ab-stats {
+    gap: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-chip {
+    animation: none;
+  }
+}

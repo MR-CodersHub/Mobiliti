@@ -3,90 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A192F">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <title>Mobiliti | Corporate Relocation & Employee Mobility Service</title>
   <meta name="description" content="Seamless global employee relocation and corporate mobility management. Streamline visa support, moving logistics, and settling-in for international talent.">
-  
+
   <!-- Remix Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  
+
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
+<body class="home-page">
 
   <!-- SITE HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-logo">
-        <div class="brand-icon"><i class="ri-global-line"></i></div>
-        <span>Mobiliti</span>
+        <img class="logo-mark" src="assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
+        <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
       <nav class="main-nav">
         <a href="index.html" class="nav-link active">Home</a>
-        <a href="pages/home-2.html" class="nav-link">Home 2 (HR Focus)</a>
-        <a href="pages/about.html" class="nav-link">About Us</a>
+        <a href="pages/home-2.html" class="nav-link">Home2</a>
+        <a href="pages/about.html" class="nav-link">About</a>
         <a href="pages/services.html" class="nav-link">Services</a>
-        <a href="pages/service-details.html" class="nav-link">Service Details</a>
         <a href="pages/blog.html" class="nav-link">Blog</a>
         <a href="pages/pricing.html" class="nav-link">Pricing</a>
         <a href="pages/contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="pages/employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="pages/hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
-        <a href="pages/login.html" class="btn btn-sm btn-outline">Portal Login</a>
-        <a href="pages/hr-dashboard.html" class="btn btn-sm btn-primary">HR Portal</a>
+        <a href="pages/login.html" class="btn btn-sm btn-primary">Portal Login</a>
         <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- SECTION 1: HERO â€” SEAMLESS EMPLOYEE TRANSITIONS -->
-    <section class="section-spacing" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%); color: #FFFFFF; position: relative; overflow: hidden;">
+    <!-- 1. HERO -->
+    <section class="hm-hero">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+        <div class="hm-hero-grid">
           <div class="reveal-on-scroll">
-            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: var(--sky-blue);">Enterprise Relocation Platform</span>
-            <h1 style="font-size: 3.25rem; color: #FFFFFF; margin-bottom: 1.25rem; font-weight: 800; line-height: 1.15;">
-              Seamless Employee Transitions across 140+ Countries.
-            </h1>
-            <p style="color: var(--slate-300); font-size: 1.15rem; margin-bottom: 2rem;">
-              Empower HR teams with centralized corporate mobility software, real-time visa coordination, household moving logistics, and personalized employee settling-in support.
-            </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <span class="hm-pill"><span class="hm-pill-dot">NEW</span> 99.4% visa approval in 2026</span>
+            <h1>Seamless employee transitions across <span class="grad">140+ countries.</span></h1>
+            <p class="hm-lead">Empower HR teams with centralized corporate mobility software, real-time visa coordination, household moving logistics, and personalized settling-in support for every hire.</p>
+            <div class="hm-ctas">
               <a href="pages/login.html" class="btn btn-lg btn-primary">Submit Relocation Request <i class="ri-arrow-right-line"></i></a>
-              <a href="pages/services.html" class="btn btn-lg btn-white">Explore Services</a>
+              <a href="pages/services.html" class="btn btn-lg btn-secondary">Explore Services</a>
             </div>
-            
-            <div style="display: flex; gap: 2rem; margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem;">
-              <div>
-                <h3 style="color: #FFFFFF; font-size: 1.75rem;">25,000+</h3>
-                <p style="color: var(--slate-400); font-size: 0.85rem;">Global Moves Managed</p>
+            <div class="hm-proof">
+              <div class="hm-avatars">
+                <span style="background:#1E3A8A">JK</span>
+                <span style="background:#0D9488">PN</span>
+                <span style="background:#7C3AED">DF</span>
+                <span style="background:#334155">+9</span>
               </div>
-              <div>
-                <h3 style="color: #FFFFFF; font-size: 1.75rem;">99.4%</h3>
-                <p style="color: var(--slate-400); font-size: 0.85rem;">Visa Approval Rate</p>
-              </div>
-              <div>
-                <h3 style="color: #FFFFFF; font-size: 1.75rem;">140+</h3>
-                <p style="color: var(--slate-400); font-size: 0.85rem;">Destinations Covered</p>
-              </div>
+              <small>
+                <span class="hm-stars">★★★★★</span><br>
+                Loved by <strong>500+ enterprises</strong> and 25,000+ relocated employees
+              </small>
             </div>
           </div>
 
-          <div class="reveal-on-scroll img-hover-zoom glass-panel" style="padding: 1rem; border-radius: var(--radius-xl);">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Corporate HR Mobility Specialist helping international employee" style="border-radius: var(--radius-lg); width: 100%; height: 440px; object-fit: cover;">
+          <div class="hm-visual reveal-on-scroll">
+            <div class="hm-chip hm-chip-a"><i class="ri-shield-check-line"></i><span>Visa approved<small>London · Skilled Worker</small></span></div>
+            <div class="hm-photo img-hover-zoom">
+              <img src="https://i.pinimg.com/736x/77/e5/d7/77e5d7e1b0e4ca85eb6db6083b148e63.jpg" alt="Seamless global employee relocation across borders">
+            </div>
+            <div class="hm-chip hm-chip-b"><i class="ri-line-chart-line"></i><span>98.8% on-time<small>arrival rate worldwide</small></span></div>
           </div>
+        </div>
+
+        <div class="hm-stats reveal-on-scroll">
+          <div class="hm-stat"><b><span data-count="25000">0</span><span>+</span></b><small>Global moves managed</small></div>
+          <div class="hm-stat"><b><span data-count="99.4" data-decimals="1">0</span><span>%</span></b><small>Visa approval rate</small></div>
+          <div class="hm-stat"><b><span data-count="140">0</span><span>+</span></b><small>Destinations covered</small></div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: CORPORATE MOBILITY OVERVIEW -->
+    <!-- 2. TRUSTED STRIP -->
+    <div class="hm-strip">
+      <div class="container">
+        <span class="hm-strip-label">Trusted by mobility leaders at</span>
+        <div class="hm-strip-names">
+          <span>HELVETIA</span><span>NORDWIND</span><span>ATLAS Air</span><span>MERIDIAN</span><span>VANTA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SERVICES -->
     <section class="section-spacing">
       <div class="container">
         <div class="section-header reveal-on-scroll">
@@ -141,7 +156,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3: HOW THE PROCESS WORKS -->
+    <!-- 4. PROCESS -->
     <section class="section-spacing" style="background-color: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-header reveal-on-scroll">
@@ -185,90 +200,59 @@
       </div>
     </section>
 
-    <!-- SECTION 4: WHY COMPANIES CHOOSE US -->
+    <!-- 5. WHY US (split) -->
     <section class="section-spacing">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-tag">Competitive Edge</span>
-          <h2 class="section-title">Why Global Enterprises Partner With Us</h2>
-          <p class="section-subtitle">Combining cutting-edge software automation with deep human empathy for international transfers.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem;">
-          <div style="display: flex; gap: 1.25rem;" class="reveal-on-scroll">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(37,99,235,0.1); color: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0;">
-              <i class="ri-user-star-line"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Dedicated Mobility Support</h3>
-              <p>Every account gets a single dedicated mobility consultant handling logistics and answering questions 24/7.</p>
-            </div>
+        <div class="hm-split">
+          <div class="hm-sticky reveal-on-scroll">
+            <span class="section-tag">Competitive Edge</span>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Why Global Enterprises Partner With Us</h2>
+            <p class="section-subtitle" style="margin-bottom: 1.75rem;">Cutting-edge software automation with deep human empathy for every international transfer.</p>
+            <a href="pages/contact.html" class="btn btn-primary">Talk to a Mobility Specialist <i class="ri-arrow-right-line"></i></a>
           </div>
 
-          <div style="display: flex; gap: 1.25rem;" class="reveal-on-scroll">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(13,148,136,0.1); color: var(--teal-accent); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0;">
-              <i class="ri-dashboard-3-line"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Transparent SaaS Tracking</h3>
-              <p>Real-time portal updates for HR directors and mobile task management for employees on the go.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 1.25rem;" class="reveal-on-scroll">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(245,158,11,0.1); color: var(--warm-accent); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0;">
-              <i class="ri-lock-password-line"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Centralized Compliance</h3>
-              <p>Bank-grade encrypted document vaults for passports, employment contracts, and tax filings.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 1.25rem;" class="reveal-on-scroll">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(139,92,246,0.1); color: #8B5CF6; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0;">
-              <i class="ri-earth-line"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Global Partner Network</h3>
-              <p>In-country vetted legal advisors, licensed movers, and real estate specialists in over 140 nations.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 1.25rem;" class="reveal-on-scroll">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(37,99,235,0.1); color: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0;">
-              <i class="ri-heart-pulse-line"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Employee-First Care</h3>
-              <p>Reduces relocations stress, helping new hires acclimatize quickly and focus on their job from Day 1.</p>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 1.25rem;" class="reveal-on-scroll">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(13,148,136,0.1); color: var(--teal-accent); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0;">
-              <i class="ri-bar-chart-box-line"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Cost Predictability</h3>
-              <p>Transparent fee structures with no hidden surcharges and detailed expense reporting analytics.</p>
-            </div>
-          </div>
+          <ul class="hm-check">
+            <li class="reveal-on-scroll">
+              <span class="hm-ico" style="background: rgba(37,99,235,0.1); color: var(--accent-blue);"><i class="ri-user-star-line"></i></span>
+              <div><strong>Dedicated Mobility Support</strong><p>A single consultant handling logistics and answering questions 24/7.</p></div>
+            </li>
+            <li class="reveal-on-scroll">
+              <span class="hm-ico" style="background: rgba(13,148,136,0.1); color: var(--teal-accent);"><i class="ri-dashboard-3-line"></i></span>
+              <div><strong>Transparent SaaS Tracking</strong><p>Real-time portal updates for HR, mobile tasks for employees on the go.</p></div>
+            </li>
+            <li class="reveal-on-scroll">
+              <span class="hm-ico" style="background: rgba(245,158,11,0.12); color: var(--warm-accent);"><i class="ri-lock-password-line"></i></span>
+              <div><strong>Centralized Compliance</strong><p>Bank-grade encrypted vaults for passports, contracts and tax filings.</p></div>
+            </li>
+            <li class="reveal-on-scroll">
+              <span class="hm-ico" style="background: rgba(139,92,246,0.1); color: #8B5CF6;"><i class="ri-earth-line"></i></span>
+              <div><strong>Global Partner Network</strong><p>Vetted legal advisors, movers and realtors in over 140 nations.</p></div>
+            </li>
+            <li class="reveal-on-scroll">
+              <span class="hm-ico" style="background: rgba(37,99,235,0.1); color: var(--accent-blue);"><i class="ri-heart-pulse-line"></i></span>
+              <div><strong>Employee-First Care</strong><p>Less relocation stress — new hires focus on the job from Day 1.</p></div>
+            </li>
+            <li class="reveal-on-scroll">
+              <span class="hm-ico" style="background: rgba(13,148,136,0.1); color: var(--teal-accent);"><i class="ri-bar-chart-box-line"></i></span>
+              <div><strong>Cost Predictability</strong><p>Transparent fees, no hidden surcharges, full expense analytics.</p></div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: GLOBAL / DESTINATION COVERAGE -->
+    <!-- 6. HUBS -->
     <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
       <div class="container">
         <div class="section-header reveal-on-scroll">
           <span class="section-tag">Global Presence</span>
           <h2 class="section-title">Popular Relocation Hubs Covered</h2>
-          <p class="section-subtitle">We manage seamless employee arrivals across premier global commercial and tech centers.</p>
+          <p class="section-subtitle">Seamless employee arrivals across premier global commercial and tech centers.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden;">
+          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden; position: relative;">
+            <span class="hm-hub-badge"><i class="ri-star-fill"></i> 2,400+ moves/yr</span>
             <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" alt="London UK Corporate Relocation Hub" style="height: 180px; width: 100%; object-fit: cover;">
             <div style="padding: 1.25rem;">
               <h4 style="font-size: 1.15rem;">London, United Kingdom</h4>
@@ -276,7 +260,8 @@
             </div>
           </div>
 
-          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden;">
+          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden; position: relative;">
+            <span class="hm-hub-badge"><i class="ri-star-fill"></i> 1,800+ moves/yr</span>
             <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80" alt="Sydney Australia Relocation Service" style="height: 180px; width: 100%; object-fit: cover;">
             <div style="padding: 1.25rem;">
               <h4 style="font-size: 1.15rem;">Sydney, Australia</h4>
@@ -284,7 +269,8 @@
             </div>
           </div>
 
-          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden;">
+          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden; position: relative;">
+            <span class="hm-hub-badge"><i class="ri-star-fill"></i> 2,100+ moves/yr</span>
             <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80" alt="Singapore Corporate Mobility Hub" style="height: 180px; width: 100%; object-fit: cover;">
             <div style="padding: 1.25rem;">
               <h4 style="font-size: 1.15rem;">Singapore Hub</h4>
@@ -292,7 +278,8 @@
             </div>
           </div>
 
-          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden;">
+          <div class="card reveal-on-scroll" style="padding: 0; overflow: hidden; position: relative;">
+            <span class="hm-hub-badge"><i class="ri-star-fill"></i> 1,600+ moves/yr</span>
             <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris France Relocation Support" style="height: 180px; width: 100%; object-fit: cover;">
             <div style="padding: 1.25rem;">
               <h4 style="font-size: 1.15rem;">Paris, France</h4>
@@ -303,16 +290,50 @@
       </div>
     </section>
 
-    <!-- SECTION 6: FINAL CTA -->
-    <section class="section-spacing" style="background: linear-gradient(135deg, var(--primary-navy), var(--accent-blue)); color: #FFFFFF; text-align: center;">
-      <div class="container reveal-on-scroll" style="max-width: 800px;">
-        <h2 style="font-size: 2.5rem; color: #FFFFFF; margin-bottom: 1rem;">Ready to Transform Your Corporate Mobility Strategy?</h2>
-        <p style="color: var(--slate-300); font-size: 1.15rem; margin-bottom: 2rem;">
-          Join over 500+ enterprises streamlining international talent relocations with Mobiliti's end-to-end platform.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
-          <a href="pages/login.html" class="btn btn-lg btn-white">Start a Relocation Request</a>
-          <a href="pages/contact.html" class="btn btn-lg btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;">Talk to a Mobility Specialist</a>
+    <!-- 7. TESTIMONIALS -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Client Stories</span>
+          <h2 class="section-title">Teams That Move With Mobiliti</h2>
+          <p class="section-subtitle">HR leaders and relocating employees on what changed after switching.</p>
+        </div>
+
+        <div class="hm-quotes">
+          <figure class="hm-quote reveal-on-scroll">
+            <span class="stars">★★★★★</span>
+            <blockquote>"Our engineers land on Monday and ship code by Friday. Mobiliti removed every ounce of relocation friction."</blockquote>
+            <figcaption><span class="avatar" style="background:#1E3A8A">JK</span><div><strong>Jonas Keller</strong><small>VP People, HELVETIA Group</small></div></figcaption>
+          </figure>
+          <figure class="hm-quote reveal-on-scroll">
+            <span class="stars">★★★★★</span>
+            <blockquote>"Visa, housing, schools — one portal, one specialist, zero surprises. The smoothest move of my career."</blockquote>
+            <figcaption><span class="avatar" style="background:#0D9488">PN</span><div><strong>Priya Nair</strong><small>Senior Engineer, relocated to Singapore</small></div></figcaption>
+          </figure>
+          <figure class="hm-quote reveal-on-scroll">
+            <span class="stars">★★★★★</span>
+            <blockquote>"We cut cost-per-move by a third while satisfaction scores went up. Finance and HR finally agree on something."</blockquote>
+            <figcaption><span class="avatar" style="background:#7C3AED">DF</span><div><strong>Diego Fuentes</strong><small>Head of Mobility, ATLAS Air</small></div></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section class="section-spacing" style="padding-top: 0;">
+      <div class="container">
+        <div class="hm-cta reveal-on-scroll">
+          <h2>Ready to Transform Your Corporate Mobility Strategy?</h2>
+          <p>Join over 500+ enterprises streamlining international talent relocations with Mobiliti's end-to-end platform.</p>
+          <div class="hm-cta-row">
+            <a href="pages/login.html" class="btn btn-lg btn-white">Start a Relocation Request</a>
+            <a href="pages/contact.html" class="btn btn-lg btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;">Talk to a Mobility Specialist</a>
+          </div>
+          <div class="hm-cta-fine">
+            <span><i class="ri-shield-check-line"></i> SOC 2 & GDPR aligned</span>
+            <span><i class="ri-time-line"></i> Live in ~14 days</span>
+            <span><i class="ri-emotion-happy-line"></i> 4.9/5 transferee rating</span>
+          </div>
         </div>
       </div>
     </section>
@@ -324,20 +345,31 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo" style="color: #FFFFFF;">
-            <div class="brand-icon"><i class="ri-global-line"></i></div>
+            <img class="logo-mark" src="assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
             <span style="color: #FFFFFF;">Mobiliti</span>
           </a>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders and talent world-wide.</p>
+          <p class="brand-tagline">Move Talent Beyond Borders.</p>
+          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
         </div>
 
         <div class="footer-col">
           <h4>Platform Navigation</h4>
           <ul>
-            <li><a href="index.html">Home 1 (General)</a></li>
-            <li><a href="pages/home-2.html">Home 2 (HR Focus)</a></li>
-            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/home-2.html">Home2</a></li>
+            <li><a href="pages/about.html">About</a></li>
             <li><a href="pages/services.html">Services</a></li>
-            <li><a href="pages/pricing.html">Pricing Plans</a></li>
+            <li><a href="pages/service-details.html">Service Details</a></li>
+            <li><a href="pages/blog.html">Blog</a></li>
+            <li><a href="pages/pricing.html">Pricing</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
           </ul>
         </div>
 
@@ -348,26 +380,33 @@
             <li><a href="pages/employee-dashboard.html">Employee Dashboard</a></li>
             <li><a href="pages/login.html">Role-Based Login</a></li>
             <li><a href="pages/service-details.html">Employee Relocation</a></li>
+            <li><a href="pages/pricing.html">Plans & Billing</a></li>
+            <li><a href="pages/maintenance.html">System Status</a></li>
+            <li><a href="pages/contact.html">Support Center</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Resources & Contact</h4>
-          <ul>
-            <li><a href="pages/blog.html">Mobiliti Blog</a></li>
-            <li><a href="pages/contact.html">Contact Support</a></li>
-            <li><a href="pages/404.html">404 Demo Page</a></li>
-            <li><a href="pages/maintenance.html">System Status</a></li>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
+            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
+            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
+            <li><i class="ri-customer-service-2-line"></i> <a href="pages/contact.html">Contact Us</a></li>
           </ul>
+          <form class="newsletter-form compact" novalidate>
+            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. Enterprise Mobility System.</div>
+        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="#" style="color: var(--slate-400);">Privacy Policy</a>
-          <a href="#" style="color: var(--slate-400);">Terms of Service</a>
-          <a href="#" style="color: var(--slate-400);">GDPR Compliance</a>
+          <a href="pages/privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
+          <a href="pages/terms.html" style="color: var(--slate-400);">Terms of Service</a>
+          <a href="pages/privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
         </div>
       </div>
     </div>
@@ -378,6 +417,41 @@
   <!-- JavaScript Modules -->
   <script src="js/store.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    /* Home count-up stats */
+    (function () {
+      function animateCount(el) {
+        var target = parseFloat(el.getAttribute('data-count'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        if (isNaN(target)) return;
+        var dur = 1600, start = null;
+        function fmt(v) {
+          return decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+        }
+        function frame(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          el.textContent = fmt(target * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          el.textContent = fmt(target);
+        } else {
+          requestAnimationFrame(frame);
+        }
+      }
+      var seen = new WeakSet();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.querySelectorAll('[data-count]').forEach(function (el) {
+            if (!seen.has(el)) { seen.add(el); animateCount(el); }
+          });
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.hm-hero').forEach(function (s) { io.observe(s); });
+    })();
+  </script>
 </body>
 </html>
-

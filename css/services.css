@@ -1,0 +1,428 @@
+/* ==========================================================================
+   MOBILITI - Services Premium Edition
+   Light, editorial, theme-aware. Scoped under .services-page.
+   One notch below Home2's dark edition.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.sv-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(760px 400px at 88% -10%, rgba(37, 99, 235, 0.13), transparent 60%),
+    radial-gradient(620px 400px at -10% 110%, rgba(13, 148, 136, 0.11), transparent 60%),
+    var(--bg-primary);
+  padding: 4.5rem 0 3.5rem;
+}
+
+.sv-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--border-color-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color-light) 1px, transparent 1px);
+  background-size: 54px 54px;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 25%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 25%, transparent 72%);
+  pointer-events: none;
+}
+
+.sv-crumbs {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.sv-crumbs a {
+  color: var(--text-muted);
+}
+
+.sv-crumbs a:hover {
+  color: var(--accent-blue);
+}
+
+.sv-hero h1 {
+  position: relative;
+  font-size: clamp(2.5rem, 4.8vw, 3.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.2rem;
+  max-width: 20ch;
+}
+
+.sv-hero h1 .grad {
+  background: linear-gradient(120deg, var(--accent-blue), var(--teal-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sv-lead {
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 62ch;
+  margin-bottom: 2rem;
+}
+
+/* Anchor chips to each service */
+.sv-index {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.sv-index a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-fast);
+}
+
+.sv-index a b {
+  color: var(--accent-blue);
+}
+
+.sv-index a:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* ---------- Service rows ---------- */
+.sv-row {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2rem;
+}
+
+.sv-row:last-child {
+  margin-bottom: 0;
+}
+
+.sv-row.flip .sv-copy {
+  order: 2;
+}
+
+.sv-row.flip .sv-media {
+  order: 1;
+}
+
+.sv-copy {
+  padding: 2.75rem;
+  position: relative;
+}
+
+.sv-num {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  color: var(--accent-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.sv-num::after {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.sv-copy h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9rem;
+}
+
+.sv-copy > p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.sv-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.sv-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sv-benefits li i {
+  color: var(--teal-accent);
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+}
+
+/* Mini 3-step process */
+.sv-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.sv-steps div {
+  flex: 1;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.sv-steps div b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  color: #fff;
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.sv-steps div + div {
+  border-left: 1px dashed var(--border-color);
+  padding-left: 0.9rem;
+  margin-left: 0.2rem;
+}
+
+[dir="rtl"] .sv-steps div + div {
+  border-left: none;
+  border-right: 1px dashed var(--border-color);
+  padding-left: 0;
+  padding-right: 0.9rem;
+  margin-left: 0;
+  margin-right: 0.2rem;
+}
+
+.sv-media {
+  position: relative;
+  min-height: 320px;
+}
+
+.sv-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.sv-row:hover .sv-media img {
+  transform: scale(1.04);
+}
+
+.sv-badge {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+[dir="rtl"] .sv-badge {
+  left: auto;
+  right: 1.1rem;
+}
+
+.sv-badge i {
+  color: var(--teal-accent);
+}
+
+/* ---------- Included band ---------- */
+.sv-included {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.sv-included div {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.1rem;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+}
+
+.sv-included i {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.sv-included strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.sv-included small {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* ---------- CTA ---------- */
+.sv-cta {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #1E3A8A, #0D9488);
+  color: #fff;
+  padding: clamp(2.75rem, 5vw, 4.5rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(13, 148, 136, 0.5);
+}
+
+.sv-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(560px 280px at 12% 100%, rgba(255, 255, 255, 0.14), transparent 60%);
+  pointer-events: none;
+}
+
+.sv-cta h2 {
+  color: #fff;
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.sv-cta p {
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 60ch;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.sv-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .sv-row,
+  .sv-row.flip .sv-copy,
+  .sv-row.flip .sv-media {
+    grid-template-columns: 1fr;
+    order: initial;
+  }
+
+  .sv-media {
+    min-height: 240px;
+    order: -1;
+  }
+
+  .sv-row.flip .sv-media {
+    order: -1;
+  }
+
+  .sv-copy {
+    padding: 2rem 1.5rem;
+  }
+
+  .sv-included {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .sv-hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .sv-steps {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .sv-steps div + div {
+    border-left: none;
+    border-top: 1px dashed var(--border-color);
+    padding-left: 0;
+    padding-top: 0.8rem;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .sv-steps div + div {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .sv-included {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-row:hover .sv-media img {
+    transform: none;
+  }
+}

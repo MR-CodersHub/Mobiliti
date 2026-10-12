@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A192F">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <title>Sitemap | Mobiliti</title>
   <meta name="description" content="Complete sitemap of the Mobiliti corporate relocation and employee mobility platform.">
   
@@ -10,14 +12,7 @@
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
-  <style>
-    .sitemap-list { list-style: none; padding-left: 0; }
-    .sitemap-list li { margin-bottom: 0.75rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.75rem; }
-    .sitemap-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .sitemap-list a { color: var(--text-primary); text-decoration: none; font-weight: 500; display: flex; align-items: center; justify-content: space-between; transition: color 0.2s ease; }
-    .sitemap-list a:hover { color: var(--accent-blue); }
-    .sitemap-list a i { color: var(--text-muted); font-size: 1.1rem; }
-  </style>
+  <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body>
 
@@ -25,21 +20,25 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo">
-        <div class="brand-icon"><i class="ri-global-line"></i></div>
-        <span>Mobiliti</span>
+        <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
+        <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
       <nav class="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link">Home 2</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="home-2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
+        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
         <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
@@ -47,11 +46,11 @@
 
   <main>
     <!-- SECTION 1: HERO -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-color); text-align: center;">
+    <section class="pg-hero center">
       <div class="container reveal-on-scroll">
         <span class="section-tag">Navigation Index</span>
-        <h1 class="section-title" style="font-size: 3rem;">Sitemap</h1>
-        <p class="section-subtitle">Explore the complete architecture of the Mobiliti platform, from public services to secure portals.</p>
+        <h1>Explore the <span class="grad">Full Platform</span></h1>
+        <p class="pg-lead">Every public page, secure portal and resource — one complete map of Mobiliti.</p>
       </div>
     </section>
 
@@ -63,10 +62,10 @@
           <p class="section-subtitle">Core informative pages for corporate clients and relocating employees.</p>
         </div>
         <div class="card reveal-on-scroll" style="max-width: 800px; margin: 0 auto;">
-          <ul class="sitemap-list">
+          <ul class="sitemap-list pg-sitemap">
             <li><a href="../index.html">Home 1 - General Services <i class="ri-arrow-right-line"></i></a></li>
-            <li><a href="home-2.html">Home 2 - HR Focus <i class="ri-arrow-right-line"></i></a></li>
-            <li><a href="about.html">About Us <i class="ri-arrow-right-line"></i></a></li>
+            <li><a href="home-2.html">Home2 <i class="ri-arrow-right-line"></i></a></li>
+            <li><a href="about.html">About <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="services.html">Services <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="service-details.html">Service Details <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="pricing.html">Pricing Plans <i class="ri-arrow-right-line"></i></a></li>
@@ -84,7 +83,7 @@
           <p class="section-subtitle">Secure access areas for HR managers and transferring staff.</p>
         </div>
         <div class="card reveal-on-scroll" style="max-width: 800px; margin: 0 auto;">
-          <ul class="sitemap-list">
+          <ul class="sitemap-list pg-sitemap">
             <li><a href="login.html">Login / Register <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="hr-dashboard.html">HR Client Dashboard <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="employee-dashboard.html">User / Employee Dashboard <i class="ri-arrow-right-line"></i></a></li>
@@ -101,7 +100,7 @@
           <p class="section-subtitle">Insights, guides, and mobility trends.</p>
         </div>
         <div class="card reveal-on-scroll" style="max-width: 800px; margin: 0 auto;">
-          <ul class="sitemap-list">
+          <ul class="sitemap-list pg-sitemap">
             <li><a href="blog.html">Blog Overview <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="blog-details.html">Blog Details <i class="ri-arrow-right-line"></i></a></li>
           </ul>
@@ -117,7 +116,7 @@
           <p class="section-subtitle">System statuses, policies, and compliance documents.</p>
         </div>
         <div class="card reveal-on-scroll" style="max-width: 800px; margin: 0 auto;">
-          <ul class="sitemap-list">
+          <ul class="sitemap-list pg-sitemap">
             <li><a href="terms.html">Terms of Service <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="privacy.html">Privacy Policy <i class="ri-arrow-right-line"></i></a></li>
             <li><a href="sitemap.html">Sitemap <i class="ri-arrow-right-line"></i></a></li>
@@ -145,43 +144,69 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
-            <div class="brand-icon"><i class="ri-global-line"></i></div>
+            <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
             <span style="color: #FFFFFF;">Mobiliti</span>
           </a>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform.</p>
+          <p class="brand-tagline">Move Talent Beyond Borders.</p>
+          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
         </div>
 
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Platform Navigation</h4>
           <ul>
-            <li><a href="../index.html">Home 1</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="home-2.html">Home2</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="service-details.html">Service Details</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Portals</h4>
+          <h4>Portals & Role Access</h4>
           <ul>
             <li><a href="hr-dashboard.html">HR Client Dashboard</a></li>
             <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
             <li><a href="login.html">Login/Register</a></li>
+            <li><a href="service-details.html">Employee Relocation</a></li>
+            <li><a href="pricing.html">Plans & Billing</a></li>
+            <li><a href="maintenance.html">System Status</a></li>
+            <li><a href="contact.html">Support Center</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="sitemap.html">Sitemap</a></li>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
+            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
+            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
+            <li><i class="ri-customer-service-2-line"></i> <a href="contact.html">Contact Us</a></li>
           </ul>
+          <form class="newsletter-form compact" novalidate>
+            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved.</div>
+        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--slate-400);">Terms of Service</a>
+          <a href="privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
+        </div>
       </div>
     </div>
   </footer>

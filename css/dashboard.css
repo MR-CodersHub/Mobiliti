@@ -64,6 +64,15 @@
   margin-top: 0.25rem;
 }
 
+.sidebar-tagline {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(203, 213, 225, 0.55);
+  margin-top: 0.35rem;
+}
+
 .sidebar-nav {
   padding: 1.5rem 1rem;
   flex: 1;
@@ -331,6 +340,7 @@
 
 .dashboard-wrapper.sidebar-collapsed .dashboard-sidebar .brand-text,
 .dashboard-wrapper.sidebar-collapsed .dashboard-sidebar .sidebar-role-badge,
+.dashboard-wrapper.sidebar-collapsed .dashboard-sidebar .sidebar-tagline,
 .dashboard-wrapper.sidebar-collapsed .dashboard-sidebar .nav-text,
 .dashboard-wrapper.sidebar-collapsed .dashboard-sidebar .nav-section-title,
 .dashboard-wrapper.sidebar-collapsed .dashboard-sidebar .user-info {

@@ -3,245 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A192F">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <title>Mobiliti | Corporate Mobility Services Overview</title>
   <meta name="description" content="Explore Mobiliti's suite of employee relocation, visa & immigration support, destination services, corporate accommodation, and managed mobility programs.">
-  
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/services.css">
 </head>
-<body>
+<body class="services-page">
 
   <!-- SITE HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo">
-        <div class="brand-icon"><i class="ri-global-line"></i></div>
-        <span>Mobiliti</span>
+        <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
+        <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
       <nav class="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link">Home 2 (HR Focus)</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="home-2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link active">Services</a>
-        <a href="service-details.html" class="nav-link">Service Details</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
-        <a href="login.html" class="btn btn-sm btn-outline">Portal Login</a>
-        <a href="hr-dashboard.html" class="btn btn-sm btn-primary">HR Portal</a>
+        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
         <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- SECTION 1: EMPLOYEE RELOCATION -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-color);">
+    <!-- HERO -->
+    <section class="sv-hero">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Service 01</span>
-            <h2 class="section-title">Employee Relocation</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Full-service domestic and international household moves, air freight logistics, customs clearances, and transit insurance.
-            </p>
+        <span class="sv-crumbs reveal-on-scroll"><a href="../index.html">Home</a> <i class="ri-arrow-right-s-line"></i> Services</span>
+        <h1 class="reveal-on-scroll">Six services. <span class="grad">One accountable partner.</span></h1>
+        <p class="sv-lead reveal-on-scroll">Every stage of the global move — visas, shipping, housing, settling-in — delivered as one governed program with a single owner and live tracking throughout.</p>
+        <div class="sv-index reveal-on-scroll">
+          <a href="#svc-1"><b>01</b> Relocation</a>
+          <a href="#svc-2"><b>02</b> Visas</a>
+          <a href="#svc-3"><b>03</b> Destination</a>
+          <a href="#svc-4"><b>04</b> Housing</a>
+          <a href="#svc-5"><b>05</b> Settling-In</a>
+          <a href="#svc-6"><b>06</b> Programs</a>
+        </div>
+      </div>
+    </section>
 
-            <div style="margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Key Benefits:</h4>
-              <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-                <li><i class="ri-check-line" style="color: var(--teal-accent);"></i> Single point of contact for inventory and transit tracking</li>
-                <li><i class="ri-check-line" style="color: var(--teal-accent);"></i> Fully insured door-to-door white-glove packing</li>
-              </ul>
+    <!-- SERVICE ROWS -->
+    <section class="section-spacing" style="padding-top: 3.5rem;">
+      <div class="container">
+
+        <article id="svc-1" class="sv-row reveal-on-scroll">
+          <div class="sv-copy">
+            <span class="sv-num">Service 01</span>
+            <h2>Employee Relocation</h2>
+            <p>Full-service domestic and international household moves, air freight logistics, customs clearance and transit insurance — door to door.</p>
+            <ul class="sv-benefits">
+              <li><i class="ri-checkbox-circle-fill"></i> Single contact for inventory and live transit tracking</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Fully insured white-glove packing and delivery</li>
+            </ul>
+            <div class="sv-steps">
+              <div><b>1</b> Video survey</div>
+              <div><b>2</b> Packing & dispatch</div>
+              <div><b>3</b> Customs & delivery</div>
             </div>
-
-            <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Process Overview:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">In-home video survey &rarr; Custom packing & container dispatch &rarr; Customs clearance & arrival delivery.</p>
-            </div>
-
             <a href="service-details.html" class="btn btn-primary">Explore Relocation Details <i class="ri-arrow-right-line"></i></a>
           </div>
-
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Professional moving logistics crew" style="border-radius: var(--radius-xl);">
+          <div class="sv-media">
+            <span class="sv-badge"><i class="ri-shield-check-line"></i> Door-to-door insured</span>
+            <img src="https://i.pinimg.com/736x/af/c6/45/afc64518e996e0d7376fa15ba3fc065a.jpg" alt="Household goods relocation and moving">
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- SECTION 2: VISA & IMMIGRATION SUPPORT -->
-    <section class="section-spacing">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=80" alt="Immigration passport and visa documentation" style="border-radius: var(--radius-xl);">
-          </div>
-
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Service 02</span>
-            <h2 class="section-title">Visa & Immigration Support</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Navigating global work authorization, corporate visa sponsorships, document legalisation, and consular filings.
-            </p>
-
-            <div style="margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Key Benefits:</h4>
-              <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-                <li><i class="ri-check-line" style="color: var(--accent-blue);"></i> 99.4% first-time visa approval compliance record</li>
-                <li><i class="ri-check-line" style="color: var(--accent-blue);"></i> Dedicated in-house immigration attorneys</li>
-              </ul>
+        <article id="svc-2" class="sv-row flip reveal-on-scroll">
+          <div class="sv-copy">
+            <span class="sv-num">Service 02</span>
+            <h2>Visa & Immigration Support</h2>
+            <p>Global work authorization, corporate sponsorships, document legalisation and consular filings handled by in-house counsel.</p>
+            <ul class="sv-benefits">
+              <li><i class="ri-checkbox-circle-fill"></i> 99.4% first-time visa approval record</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Dedicated in-house immigration attorneys</li>
+            </ul>
+            <div class="sv-steps">
+              <div><b>1</b> Eligibility check</div>
+              <div><b>2</b> Document verification</div>
+              <div><b>3</b> Filing & issuance</div>
             </div>
-
-            <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Process Overview:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">Eligibility check &rarr; Document gathering & verification &rarr; Embassy filing & passport issuance.</p>
-            </div>
-
             <a href="contact.html" class="btn btn-secondary">Request Visa Assessment</a>
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="sv-media">
+            <span class="sv-badge"><i class="ri-passport-line"></i> 99.4% approval</span>
+            <img src="https://i.pinimg.com/736x/db/ce/1e/dbce1e92cc156619c73e0141b9663711.jpg" alt="Visa and immigration documentation">
+          </div>
+        </article>
 
-    <!-- SECTION 3: DESTINATION SERVICES -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Service 03</span>
-            <h2 class="section-title">Destination Services</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Helping talent find their perfect long-term home, explore neighborhood amenities, and enroll children in top schools.
-            </p>
-
-            <div style="margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Key Benefits:</h4>
-              <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-                <li><i class="ri-check-line" style="color: var(--teal-accent);"></i> Hosted local orientation tours by local experts</li>
-                <li><i class="ri-check-line" style="color: var(--teal-accent);"></i> Lease contract protection & negotiation</li>
-              </ul>
+        <article id="svc-3" class="sv-row reveal-on-scroll">
+          <div class="sv-copy">
+            <span class="sv-num">Service 03</span>
+            <h2>Destination Services</h2>
+            <p>Help talent find the perfect long-term home, explore neighborhoods and enroll children in top schools before Day 1.</p>
+            <ul class="sv-benefits">
+              <li><i class="ri-checkbox-circle-fill"></i> Hosted orientation tours with local experts</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Lease protection & negotiation support</li>
+            </ul>
+            <div class="sv-steps">
+              <div><b>1</b> Needs analysis</div>
+              <div><b>2</b> Shortlist viewings</div>
+              <div><b>3</b> Lease & handover</div>
             </div>
-
-            <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Process Overview:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">Needs analysis &rarr; Property shortlist viewings &rarr; Lease signing & inventory hand-over.</p>
-            </div>
-
             <a href="service-details.html" class="btn btn-primary">Learn About Destination Services</a>
           </div>
-
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="Modern home finding orientation" style="border-radius: var(--radius-xl);">
+          <div class="sv-media">
+            <span class="sv-badge"><i class="ri-home-heart-line"></i> 48h shortlist</span>
+            <img src="https://i.pinimg.com/736x/76/6b/7a/766b7a0abda3f4098d0793e4f7cdb83a.jpg" alt="Finding a long-term family home">
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- SECTION 4: TEMPORARY ACCOMMODATION -->
-    <section class="section-spacing">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80" alt="Vetted corporate temporary housing apartment" style="border-radius: var(--radius-xl);">
-          </div>
-
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Service 04</span>
-            <h2 class="section-title">Temporary Accommodation</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Comfortable, fully-furnished corporate apartments for the first 30â€“90 days of arrival.
-            </p>
-
-            <div style="margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Key Benefits:</h4>
-              <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-                <li><i class="ri-check-line" style="color: var(--accent-blue);"></i> Flexible corporate leasing terms</li>
-                <li><i class="ri-check-line" style="color: var(--accent-blue);"></i> All-inclusive utilities, high-speed WiFi, & house-keeping</li>
-              </ul>
+        <article id="svc-4" class="sv-row flip reveal-on-scroll">
+          <div class="sv-copy">
+            <span class="sv-num">Service 04</span>
+            <h2>Temporary Accommodation</h2>
+            <p>Comfortable, fully-furnished corporate apartments for the first 30–90 days after arrival.</p>
+            <ul class="sv-benefits">
+              <li><i class="ri-checkbox-circle-fill"></i> Flexible corporate leasing terms</li>
+              <li><i class="ri-checkbox-circle-fill"></i> All-inclusive utilities, WiFi & housekeeping</li>
+            </ul>
+            <div class="sv-steps">
+              <div><b>1</b> Family size check</div>
+              <div><b>2</b> Curated selection</div>
+              <div><b>3</b> Keys on arrival</div>
             </div>
-
-            <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Process Overview:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">Family size check &rarr; Curated suite selection &rarr; Key handover on arrival.</p>
-            </div>
-
             <a href="pricing.html" class="btn btn-secondary">View Accommodation Pricing</a>
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="sv-media">
+            <span class="sv-badge"><i class="ri-hotel-line"></i> 30–90 day stays</span>
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80" alt="Vetted corporate temporary housing apartment">
+          </div>
+        </article>
 
-    <!-- SECTION 5: SETTLING-IN SERVICES -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Service 05</span>
-            <h2 class="section-title">Settling-In Services</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Smooth administrative onboarding: local registration, utility setup, tax ID numbers, and bank account creation.
-            </p>
-
-            <div style="margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Key Benefits:</h4>
-              <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-                <li><i class="ri-check-line" style="color: var(--teal-accent);"></i> Fast-tracked municipal appointments</li>
-                <li><i class="ri-check-line" style="color: var(--teal-accent);"></i> In-person bilingual translator accompaniment</li>
-              </ul>
+        <article id="svc-5" class="sv-row reveal-on-scroll">
+          <div class="sv-copy">
+            <span class="sv-num">Service 05</span>
+            <h2>Settling-In Services</h2>
+            <p>Smooth administrative onboarding: local registration, utility setup, tax IDs and bank account creation.</p>
+            <ul class="sv-benefits">
+              <li><i class="ri-checkbox-circle-fill"></i> Fast-tracked municipal appointments</li>
+              <li><i class="ri-checkbox-circle-fill"></i> In-person bilingual accompaniment</li>
+            </ul>
+            <div class="sv-steps">
+              <div><b>1</b> Document review</div>
+              <div><b>2</b> Registration</div>
+              <div><b>3</b> Bank & mobile live</div>
             </div>
-
-            <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Process Overview:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">Pre-appointment document review &rarr; Municipal registration &rarr; Bank & mobile line activation.</p>
-            </div>
-
             <a href="contact.html" class="btn btn-primary">Inquire Settling-In Options</a>
           </div>
-
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80" alt="Settling-in assistance and banking guidance" style="border-radius: var(--radius-xl);">
+          <div class="sv-media">
+            <span class="sv-badge"><i class="ri-bank-card-line"></i> 5-day setup</span>
+            <img src="https://i.pinimg.com/1200x/64/be/94/64be941d71abf4882ee1255f1474f3b7.jpg" alt="Settling-in administrative support">
           </div>
+        </article>
+
+        <article id="svc-6" class="sv-row flip reveal-on-scroll">
+          <div class="sv-copy">
+            <span class="sv-num">Service 06</span>
+            <h2>Corporate Mobility Programs</h2>
+            <p>Tailored bulk mobility management, custom policy drafting and dedicated account leadership for global corporations.</p>
+            <ul class="sv-benefits">
+              <li><i class="ri-checkbox-circle-fill"></i> Custom SLAs & volume pricing discounts</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Dedicated executive & tailored HR workflows</li>
+            </ul>
+            <div class="sv-steps">
+              <div><b>1</b> Policy audit</div>
+              <div><b>2</b> Portal onboarding</div>
+              <div><b>3</b> Program execution</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Book Enterprise Mobility Consult</a>
+          </div>
+          <div class="sv-media">
+            <span class="sv-badge"><i class="ri-building-4-line"></i> Custom SLAs</span>
+            <img src="https://i.pinimg.com/1200x/46/32/14/463214884570f32c097aba3ebc7f99c3.jpg" alt="Corporate mobility program management">
+          </div>
+        </article>
+
+        <div class="sv-included reveal-on-scroll">
+          <div><i class="ri-user-star-line"></i><strong>Named Specialist</strong><small>One owner per file</small></div>
+          <div><i class="ri-radar-line"></i><strong>Live Tracking</strong><small>Every stage visible</small></div>
+          <div><i class="ri-shield-check-line"></i><strong>Full Insurance</strong><small>Door-to-door cover</small></div>
+          <div><i class="ri-customer-service-2-line"></i><strong>24/7 Support</strong><small>Humans on call</small></div>
         </div>
+
       </div>
     </section>
 
-    <!-- SECTION 6: CORPORATE MOBILITY PROGRAMS -->
-    <section class="section-spacing">
+    <!-- CTA -->
+    <section class="section-spacing" style="padding-top: 0;">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" alt="Managed corporate mobility programs for enterprise companies" style="border-radius: var(--radius-xl);">
-          </div>
-
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Service 06</span>
-            <h2 class="section-title">Corporate Mobility Programs</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Tailored bulk mobility management programs, custom policy drafting, and dedicated account leadership for global corporations.
-            </p>
-
-            <div style="margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Key Benefits:</h4>
-              <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-                <li><i class="ri-check-line" style="color: var(--accent-blue);"></i> Custom SLA guarantees & volume pricing discounts</li>
-                <li><i class="ri-check-line" style="color: var(--accent-blue);"></i> Dedicated Account Executive & tailored HR portal workflows</li>
-              </ul>
-            </div>
-
-            <div style="margin-bottom: 2rem;">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Process Overview:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">Policy audit & consult &rarr; Portal onboarding & custom workflows &rarr; Ongoing program execution.</p>
-            </div>
-
-            <a href="contact.html" class="btn btn-primary">Book Enterprise Mobility Consult</a>
+        <div class="sv-cta reveal-on-scroll">
+          <h2>Not sure which service fits your move?</h2>
+          <p>Tell us the destination, timeline and family size — a mobility architect replies within one business day with a tailored plan.</p>
+          <div class="sv-cta-row">
+            <a href="contact.html" class="btn btn-lg btn-white">Get a Tailored Plan</a>
+            <a href="pricing.html" class="btn btn-lg btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;">Compare Pricing</a>
           </div>
         </div>
       </div>
@@ -254,43 +229,69 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
-            <div class="brand-icon"><i class="ri-global-line"></i></div>
+            <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
             <span style="color: #FFFFFF;">Mobiliti</span>
           </a>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform.</p>
+          <p class="brand-tagline">Move Talent Beyond Borders.</p>
+          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
         </div>
 
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Platform Navigation</h4>
           <ul>
-            <li><a href="../index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="home-2.html">Home2</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="service-details.html">Service Details</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Portals</h4>
+          <h4>Portals & Role Access</h4>
           <ul>
             <li><a href="hr-dashboard.html">HR Client Dashboard</a></li>
             <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
             <li><a href="login.html">Login/Register</a></li>
+            <li><a href="service-details.html">Employee Relocation</a></li>
+            <li><a href="pricing.html">Plans & Billing</a></li>
+            <li><a href="maintenance.html">System Status</a></li>
+            <li><a href="contact.html">Support Center</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Contact</h4>
-          <ul>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+          <ul class="footer-contact">
+            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
+            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
+            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
+            <li><i class="ri-customer-service-2-line"></i> <a href="contact.html">Contact Us</a></li>
           </ul>
+          <form class="newsletter-form compact" novalidate>
+            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved.</div>
+        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--slate-400);">Terms of Service</a>
+          <a href="privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -301,4 +302,3 @@
   <script src="../js/app.js"></script>
 </body>
 </html>
-

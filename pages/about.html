@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A192F">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <title>Mobiliti | About Us & Global Mobility Mission</title>
   <meta name="description" content="Learn about Mobiliti's mission to transform global employee relocation, our mobility philosophy, values, and global partner network.">
   
@@ -10,33 +12,33 @@
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/about.css">
 </head>
-<body>
+<body class="about-page">
 
   <!-- SITE HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo">
-        <div class="brand-icon"><i class="ri-global-line"></i></div>
-        <span>Mobiliti</span>
+        <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
+        <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
       <nav class="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link">Home 2 (HR Focus)</a>
-        <a href="about.html" class="nav-link active">About Us</a>
+        <a href="home-2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link active">About</a>
         <a href="services.html" class="nav-link">Services</a>
-        <a href="service-details.html" class="nav-link">Service Details</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
-        <a href="login.html" class="btn btn-sm btn-outline">Portal Login</a>
-        <a href="hr-dashboard.html" class="btn btn-sm btn-primary">HR Portal</a>
+        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
         <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
@@ -44,33 +46,52 @@
 
   <main>
     <!-- SECTION 1: OUR STORY -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-color);">
+    <!-- SECTION 1: STORY HERO -->
+    <section class="ab-hero">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+        <span class="ab-crumbs reveal-on-scroll"><a href="../index.html">Home</a> <i class="ri-arrow-right-s-line"></i> About</span>
+        <div class="ab-hero-grid">
           <div class="reveal-on-scroll">
             <span class="section-tag">Established 2018</span>
-            <h1 class="section-title">Our Story & Mission</h1>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Mobiliti was founded by former corporate HR directors and global immigration attorneys who recognized that legacy relocation services were slow, expensive, and opaque.
+            <h1>Built by people who've lived the <span class="grad">global move.</span></h1>
+            <p class="ab-lead">
+              Mobiliti was founded by former corporate HR directors and global immigration attorneys who knew legacy relocation was slow, expensive and opaque — so we engineered the platform we always wished existed.
             </p>
-            <p style="margin-bottom: 1.5rem;">
-              We set out to engineer a modern enterprise SaaS platform backed by local specialists, making international career moves effortless for companies and human-centered for talent.
-            </p>
-            <div style="display: flex; gap: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-              <div>
-                <strong style="font-size: 1.75rem; color: var(--accent-blue);">140+</strong>
-                <div style="font-size: 0.85rem; color: var(--text-muted);">Countries Supported</div>
-              </div>
-              <div>
-                <strong style="font-size: 1.75rem; color: var(--teal-accent);">500+</strong>
-                <div style="font-size: 0.85rem; color: var(--text-muted);">Enterprise HR Clients</div>
-              </div>
+            <div class="ab-hero-ctas">
+              <a href="#leadership" class="btn btn-lg btn-primary">Meet the Leader <i class="ri-arrow-down-line"></i></a>
+              <a href="services.html" class="btn btn-lg btn-secondary">Explore Services</a>
+            </div>
+            <div class="ab-stats">
+              <div><b><span data-count="140">0</span>+</b><small>Countries supported</small></div>
+              <div><b class="teal"><span data-count="500">0</span>+</b><small>Enterprise HR clients</small></div>
+              <div><b><span data-count="25">0</span>k+</b><small>Moves delivered</small></div>
             </div>
           </div>
 
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80" alt="Mobiliti global leadership team meeting" style="border-radius: var(--radius-xl); box-shadow: var(--card-shadow);">
+          <div class="ab-visual reveal-on-scroll">
+            <div class="ab-chip ab-chip-a"><i class="ri-award-line"></i> Est. 2018 · 8 years of moves</div>
+            <div class="ab-photo img-hover-zoom">
+              <img src="https://i.pinimg.com/1200x/78/96/72/7896725b58569380370e88b55652c08b.jpg" alt="Mobiliti leader portrait">
+            </div>
+            <div class="ab-chip ab-chip-b"><i class="ri-shield-check-line"></i> SOC 2 · GDPR aligned</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MILESTONES -->
+    <section class="section-spacing" style="padding-top: 0;">
+      <div class="container">
+        <div class="reveal-on-scroll" style="max-width: 680px; margin-bottom: 0.5rem;">
+          <span class="section-tag">Our Journey</span>
+          <h2 class="section-title" style="font-size: 2rem;">Eight years, one obsession</h2>
+        </div>
+        <div class="ab-miles">
+          <div class="ab-mile reveal-on-scroll"><b>2018</b><span>Founded in San Francisco by three HR directors</span></div>
+          <div class="ab-mile reveal-on-scroll"><b>2020</b><span>Live in 50 countries with portal v1</span></div>
+          <div class="ab-mile reveal-on-scroll"><b>2022</b><span>10,000th family relocated door-to-door</span></div>
+          <div class="ab-mile reveal-on-scroll"><b>2024</b><span>140 countries covered, 24/7 specialist desk</span></div>
+          <div class="ab-mile reveal-on-scroll"><b>2026</b><span>25,000 moves for 500+ enterprise clients</span></div>
         </div>
       </div>
     </section>
@@ -109,21 +130,21 @@
     <!-- SECTION 3: HOW WE SUPPORT HR TEAMS -->
     <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+        <div class="ab-split">
           <div class="reveal-on-scroll">
             <span class="section-tag">For HR Directors</span>
             <h2 class="section-title">How We Support HR Teams</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Empower HR professionals with a unified dashboard that converts multi-month relocations into predictable milestones.
+            <p class="section-subtitle" style="margin-bottom: 0;">
+              A unified dashboard that turns multi-month relocations into predictable milestones.
             </p>
-            <ul style="display: flex; flex-direction: column; gap: 1rem;">
-              <li style="display: flex; gap: 0.75rem;"><i class="ri-check-line" style="color: var(--accent-blue); font-weight: 700;"></i> 1-Click Request Authorizations</li>
-              <li style="display: flex; gap: 0.75rem;"><i class="ri-check-line" style="color: var(--accent-blue); font-weight: 700;"></i> Consolidated Billing & Expense Analytics</li>
-              <li style="display: flex; gap: 0.75rem;"><i class="ri-check-line" style="color: var(--accent-blue); font-weight: 700;"></i> Automated Document Vault Verification</li>
+            <ul class="ab-check">
+              <li><i class="ri-checkbox-circle-fill"></i> 1-Click Request Authorizations</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Consolidated Billing & Expense Analytics</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Automated Document Vault Verification</li>
             </ul>
           </div>
           <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1000&q=80" alt="HR Professional using Mobiliti Software" style="border-radius: var(--radius-xl);">
+              <img src="https://i.pinimg.com/1200x/ce/36/41/ce364144f61fd7e26aa1e4133a957ffa.jpg" alt="HR director managing relocations in Mobiliti dashboard" style="border-radius: var(--radius-xl);">
           </div>
         </div>
       </div>
@@ -132,20 +153,20 @@
     <!-- SECTION 4: HOW WE SUPPORT EMPLOYEES -->
     <section class="section-spacing">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
+        <div class="ab-split">
           <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" alt="Relocating employee arriving at modern apartment" style="border-radius: var(--radius-xl);">
+              <img src="https://i.pinimg.com/1200x/f0/79/6d/f0796dbcfbf180bcb5f3c218a2939af3.jpg" alt="Relocating employee settling into new home" style="border-radius: var(--radius-xl);">
           </div>
           <div class="reveal-on-scroll">
             <span class="section-tag">For Relocating Talent</span>
             <h2 class="section-title">How We Support Relocating Employees</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              Removing anxiety from international transfers through clear action items and personalized guidance.
+            <p class="section-subtitle" style="margin-bottom: 0;">
+              Removing anxiety from international transfers through clear action items and personal guidance.
             </p>
-            <ul style="display: flex; flex-direction: column; gap: 1rem;">
-              <li style="display: flex; gap: 0.75rem;"><i class="ri-check-line" style="color: var(--teal-accent); font-weight: 700;"></i> Self-Service Mobile Dashboard</li>
-              <li style="display: flex; gap: 0.75rem;"><i class="ri-check-line" style="color: var(--teal-accent); font-weight: 700;"></i> 24/7 Specialist Chat Support</li>
-              <li style="display: flex; gap: 0.75rem;"><i class="ri-check-line" style="color: var(--teal-accent); font-weight: 700;"></i> Neighborhood & School Placement Assistance</li>
+            <ul class="ab-check teal">
+              <li><i class="ri-checkbox-circle-fill"></i> Self-Service Mobile Dashboard</li>
+              <li><i class="ri-checkbox-circle-fill"></i> 24/7 Specialist Chat Support</li>
+              <li><i class="ri-checkbox-circle-fill"></i> Neighborhood & School Placement Assistance</li>
             </ul>
           </div>
         </div>
@@ -195,35 +216,83 @@
           <p class="section-subtitle">The standards that drive our product development and customer service every single day.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.5rem;">1. Reliability</h4>
+        <div class="ab-values">
+          <div class="ab-value reveal-on-scroll" data-n="01">
+            <h4>Reliability</h4>
             <p class="card-desc">We deliver on our promised timelines and keep HR teams updated at every stage without fail.</p>
           </div>
 
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.25rem; color: var(--teal-accent); margin-bottom: 0.5rem;">2. Transparency</h4>
+          <div class="ab-value reveal-on-scroll" data-n="02">
+            <h4>Transparency</h4>
             <p class="card-desc">Clear pricing, real-time status tracking, and open communication channels.</p>
           </div>
 
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.25rem; color: var(--warm-accent); margin-bottom: 0.5rem;">3. Compliance</h4>
+          <div class="ab-value reveal-on-scroll" data-n="03">
+            <h4>Compliance</h4>
             <p class="card-desc">Strict security standards, GDPR data protection, and thorough visa legal accuracy.</p>
           </div>
 
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.25rem; color: #8B5CF6; margin-bottom: 0.5rem;">4. Empathy</h4>
+          <div class="ab-value reveal-on-scroll" data-n="04">
+            <h4>Empathy</h4>
             <p class="card-desc">Recognizing that relocating across the globe is a human life event requiring genuine care.</p>
           </div>
 
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.25rem; color: var(--accent-blue); margin-bottom: 0.5rem;">5. Efficiency</h4>
+          <div class="ab-value reveal-on-scroll" data-n="05">
+            <h4>Efficiency</h4>
             <p class="card-desc">Eliminating tedious admin loops and optimizing workflows to save HR teams time.</p>
           </div>
 
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.25rem; color: var(--teal-accent); margin-bottom: 0.5rem;">6. Global Expertise</h4>
+          <div class="ab-value reveal-on-scroll" data-n="06">
+            <h4>Global Expertise</h4>
             <p class="card-desc">Deep local cultural knowledge backed by international mobility intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: LEADERSHIP -->
+    <section id="leadership" class="section-spacing" style="background-color: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Leadership</span>
+          <h2 class="section-title">Operators, Not Just Founders</h2>
+          <p class="section-subtitle">HR directors, immigration attorneys and logistics veterans running your moves.</p>
+        </div>
+
+        <div class="ab-team">
+          <div class="ab-member reveal-on-scroll">
+            <span class="avatar" style="background:#1E3A8A">MK</span>
+            <strong>Maya Krishnan</strong>
+            <small>Co-Founder & CEO · ex-CHRO</small>
+          </div>
+          <div class="ab-member reveal-on-scroll">
+            <span class="avatar" style="background:#0D9488">DL</span>
+            <strong>Daniel Lindqvist</strong>
+            <small>Co-Founder · Immigration Counsel</small>
+          </div>
+          <div class="ab-member reveal-on-scroll">
+            <span class="avatar" style="background:#7C3AED">SO</span>
+            <strong>Sofia Okafor</strong>
+            <small>COO · Global Logistics</small>
+          </div>
+          <div class="ab-member reveal-on-scroll">
+            <span class="avatar" style="background:#B45309">JT</span>
+            <strong>James Tan</strong>
+            <small>CTO · Platform & Security</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: CTA -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="ab-cta reveal-on-scroll">
+          <h2>Come and build the future of mobility with us.</h2>
+          <p>Whether you're moving one critical hire or one thousand transferees, our team designs a program around your people, policies and budget.</p>
+          <div class="ab-cta-row">
+            <a href="contact.html" class="btn btn-lg btn-primary">Contact Our Team <i class="ri-arrow-right-line"></i></a>
+            <a href="services.html" class="btn btn-lg btn-secondary">Explore Services</a>
           </div>
         </div>
       </div>
@@ -236,43 +305,69 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
-            <div class="brand-icon"><i class="ri-global-line"></i></div>
+            <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
             <span style="color: #FFFFFF;">Mobiliti</span>
           </a>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform.</p>
+          <p class="brand-tagline">Move Talent Beyond Borders.</p>
+          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
         </div>
 
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4>Platform Navigation</h4>
           <ul>
-            <li><a href="../index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="home-2.html">Home2</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="service-details.html">Service Details</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Portals</h4>
+          <h4>Portals & Role Access</h4>
           <ul>
             <li><a href="hr-dashboard.html">HR Client Dashboard</a></li>
             <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
             <li><a href="login.html">Login/Register</a></li>
+            <li><a href="service-details.html">Employee Relocation</a></li>
+            <li><a href="pricing.html">Plans & Billing</a></li>
+            <li><a href="maintenance.html">System Status</a></li>
+            <li><a href="contact.html">Support Center</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Contact</h4>
-          <ul>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+          <ul class="footer-contact">
+            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
+            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
+            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
+            <li><i class="ri-customer-service-2-line"></i> <a href="contact.html">Contact Us</a></li>
           </ul>
+          <form class="newsletter-form compact" novalidate>
+            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved.</div>
+        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--slate-400);">Terms of Service</a>
+          <a href="privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -281,6 +376,38 @@
 
   <script src="../js/store.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+    /* About count-up stats */
+    (function () {
+      function animateCount(el) {
+        var target = parseFloat(el.getAttribute('data-count'));
+        if (isNaN(target)) return;
+        var dur = 1600, start = null;
+        function frame(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          el.textContent = target.toLocaleString('en-US');
+        } else {
+          requestAnimationFrame(frame);
+        }
+      }
+      var seen = new WeakSet();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.querySelectorAll('[data-count]').forEach(function (el) {
+            if (!seen.has(el)) { seen.add(el); animateCount(el); }
+          });
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.ab-hero').forEach(function (s) { io.observe(s); });
+    })();
+  </script>
 </body>
 </html>
 

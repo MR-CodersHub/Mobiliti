@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mobiliti logo">
+  <defs>
+    <linearGradient id="mobiliti-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A192F"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#mobiliti-g)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round">
+    <circle cx="30" cy="34" r="14.5"/>
+    <ellipse cx="30" cy="34" rx="6.8" ry="14.5"/>
+    <path d="M15.5 34h29"/>
+    <path d="M19 25.5c6 2.6 16 2.6 22 0"/>
+    <path d="M19 42.5c6-2.6 16-2.6 22 0"/>
+  </g>
+  <circle cx="47.5" cy="16.5" r="4.2" fill="#E7CE8F"/>
+  <path d="M41 51.5c4 2.4 9 2.4 13 0" fill="none" stroke="#E7CE8F" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

@@ -3,302 +3,420 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobiliti | HR Employee Mobility Platform (Home 2)</title>
-  <meta name="description" content="Move employees, not paperwork. Dedicated corporate mobility management software built specifically for global HR teams.">
-  
+  <meta name="theme-color" content="#0A192F">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <title>Mobiliti Executive | Global Mobility Command for HR Leaders</title>
+  <meta name="description" content="The executive mobility command center for global HR teams. Move employees, not paperwork — visas, vendors, budgets and compliance in one private, audit-ready workspace.">
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/home2.css">
 </head>
-<body>
+<body class="home2-page">
 
   <!-- SITE HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="brand-logo">
-        <div class="brand-icon"><i class="ri-global-line"></i></div>
-        <span>Mobiliti</span>
+            <a href="../index.html" class="brand-logo">
+        <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
+        <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
       <nav class="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link active">Home 2 (HR Focus)</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="home-2.html" class="nav-link active">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
-        <a href="service-details.html" class="nav-link">Service Details</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
-        <a href="login.html" class="btn btn-sm btn-outline">Portal Login</a>
-        <a href="hr-dashboard.html" class="btn btn-sm btn-primary">HR Portal</a>
+        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
         <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
   </header>
 
+  <!-- UTILITY BAR -->
+  <div class="h2-utility">
+    <div class="container">
+      <span><span class="dot"></span>All systems operational — 99.4% visa approval across 140+ countries</span>
+      <a href="contact.html" class="hide-sm">Book an executive briefing <i class="ri-arrow-right-line"></i></a>
+    </div>
+  </div>
+
   <main>
-    <!-- SECTION 1: HR MOBILITY HERO -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-color);">
+    <!-- 1. HERO -->
+    <section class="h2-hero h2-dark">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <div class="h2-hero-grid">
           <div class="reveal-on-scroll">
-            <span class="section-tag">HR Mobility Engine</span>
-            <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1.25rem;">
-              "Move employees, not paperwork."
-            </h1>
-            <p class="section-subtitle" style="margin-bottom: 2rem;">
-              Eliminate admin overload. Mobiliti gives corporate HR teams unified control over multi-country relocation requests, visa approvals, document verifications, and relocation vendor coordination.
-            </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="hr-dashboard.html" class="btn btn-lg btn-primary"><i class="ri-dashboard-line"></i> Launch HR Portal Demo</a>
-              <a href="contact.html" class="btn btn-lg btn-secondary">Request Consultation</a>
+            <span class="h2-eyebrow">Executive Mobility Command</span>
+            <h1 class="h2-display">Global mobility, run like <em>a private bank.</em></h1>
+            <p class="h2-lead">One confidential workspace where HR leaders authorize moves, track every visa, settle every vendor invoice, and prove compliance — without chasing a single email thread.</p>
+            <div class="h2-hero-ctas">
+              <a href="hr-dashboard.html" class="h2-btn h2-btn-gold"><i class="ri-dashboard-line"></i> Launch HR Portal Demo</a>
+              <a href="contact.html" class="h2-btn h2-btn-ghost">Book Executive Briefing</a>
+            </div>
+            <div class="h2-proof">
+              <div class="h2-avatars">
+                <span style="background:#1E3A8A">AK</span>
+                <span style="background:#0D9488">MR</span>
+                <span style="background:#9A7422">SL</span>
+                <span style="background:#334155">+9</span>
+              </div>
+              <small>
+                <span class="h2-stars">★★★★★</span><br>
+                Trusted by <strong>500+ enterprises</strong> moving 25,000+ employees a year
+              </small>
             </div>
           </div>
 
-          <div class="reveal-on-scroll glass-panel" style="padding: 2rem; border-radius: var(--radius-xl); box-shadow: var(--card-shadow-hover);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
-              <h4 style="font-size: 1.15rem;">Live HR Dashboard Snapshot</h4>
-              <span class="badge badge-success">System Online</span>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-              <div style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md);">
-                <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-blue);">42</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Active Global Relocations</div>
+          <div class="reveal-on-scroll" style="position: relative;">
+            <div class="h2-chip h2-chip-a"><i class="ri-shield-check-line"></i> Visa approved — London, UK</div>
+            <div class="h2-command">
+              <div class="h2-command-bar">
+                <div class="h2-traffic">
+                  <i style="background:#F87171"></i><i style="background:#FBBF24"></i><i style="background:#34D399"></i>
+                </div>
+                <span class="h2-live">Live Portfolio</span>
               </div>
-              <div style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md);">
-                <div style="font-size: 1.5rem; font-weight: 800; color: var(--teal-accent);">98.8%</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">On-Time Arrival Rate</div>
+              <div class="h2-kpis">
+                <div class="h2-kpi"><b class="gold" data-count="42">0</b><small>Active relocations</small></div>
+                <div class="h2-kpi"><b data-count="98.8" data-decimals="1" data-suffix="%">0</b><small>On-time arrivals</small></div>
+                <div class="h2-kpi"><b data-count="140" data-suffix="+">0</b><small>Countries covered</small></div>
               </div>
-            </div>
-            <div class="checklist-item" style="margin-bottom: 0.5rem;">
-              <div class="checklist-info">
-                <i class="ri-shield-check-line" style="color: var(--teal-accent); font-size: 1.25rem;"></i>
-                <div>
-                  <strong style="font-size: 0.875rem;">Visa Issued: Sarah Jenkins</strong>
-                  <div style="font-size: 0.75rem; color: var(--text-muted);">UK Tier 2 Skilled Worker</div>
+              <div class="h2-feed">
+                <div class="h2-feed-row">
+                  <span class="avatar" style="background:#1E3A8A">SJ</span>
+                  <div><strong>Sarah Jenkins · Senior Engineer</strong><small>UK Skilled Worker visa issued</small></div>
+                  <span class="h2-pill ok">Approved</span>
+                </div>
+                <div class="h2-feed-row">
+                  <span class="avatar" style="background:#0D9488">AW</span>
+                  <div><strong>Alexander Wright · VP Operations</strong><small>Singapore housing shortlist ready</small></div>
+                  <span class="h2-pill warn">Review</span>
                 </div>
               </div>
-              <span class="badge badge-success">Approved</span>
+              <div class="h2-meter"><i data-meter="78"></i></div>
+              <div class="h2-meter-label"><span>Portfolio completion</span><span>78%</span></div>
+            </div>
+            <div class="h2-chip h2-chip-b"><i class="ri-line-chart-line"></i> Relocation spend −32% YoY</div>
+          </div>
+        </div>
+
+        <div class="h2-stats reveal-on-scroll">
+          <div class="h2-stat"><b><span data-count="25000">0</span><span>+</span></b><small>Global moves managed end-to-end</small></div>
+          <div class="h2-stat"><b><span data-count="99.4" data-decimals="1">0</span><span>%</span></b><small>Visa approval rate, 2025–2026</small></div>
+          <div class="h2-stat"><b><span data-count="500">0</span><span>+</span></b><small>Enterprise HR teams on platform</small></div>
+          <div class="h2-stat"><b><span data-count="24">0</span><span>/7</span></b><small>Dedicated specialist coverage</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MARQUEE -->
+    <div class="h2-marquee" aria-hidden="true">
+      <div class="h2-marquee-label">Powering mobility for category-defining employers</div>
+      <div class="h2-marquee-track">
+        <span>HELVETIA Group</span><span>NORDWIND</span><span>ATLAS Air</span><span>Kestrel &amp; Co.</span><span>MERIDIAN Bank</span><span>VANTA Systems</span>
+        <span>HELVETIA Group</span><span>NORDWIND</span><span>ATLAS Air</span><span>Kestrel &amp; Co.</span><span>MERIDIAN Bank</span><span>VANTA Systems</span>
+      </div>
+    </div>
+
+    <!-- 3. BEFORE / AFTER -->
+    <section class="h2-section h2-ivory">
+      <div class="container">
+        <div class="h2-center reveal-on-scroll">
+          <span class="h2-eyebrow">The old way is over</span>
+          <h2 class="h2-display" style="font-size: clamp(2rem, 4vw, 3rem);">From spreadsheet chaos<br>to <em>quiet control.</em></h2>
+          <p class="h2-lead">Most HR teams run mobility on email chains and tribal knowledge. Mobiliti replaces all of it with one governed, auditable workflow.</p>
+        </div>
+        <div class="h2-duo">
+          <div class="h2-panel h2-panel-before reveal-on-scroll">
+            <span class="h2-tag no">Before Mobiliti</span>
+            <h3>The Friday-afternoon fire drill</h3>
+            <p>Every move feels bespoke, fragile, and one resignation away from collapse.</p>
+            <ul>
+              <li><i class="ri-close-circle-line"></i>Visa status buried in a 90-message email thread</li>
+              <li><i class="ri-close-circle-line"></i>Vendor quotes compared across five spreadsheets</li>
+              <li><i class="ri-close-circle-line"></i>Leadership asks for spend data — answer takes a week</li>
+              <li><i class="ri-close-circle-line"></i>Employee anxiety spikes; HR absorbs the stress</li>
+            </ul>
+          </div>
+          <div class="h2-panel h2-panel-after reveal-on-scroll">
+            <span class="h2-tag yes">With Mobiliti Executive</span>
+            <h3>Every move, visible at a glance</h3>
+            <p>Standardized stages, automated evidence collection, instant reporting.</p>
+            <ul>
+              <li><i class="ri-checkbox-circle-fill"></i>Live stage tracking with owner, deadline and proof</li>
+              <li><i class="ri-checkbox-circle-fill"></i>Pre-vetted vendors, contracted rates, one invoice</li>
+              <li><i class="ri-checkbox-circle-fill"></i>Board-ready cost and SLA reports in one click</li>
+              <li><i class="ri-checkbox-circle-fill"></i>Employees guided daily by a named specialist</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BENTO MODULES -->
+    <section class="h2-section h2-dark">
+      <div class="container">
+        <div class="reveal-on-scroll" style="max-width: 720px;">
+          <span class="h2-eyebrow">The platform</span>
+          <h2 class="h2-display" style="font-size: clamp(2rem, 4vw, 3rem);">Four instruments.<br><em>Total command.</em></h2>
+          <p class="h2-lead">Purpose-built modules that behave like one private office for your entire mobility portfolio.</p>
+        </div>
+        <div class="h2-bento">
+          <div class="h2-tile h2-tile-feature reveal-on-scroll">
+            <span class="h2-ico"><i class="ri-passport-line"></i></span>
+            <div class="h2-feature-mid">
+              <div class="h2-ring">
+                <svg viewBox="0 0 96 96" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="h2gold" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#E7CE8F"></stop>
+                      <stop offset="1" stop-color="#C9A24B"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="48" cy="48" r="42" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"></circle>
+                  <circle cx="48" cy="48" r="42" fill="none" stroke="url(#h2gold)" stroke-width="8" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="1.6" transform="rotate(-90 48 48)"></circle>
+                </svg>
+                <div><b>99.4%</b><small>approval</small></div>
+              </div>
+              <div class="h2-feature-meta">
+                <b>140+ jurisdictions</b>
+                <small>monitored daily by in-house counsel</small>
+                <div class="h2-regions"><span>UK</span><span>SG</span><span>DE</span><span>AE</span><span>US</span><span>+135</span></div>
+              </div>
+            </div>
+            <h3>Immigration desk, always ahead of the law</h3>
+            <p>In-house counsel monitors 140+ jurisdictions and files work permits, dependent visas and legalisations before deadlines become emergencies — with every approval logged for audit.</p>
+            <div>
+              <div class="h2-doc-row"><i class="ri-shield-check-line"></i> UK Skilled Worker — issued <span class="pct">100%</span></div>
+              <div class="h2-doc-row"><i class="ri-shield-check-line"></i> Singapore EP — consulate booked <span class="pct">80%</span></div>
+              <div class="h2-doc-row"><i class="ri-time-line"></i> Germany EU Blue Card — in review <span class="pct">45%</span></div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: HR CHALLENGES WE SOLVE -->
-    <section class="section-spacing">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-tag">HR Friction Points</span>
-          <h2 class="section-title">HR Mobility Challenges We Solve</h2>
-          <p class="section-subtitle">We turn manual email chains and fragmented spreadsheets into an automated, compliant corporate mobility workflow.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;">
-          <div class="card reveal-on-scroll">
-            <div class="card-icon" style="background: rgba(239, 68, 68, 0.1); color: #EF4444;"><i class="ri-team-line"></i></div>
-            <h3 class="card-title">Multiple Concurrent Moves</h3>
-            <p class="card-desc">Managing dozens of transfers across different timezones without losing track of individual progress or deadlines.</p>
+          <div class="h2-tile h2-tile-light reveal-on-scroll">
+            <span class="h2-ico"><i class="ri-pie-chart-2-line"></i></span>
+            <h3>Spend control</h3>
+            <p>Budgets per policy tier, variance alerts, one consolidated invoice.</p>
+            <div class="h2-mini-bars"><i style="height:38%"></i><i style="height:55%"></i><i style="height:44%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:88%"></i></div>
           </div>
-
-          <div class="card reveal-on-scroll">
-            <div class="card-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warm-accent);"><i class="ri-file-warning-line"></i></div>
-            <h3 class="card-title">Document Collection Delays</h3>
-            <p class="card-desc">Chasing employees for passports, marriage certificates, and tax records. Our auto-reminder vault solves this.</p>
+          <div class="h2-tile h2-tile-gold reveal-on-scroll">
+            <span class="h2-ico"><i class="ri-hand-heart-line"></i></span>
+            <div class="h2-tile-mid">
+              <div class="h2-route">
+                <span><b>Day 1</b>Reception</span><i></i><span><b>Day 3</b>Apartment</span><i></i><span><b>Day 7</b>Schools</span>
+              </div>
+            </div>
+            <h3>White-glove arrival</h3>
+            <p>Airport reception, corporate apartment, school tours — choreographed to the day.</p>
           </div>
-
-          <div class="card reveal-on-scroll">
-            <div class="card-icon" style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue);"><i class="ri-passport-line"></i></div>
-            <h3 class="card-title">Complex Visa Coordination</h3>
-            <p class="card-desc">Navigating changing immigration laws in target countries with integrated legal advisor assistance.</p>
+          <div class="h2-tile h2-tile-light reveal-on-scroll">
+            <span class="h2-ico"><i class="ri-safe-2-line"></i></span>
+            <div class="h2-tile-mid">
+              <div class="h2-vault-row"><i class="ri-shield-check-line"></i>Passport · verified <span class="exp">Valid</span></div>
+              <div class="h2-vault-row"><i class="ri-time-line"></i>Work permit · auto-renewal <span class="exp">340d</span></div>
+            </div>
+            <h3>Evidence vault</h3>
+            <p>Bank-grade encrypted documents with expiry tracking and auto-reminders.</p>
           </div>
-
-          <div class="card reveal-on-scroll">
-            <div class="card-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--teal-accent);"><i class="ri-truck-line"></i></div>
-            <h3 class="card-title">Unreliable Vendor Management</h3>
-            <p class="card-desc">Coordinating multiple movers, housing agents, and insurance providers through one centralized portal.</p>
-          </div>
-
-          <div class="card reveal-on-scroll">
-            <div class="card-icon" style="background: rgba(139, 92, 246, 0.1); color: #8B5CF6;"><i class="ri-line-chart-line"></i></div>
-            <h3 class="card-title">Lack of Executive Visibility</h3>
-            <p class="card-desc">Real-time status updates and exportable reporting metrics for C-suite and department heads.</p>
-          </div>
-
-          <div class="card reveal-on-scroll">
-            <div class="card-icon" style="background: rgba(37, 99, 235, 0.1); color: var(--accent-blue);"><i class="ri-message-3-line"></i></div>
-            <h3 class="card-title">Employee Anxiety & Stress</h3>
-            <p class="card-desc">Direct 1-on-1 specialist chat and self-service mobile app keep relocating talent informed and calm.</p>
+          <div class="h2-tile h2-tile-light reveal-on-scroll">
+            <span class="h2-ico"><i class="ri-customer-service-2-line"></i></span>
+            <div class="h2-tile-mid">
+              <div class="h2-agent">
+                <span class="avatar" style="background:#0D9488">NS</span>
+                <div><b>Nadia S. · Your specialist</b><small><i></i>Online · replies in ~4 min</small></div>
+              </div>
+            </div>
+            <h3>Named specialist</h3>
+            <p>A single accountable human on every file, reachable 24/7 by the employee.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: END-TO-END MOBILITY -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
+    <!-- 5. WORKFLOW -->
+    <section class="h2-section h2-ivory">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-tag">Lifecycle Management</span>
-          <h2 class="section-title">End-to-End Employee Mobility</h2>
-          <p class="section-subtitle">Complete coverage from initial assignment authorization to local settling-in success.</p>
+        <div class="h2-center reveal-on-scroll">
+          <span class="h2-eyebrow">How it runs</span>
+          <h2 class="h2-display" style="font-size: clamp(2rem, 4vw, 3rem);">A governed pipeline,<br><em>not a checklist.</em></h2>
+          <p class="h2-lead">Four gated phases. Nothing advances without evidence, owner sign-off and a timestamp.</p>
         </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 0.5rem;">01. Pre-Move Planning</h4>
-            <p style="font-size: 0.95rem;">Policy assignment, budget estimation, initial employee briefing, and relocation timeline creation.</p>
+        <div class="h2-steps">
+          <div class="h2-step reveal-on-scroll">
+            <h4>Authorize &amp; budget</h4>
+            <p>Policy tier assigned, cost estimate approved, timeline issued to employee and manager.</p>
+            <time>Day 0 – 5</time>
           </div>
-
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 0.5rem;">02. Immigration & Visas</h4>
-            <p style="font-size: 0.95rem;">Work authorization filings, document legalisation, dependent visas, and consular appointment prep.</p>
+          <div class="h2-step reveal-on-scroll">
+            <h4>Clear immigration</h4>
+            <p>Filings lodged, biometrics scheduled, decisions tracked live with counsel notes.</p>
+            <time>Week 1 – 6</time>
           </div>
-
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 0.5rem;">03. Home & School Finding</h4>
-            <p style="font-size: 0.95rem;">Target neighborhood overview, hosted property viewings, lease negotiation, and international school tours.</p>
+          <div class="h2-step reveal-on-scroll">
+            <h4>Move &amp; house</h4>
+            <p>Survey, packing, customs and delivery synced with lease signing and school placement.</p>
+            <time>Week 4 – 10</time>
           </div>
-
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 0.5rem;">04. Moving Logistics</h4>
-            <p style="font-size: 0.95rem;">Home inventory survey, container packing, customs clearance, transit insurance, and delivery coordination.</p>
-          </div>
-
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 0.5rem;">05. Arrival & Accommodations</h4>
-            <p style="font-size: 0.95rem;">Airport transfer reception, temporary corporate apartment check-in, and emergency local contact setup.</p>
-          </div>
-
-          <div class="card reveal-on-scroll">
-            <h4 style="font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 0.5rem;">06. Settling In & Registration</h4>
-            <p style="font-size: 0.95rem;">Local municipal registration, utility connection, banking guidance, and ongoing local support.</p>
+          <div class="h2-step reveal-on-scroll">
+            <h4>Land &amp; settle</h4>
+            <p>Reception, registration, banking and utilities closed out with a satisfaction sign-off.</p>
+            <time>Week 8 – 12</time>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: REAL-TIME RELOCATION TRACKING -->
-    <section class="section-spacing">
+    <!-- 6. DASHBOARD PREVIEW -->
+    <section class="h2-section h2-dark">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-tag">Interactive Preview</span>
-          <h2 class="section-title">Real-Time HR Tracking Dashboard Preview</h2>
-          <p class="section-subtitle">A powerful, intuitive workspace designed for maximum efficiency and total audit compliance.</p>
+        <div class="h2-center reveal-on-scroll">
+          <span class="h2-eyebrow">Inside the workspace</span>
+          <h2 class="h2-display" style="font-size: clamp(2rem, 4vw, 3rem);">Your portfolio, <em>at 8am Monday.</em></h2>
+          <p class="h2-lead">The exact view your mobility lead opens every morning — no filters to build, no exports to stitch.</p>
         </div>
-
-        <div class="card reveal-on-scroll" style="padding: 1.5rem; border-radius: var(--radius-xl);">
-          <div class="table-responsive">
-            <table class="data-table">
+        <div class="h2-frame reveal-on-scroll">
+          <div class="h2-frame-bar">
+            <div class="h2-traffic">
+              <i style="background:#F87171"></i><i style="background:#FBBF24"></i><i style="background:#34D399"></i>
+            </div>
+            <div class="h2-frame-tabs"><span class="on">Portfolio</span><span>Visas</span><span>Vendors</span><span>Reports</span></div>
+          </div>
+          <div class="h2-frame-body">
+            <table class="h2-table">
               <thead>
                 <tr>
                   <th>Employee</th>
                   <th>Destination</th>
-                  <th>Current Stage</th>
+                  <th>Stage</th>
                   <th>Progress</th>
-                  <th>Next Action</th>
-                  <th>Documents Pending</th>
+                  <th>Next action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Sarah Jenkins</strong><br><small style="color:var(--text-muted)">Senior Engineer</small></td>
+                  <td><div class="h2-emp"><span class="avatar" style="background:#1E3A8A">SJ</span><div><strong>Sarah Jenkins</strong><small>Senior Engineer</small></div></div></td>
                   <td>London, UK</td>
-                  <td><span class="badge badge-info">Visa / Immigration</span></td>
-                  <td>
-                    <div style="display:flex; align-items:center; gap:0.5rem;">
-                      <div class="progress-bar-container" style="width: 80px;"><div class="progress-bar-fill" style="width: 60%;"></div></div>
-                      <span>60%</span>
-                    </div>
-                  </td>
-                  <td>Consular Appointment</td>
-                  <td><span class="badge badge-warning">1 Under Review</span></td>
+                  <td><span class="h2-stage visa">Visa / Immigration</span></td>
+                  <td><div class="h2-prog"><div class="h2-meter"><i data-meter="60"></i></div><span>60%</span></div></td>
+                  <td>Consular appointment</td>
                 </tr>
                 <tr>
-                  <td><strong>Alexander Wright</strong><br><small style="color:var(--text-muted)">VP Operations</small></td>
+                  <td><div class="h2-emp"><span class="avatar" style="background:#0D9488">AW</span><div><strong>Alexander Wright</strong><small>VP Operations</small></div></div></td>
                   <td>Singapore</td>
-                  <td><span class="badge badge-pending">Planning</span></td>
-                  <td>
-                    <div style="display:flex; align-items:center; gap:0.5rem;">
-                      <div class="progress-bar-container" style="width: 80px;"><div class="progress-bar-fill" style="width: 25%;"></div></div>
-                      <span>25%</span>
-                    </div>
-                  </td>
-                  <td>School Selection</td>
-                  <td><span class="badge badge-pending">2 Required</span></td>
+                  <td><span class="h2-stage plan">Planning</span></td>
+                  <td><div class="h2-prog"><div class="h2-meter"><i data-meter="25"></i></div><span>25%</span></div></td>
+                  <td>School selection</td>
                 </tr>
                 <tr>
-                  <td><strong>Elena Gomez</strong><br><small style="color:var(--text-muted)">Product Design</small></td>
+                  <td><div class="h2-emp"><span class="avatar" style="background:#9A7422">EG</span><div><strong>Elena Gomez</strong><small>Product Design</small></div></div></td>
                   <td>Berlin, Germany</td>
-                  <td><span class="badge badge-success">Completed</span></td>
-                  <td>
-                    <div style="display:flex; align-items:center; gap:0.5rem;">
-                      <div class="progress-bar-container" style="width: 80px;"><div class="progress-bar-fill" style="width: 100%;"></div></div>
-                      <span>100%</span>
-                    </div>
-                  </td>
-                  <td>Completed</td>
-                  <td><span class="badge badge-success">All Approved</span></td>
+                  <td><span class="h2-stage done">Settled</span></td>
+                  <td><div class="h2-prog"><div class="h2-meter"><i data-meter="100"></i></div><span>100%</span></div></td>
+                  <td>Satisfaction sign-off</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="hr-dashboard.html" class="btn btn-primary"><i class="ri-external-link-line"></i> Access Full HR Dashboard Platform</a>
+          <div class="h2-frame-cta">
+            <a href="hr-dashboard.html" class="h2-btn h2-btn-gold"><i class="ri-external-link-line"></i> Access Full HR Dashboard Platform</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: EMPLOYEE EXPERIENCE -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
+    <!-- 7. TESTIMONIALS -->
+    <section class="h2-section h2-ivory">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;">
-          <div class="reveal-on-scroll">
-            <span class="section-tag">Talent Retention</span>
-            <h2 class="section-title">Elevating the Employee Experience</h2>
-            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-              When employees feel supported, relocation becomes an exciting career milestone rather than a stressful ordeal.
-            </p>
-            
-            <ul style="display: flex; flex-direction: column; gap: 1rem;">
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <i class="ri-checkbox-circle-fill" style="color: var(--teal-accent); font-size: 1.25rem;"></i>
-                <div><strong>Dedicated Personal Specialist:</strong> Human touch backing every digital step.</div>
-              </li>
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <i class="ri-checkbox-circle-fill" style="color: var(--teal-accent); font-size: 1.25rem;"></i>
-                <div><strong>Mobile Task Checklist:</strong> Clear, manageable micro-tasks so nothing is forgotten.</div>
-              </li>
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <i class="ri-checkbox-circle-fill" style="color: var(--teal-accent); font-size: 1.25rem;"></i>
-                <div><strong>Family Support Services:</strong> Spouse career transition guidance and school placements.</div>
-              </li>
-            </ul>
-          </div>
+        <div class="h2-center reveal-on-scroll">
+          <span class="h2-eyebrow">Client voices</span>
+          <h2 class="h2-display" style="font-size: clamp(2rem, 4vw, 3rem);">HR leaders who<br><em>sleep better now.</em></h2>
+        </div>
+        <div class="h2-quotes">
+          <figure class="h2-quote reveal-on-scroll">
+            <span class="stars">★★★★★</span>
+            <blockquote>"Our board pack used to take a week. Now I export portfolio spend and visa SLAs before my coffee cools."</blockquote>
+            <figcaption><span class="avatar" style="background:#1E3A8A">AK</span><div><strong>Amara Keller</strong><small>VP People, Meridian Bank</small></div></figcaption>
+          </figure>
+          <figure class="h2-quote reveal-on-scroll">
+            <span class="stars">★★★★★</span>
+            <blockquote>"Forty-two concurrent moves and zero escalations last quarter. The evidence vault alone paid for itself."</blockquote>
+            <figcaption><span class="avatar" style="background:#0D9488">MR</span><div><strong>Marcus Reid</strong><small>Head of Mobility, VANTA Systems</small></div></figcaption>
+          </figure>
+          <figure class="h2-quote reveal-on-scroll">
+            <span class="stars">★★★★★</span>
+            <blockquote>"Employees arrive calm. Spouses get career support, kids get schools. Retention of transferees is up 19%."</blockquote>
+            <figcaption><span class="avatar" style="background:#9A7422">SL</span><div><strong>Sofia Lindqvist</strong><small>CHRO, NORDWIND</small></div></figcaption>
+          </figure>
+        </div>
 
-          <div class="reveal-on-scroll img-hover-zoom">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Happy relocating employee on arrival" style="border-radius: var(--radius-xl); box-shadow: var(--card-shadow);">
+        <div class="h2-roi reveal-on-scroll">
+          <div>
+            <h3>Mobility that pays for itself in year one.</h3>
+            <p>Consolidated vendor rates, fewer failed moves and zero compliance penalties compound fast. Median client results after 12 months:</p>
+          </div>
+          <div class="h2-roi-figures">
+            <div><b>−32%</b><small>Average cost per move</small></div>
+            <div><b>11 days</b><small>Faster average time-to-productivity</small></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 6: HR CTA -->
-    <section class="section-spacing" style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-blue)); color: #FFFFFF; text-align: center;">
-      <div class="container reveal-on-scroll" style="max-width: 800px;">
-        <h2 style="font-size: 2.5rem; color: #FFFFFF; margin-bottom: 1rem;">Simplify Your Corporate Mobility Today</h2>
-        <p style="color: var(--slate-300); font-size: 1.15rem; margin-bottom: 2rem;">
-          Access the HR Portal directly or schedule a tailored consultation with our senior mobility architects.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
-          <a href="login.html" class="btn btn-lg btn-primary"><i class="ri-login-box-line"></i> Login to HR Portal</a>
-          <a href="contact.html" class="btn btn-lg btn-white">Request a Consultation</a>
+    <!-- 8. FAQ -->
+    <section class="h2-section h2-ivory" style="padding-top: 0;">
+      <div class="container">
+        <div class="h2-center reveal-on-scroll">
+          <span class="h2-eyebrow">Due diligence</span>
+          <h2 class="h2-display" style="font-size: clamp(2rem, 4vw, 3rem);">Questions the <em>C-suite asks.</em></h2>
+        </div>
+        <div class="h2-faq reveal-on-scroll">
+          <details open>
+            <summary>How is this different from a traditional relocation agency? <i class="ri-add-line"></i></summary>
+            <p>Agencies sell vendor hours. Mobiliti Executive is a governed software workspace plus a named specialist per file — every stage requires evidence and sign-off, and leadership gets live portfolio reporting instead of monthly PDFs.</p>
+          </details>
+          <details>
+            <summary>Who owns immigration risk? <i class="ri-add-line"></i></summary>
+            <p>Our in-house counsel network across 140+ countries. Filings, legalisations and dependent visas are tracked with counsel notes and decision documents stored in your encrypted vault for audit.</p>
+          </details>
+          <details>
+            <summary>Can we keep our existing movers and housing agents? <i class="ri-add-line"></i></summary>
+            <p>Yes. Bring your preferred vendors into the portal with contracted SLAs, or use our pre-vetted network at negotiated enterprise rates. Either way you get one consolidated invoice.</p>
+          </details>
+          <details>
+            <summary>How fast can we onboard? <i class="ri-add-line"></i></summary>
+            <p>Most enterprises run their first live relocation within two weeks: policy tiers configured, users provisioned with role-based access, and historical files migrated by our team.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA -->
+    <section class="h2-section h2-dark h2-cta-section">
+      <div class="container">
+        <div class="h2-cta reveal-on-scroll">
+          <span class="h2-eyebrow" style="justify-content: center;">Private consultation</span>
+          <h2>Your next hundred moves,<br><em>already under control.</em></h2>
+          <p>See your own portfolio inside the executive workspace in a 30-minute briefing with a senior mobility architect.</p>
+          <div class="h2-cta-row">
+            <a href="login.html" class="h2-btn h2-btn-gold"><i class="ri-login-box-line"></i> Login to HR Portal</a>
+            <a href="contact.html" class="h2-btn h2-btn-ghost">Request a Consultation</a>
+          </div>
+          <div class="h2-cta-fine">
+            <span><i class="ri-shield-check-line"></i> SOC 2 &amp; GDPR aligned</span>
+            <span><i class="ri-lock-line"></i> Bank-grade encryption</span>
+            <span><i class="ri-time-line"></i> Live in ~14 days</span>
+          </div>
         </div>
       </div>
     </section>
@@ -310,20 +428,31 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
-            <div class="brand-icon"><i class="ri-global-line"></i></div>
+            <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
             <span style="color: #FFFFFF;">Mobiliti</span>
           </a>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders.</p>
+          <p class="brand-tagline">Move Talent Beyond Borders.</p>
+          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
         </div>
 
         <div class="footer-col">
           <h4>Platform Navigation</h4>
           <ul>
-            <li><a href="../index.html">Home 1 (General)</a></li>
-            <li><a href="home-2.html">Home 2 (HR Focus)</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="home-2.html">Home2</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="service-details.html">Service Details</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
@@ -334,26 +463,33 @@
             <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
             <li><a href="login.html">Role-Based Login</a></li>
             <li><a href="service-details.html">Employee Relocation</a></li>
+            <li><a href="pricing.html">Plans & Billing</a></li>
+            <li><a href="maintenance.html">System Status</a></li>
+            <li><a href="contact.html">Support Center</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Resources & Contact</h4>
-          <ul>
-            <li><a href="blog.html">Mobiliti Blog</a></li>
-            <li><a href="contact.html">Contact Support</a></li>
-            <li><a href="404.html">404 Demo Page</a></li>
-            <li><a href="maintenance.html">System Status</a></li>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
+            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
+            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
+            <li><i class="ri-customer-service-2-line"></i> <a href="contact.html">Contact Us</a></li>
           </ul>
+          <form class="newsletter-form compact" novalidate>
+            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="#" style="color: var(--slate-400);">Privacy Policy</a>
-          <a href="#" style="color: var(--slate-400);">Terms of Service</a>
-          <a href="#" style="color: var(--slate-400);">GDPR Compliance</a>
+          <a href="privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--slate-400);">Terms of Service</a>
+          <a href="privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
         </div>
       </div>
     </div>
@@ -363,6 +499,49 @@
 
   <script src="../js/store.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+    /* Home 2 premium micro-interactions: count-up stats + progress meters */
+    (function () {
+      function animateCount(el) {
+        var target = parseFloat(el.getAttribute('data-count'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        if (isNaN(target)) return;
+        var dur = 1600, start = null;
+        function fmt(v) {
+          return decimals
+            ? v.toFixed(decimals) + suffix
+            : Math.round(v).toLocaleString('en-US') + suffix;
+        }
+        function frame(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(target * eased);
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          el.textContent = fmt(target);
+        } else {
+          requestAnimationFrame(frame);
+        }
+      }
+      var seen = new WeakSet();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var scope = entry.target;
+          scope.querySelectorAll('[data-count]').forEach(function (el) {
+            if (!seen.has(el)) { seen.add(el); animateCount(el); }
+          });
+          scope.querySelectorAll('[data-meter]').forEach(function (bar) {
+            bar.style.width = bar.getAttribute('data-meter') + '%';
+          });
+          io.unobserve(scope);
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.h2-hero, .h2-frame').forEach(function (s) { io.observe(s); });
+    })();
+  </script>
 </body>
 </html>
-
