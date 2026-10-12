@@ -380,6 +380,11 @@ ul, ol {
   white-space: nowrap;
 }
 
+/* Mobile tagline strip (injected by JS, visible ≤760px only) */
+.mobile-tagline {
+  display: none;
+}
+
 /* Logo image mark (replaces the generic icon everywhere) */
 img.logo-mark {
   width: 40px;
@@ -823,6 +828,22 @@ body.nav-open {
   img.logo-mark {
     width: 34px;
     height: 34px;
+  }
+
+  /* Tagline lives on its own slim strip below the bar on mobile */
+  .mobile-tagline {
+    display: block;
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.45rem 1rem;
+    border-top: 1px solid var(--border-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

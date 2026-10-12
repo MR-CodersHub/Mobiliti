@@ -49,6 +49,27 @@
   margin: 0 auto 1.75rem;
 }
 
+/* ---------- Hero background image (per-page via --hero-bg: url(...)) ---------- */
+.bg-hero.has-bg {
+  background-image:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.94) 0%, rgba(248, 250, 252, 0.86) 100%),
+    var(--hero-bg);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+[data-theme="dark"] .bg-hero.has-bg {
+  background-image:
+    linear-gradient(180deg, rgba(11, 19, 43, 0.92) 0%, rgba(11, 19, 43, 0.85) 100%),
+    var(--hero-bg);
+}
+
+.bg-hero.has-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
 .bg-chips {
   position: relative;
   display: flex;
@@ -77,6 +98,77 @@
   color: var(--accent-blue);
   transform: translateY(-2px);
   box-shadow: var(--card-shadow-hover);
+}
+
+/* ---------- Article card grid (equal-height cards, bottom-pinned footers) ---------- */
+.bg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+}
+
+.bg-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.bg-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bg-card-body h3 {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
+
+.bg-card-body h3 a {
+  color: var(--text-primary);
+}
+
+.bg-card-body h3 a:hover {
+  color: var(--accent-blue);
+}
+
+.bg-card-body .badge {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.bg-card-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.bg-card-meta {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.bg-card-meta a {
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* ---------- Featured ---------- */

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDirection();
   initProfileMenu();
   initMobileMenu();
+  initMobileTagline();
   initNewsletter();
   initSocialLinks();
   initFooterTrust();
@@ -118,6 +119,18 @@ function initProfileMenu() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAll();
+  });
+}
+
+/* Mobile tagline strip — the header lockup tagline hides on small screens,
+   so re-surface it as a slim centered line below the bar (CSS shows ≤760px) */
+function initMobileTagline() {
+  document.querySelectorAll('.site-header').forEach((header) => {
+    if (header.querySelector('.mobile-tagline')) return;
+    const strip = document.createElement('div');
+    strip.className = 'mobile-tagline';
+    strip.textContent = 'Move Talent Beyond Borders.';
+    header.appendChild(strip);
   });
 }
 
