@@ -109,7 +109,7 @@
       <div class="container reveal-on-scroll" style="max-width: 600px; text-align: center;">
         <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Get Notified When Maintenance Concludes</h3>
         <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Enter your email to receive an instant ping when the portal is back online.</p>
-        <form style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;" onsubmit="event.preventDefault(); showToast('Notification saved!', 'success');">
+        <form style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;" onsubmit="event.preventDefault(); showToast('Notification saved!', 'success'); this.reset();">
           <input type="email" class="form-control" placeholder="Enter corporate email" required style="max-width: 360px; height: 46px;">
           <button type="submit" class="btn btn-primary">Notify Me</button>
         </form>

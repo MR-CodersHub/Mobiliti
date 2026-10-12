@@ -185,6 +185,7 @@ function initUploadModal() {
       const store = window.mobilitiStore;
       store.addDocument('MOB-8402', docName);
       showToast('Document uploaded successfully!', 'success');
+      form.reset();
       modal.classList.remove('active');
       renderEmployeeDocuments();
     });

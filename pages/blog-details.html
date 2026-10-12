@@ -48,11 +48,11 @@
     <!-- SECTION 1: ARTICLE HERO -->
     <section class="pg-hero center">
       <div class="container reveal-on-scroll" style="max-width: 880px;">
-        <span class="badge badge-info" style="margin-bottom: 1rem;">Featured HR Report</span>
-        <h1>
+        <span class="badge badge-info" id="bdBadge" style="margin-bottom: 1rem;">Featured HR Report</span>
+        <h1 id="bdTitle">
           The 2026 State of Global Corporate Mobility <span class="grad">& Talent Transfers</span>
         </h1>
-        <div class="pg-meta">
+        <div class="pg-meta" id="bdMeta">
           <span class="pg-byline"><span class="avatar" style="background:#1E3A8A">ER</span><span><strong>Elena Rostova</strong></span></span>
           <span><i class="ri-calendar-line"></i> Oct 4, 2026</span>
           <span><i class="ri-time-line"></i> 6 min read</span>
@@ -64,7 +64,7 @@
     <!-- SECTION 2: ARTICLE INTRODUCTION -->
     <section class="section-spacing">
       <div class="container reveal-on-scroll" style="max-width: 800px;">
-        <p class="pg-lede">
+        <p class="pg-lede" id="bdLede">
           As global talent markets become increasingly interconnected, enterprise HR leaders face a double imperative: accelerating international executive deployments while ensuring strict compliance with evolving tax and immigration laws.
         </p>
 
@@ -115,13 +115,13 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
           <div class="card reveal-on-scroll">
             <span class="badge badge-info" style="margin-bottom: 0.75rem;">HR Strategy</span>
-            <h4><a href="blog.html">5 Ways to Reduce Corporate Relocation Costs</a></h4>
+            <h4><a href="blog-details.html?post=relocation-costs">5 Ways to Reduce Corporate Relocation Costs</a></h4>
             <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Direct managed mobility vs lump sums.</p>
           </div>
 
           <div class="card reveal-on-scroll">
             <span class="badge badge-success" style="margin-bottom: 0.75rem;">Immigration</span>
-            <h4><a href="blog.html">EU Blue Card Updates for 2026</a></h4>
+            <h4><a href="blog-details.html?post=eu-blue-card">EU Blue Card Updates for 2026</a></h4>
             <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Fast-track tech visas across Europe.</p>
           </div>
         </div>
@@ -215,6 +215,103 @@
 
   <script src="../js/store.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+  /* Per-article content (?post=slug) */
+  (function () {
+    var POSTS = {
+      'relocation-costs': { badge: 'HR Strategy', cls: 'badge-info', title: '5 Ways to Reduce Corporate Relocation Costs Without Sacrificing Employee Satisfaction', excerpt: 'Learn how lump-sum stipends compare to direct-managed mobility programs.', author: 'Marcus Reid', init: 'MR', color: '#0D9488', date: 'Sept 28, 2026', read: '5 min read',
+        h1: '1. Benchmark Before You Budget', p1: 'Companies that benchmark cost-per-move against industry quartiles cut overspend by 18% on average — without touching the employee experience.',
+        h2: '2. Core-Flex Beats One-Size', p2: 'Fixed core benefits plus flexible choice dollars let junior hires and executives share one policy framework while spending differently.',
+        t1t: 'Rule 1: Cap, Don\'t Cut', t1d: 'Set transparent stipend caps per tier instead of trimming benefits everyone sees.',
+        t2t: 'Rule 2: Measure Satisfaction', t2d: 'Post-move NPS predicts retention; track it like you track cost.' },
+      'onboarding-attrition': { badge: 'Talent Onboarding', cls: 'badge-info', title: 'Onboarding International Hires: Preventing Early Relocation Attrition', excerpt: 'Why spouse support and destination orientation are critical for long-term retention.', author: 'Sofia Lindqvist', init: 'SL', color: '#9A7422', date: 'Sept 20, 2026', read: '4 min read',
+        h1: '1. The First 90 Days Decide', p1: 'Nearly a third of failed assignments unravel in the first three months — usually over school, spouse or housing friction, not the job.',
+        h2: '2. Support the Whole Family', p2: 'Spouse career help and hosted orientation cut early returns by 40% in Mobiliti client data.',
+        t1t: 'Rule 1: Start Before Landing', t1d: 'Pre-arrival school tours and video home viewings remove day-one panic.',
+        t2t: 'Rule 2: Assign a Human', t2d: 'A named specialist beats a helpdesk ticket for anxious new arrivals.' },
+      'lump-sum-policy': { badge: 'HR Policy', cls: 'badge-info', title: 'Lump-Sum vs Managed Moves: Designing a 2026 Relocation Policy', excerpt: 'A framework for choosing stipend caps, core-flex tiers and exception handling.', author: 'Amara Keller', init: 'AK', color: '#1E3A8A', date: 'Sept 12, 2026', read: '6 min read',
+        h1: '1. Know What Lump Sums Hide', p1: 'Cash payouts look cheap until exception requests, tax gross-ups and failed DIY moves quietly double the bill.',
+        h2: '2. Tier by Talent Segment', p2: 'Executives, critical skills and graduates need different cores — one policy with three tiers covers 95% of cases.',
+        t1t: 'Rule 1: Write Exceptions Down', t1d: 'A clear exceptions matrix stops one-off deals from becoming shadow policy.',
+        t2t: 'Rule 2: Review Annually', t2d: 'Thresholds, caps and vendor rates drift — re-benchmark every twelve months.' },
+      'eu-blue-card': { badge: 'Immigration Legal', cls: 'badge-success', title: 'EU Blue Card Updates: What HR Teams Need to Know for 2026', excerpt: 'Salary threshold changes and streamlined fast-track tech permits across Germany and France.', author: 'Daniel Lindqvist', init: 'DL', color: '#0D9488', date: 'Sept 15, 2026', read: '7 min read',
+        h1: '1. Lower Thresholds, Wider Net', p1: 'Germany and France cut salary thresholds for shortage occupations, opening the Blue Card to far more mid-career engineers.',
+        h2: '2. File Digital-First', p2: 'Online employer portals now decide most cases in under three weeks — paper filings are the slow lane.',
+        t1t: 'Rule 1: Check Shortage Lists', t1d: 'IT, healthcare and engineering roles clear reduced thresholds in most EU states.',
+        t2t: 'Rule 2: Start Before the Offer', t2d: 'Pre-verified diplomas and contracts compress timelines dramatically.' },
+      'singapore-onepass': { badge: 'APAC Visas', cls: 'badge-success', title: 'Navigating Singapore ONE Pass and Tech.Pass Requirements', excerpt: 'Complete employer guide to sponsoring high-earning leaders in Southeast Asia.', author: 'Jonas Keller', init: 'JK', color: '#334155', date: 'Sept 10, 2026', read: '5 min read',
+        h1: '1. ONE Pass Rewards Top Talent', p1: 'Fixed S$30,000 monthly salaries unlock five-year flexibility — but documentation must be flawless.',
+        h2: '2. Tech.Pass Has Its Own Lane', p2: 'Founders and technical leaders qualify on achievements, not just salary — plan evidence early.',
+        t1t: 'Rule 1: Salary Proof First', t1d: 'Bank statements and contracts make or break ONE Pass cases.',
+        t2t: 'Rule 2: Mind the Quotas', t2d: 'Tech.Pass places are capped — file early in the cycle.' },
+      'uk-sponsor': { badge: 'UK Immigration', cls: 'badge-success', title: 'UK Skilled Worker Visas: Sponsor Duties Every Employer Must Meet', excerpt: 'Reporting duties, record-keeping and audits that keep your sponsor licence safe.', author: 'Daniel Lindqvist', init: 'DL', color: '#0D9488', date: 'Sept 5, 2026', read: '6 min read',
+        h1: '1. Your Licence Is the Asset', p1: 'A sponsor licence is a privilege UKVI can suspend in days — reporting and record duties are non-negotiable.',
+        h2: '2. Audit-Ready Always', p2: 'Right-to-work checks, address records and absence logs must survive unannounced Home Office visits.',
+        t1t: 'Rule 1: Report in 10 Days', t1d: 'New starters, absences and terminations all trigger 10-working-day reports.',
+        t2t: 'Rule 2: Centralise Records', t2d: 'One vault for CoS, contracts and checks beats scattered HR folders.' },
+      'digital-nomad': { badge: 'Workplace Trends', cls: 'badge-warning', title: 'Digital Nomad Visas vs Corporate Relocation: Finding the Balance', excerpt: 'Managing tax residency risks when employees request short-term overseas work stays.', author: 'Priya Nair', init: 'PN', color: '#0D9488', date: 'Aug 29, 2026', read: '6 min read',
+        h1: '1. Nomad Visas Aren\'t Relocation', p1: 'Digital nomad permits solve presence, not payroll — tax residency still follows the person, not the visa.',
+        h2: '2. Write the Guardrails', p2: 'Clear day-count caps, approved-country lists and pre-trip checks keep short stays short.',
+        t1t: 'Rule 1: Count the Days', t1d: 'The 183-day threshold sneaks up fast across staggered trips.',
+        t2t: 'Rule 2: Keep HR in the Loop', t2d: 'Self-declared workations bypass the controls that protect the company.' },
+      'rto-relocate': { badge: 'Workplace Trends', cls: 'badge-warning', title: 'Return-to-Office vs Relocate: Where Talent Actually Wants to Go', excerpt: 'Survey data on how location flexibility now decides offer acceptance.', author: 'Marcus Reid', init: 'MR', color: '#0D9488', date: 'Aug 21, 2026', read: '4 min read',
+        h1: '1. Flexibility Wins Offers', p1: 'Candidates now rank location flexibility alongside salary — rigid mandates shrink pipelines measurably.',
+        h2: '2. Relocation Beats Mandates', p2: 'Moving willing talent to hubs outperforms forcing everyone back — satisfaction and retention both rise.',
+        t1t: 'Rule 1: Ask, Don\'t Assume', t1d: 'Pulse surveys reveal which teams truly benefit from colocation.',
+        t2t: 'Rule 2: Fund the Move', t2d: 'A supported relocation converts fence-sitters into advocates.' },
+      'payroll-traps': { badge: 'Compliance', cls: 'badge-warning', title: 'Cross-Border Payroll in 2026: Avoiding Permanent Establishment Traps', excerpt: 'When a short assignment quietly creates a taxable presence — and how to prevent it.', author: 'Sofia Lindqvist', init: 'SL', color: '#9A7422', date: 'Aug 14, 2026', read: '5 min read',
+        h1: '1. Presence Creates Liability', p1: 'A single employee signing contracts abroad can create taxable presence — even without an office.',
+        h2: '2. Track Everything', p2: 'Day counts, contract venues and payroll splits form the audit trail that proves compliance.',
+        t1t: 'Rule 1: Map Before Sending', t1d: 'A 30-minute tax review beats a six-figure assessment later.',
+        t2t: 'Rule 2: Split Payroll Cleanly', t2d: 'Shadow payrolls keep home and host obligations distinct.' },
+      'state-of-mobility-2026': { badge: 'Featured HR Report', cls: 'badge-info', title: 'The 2026 State of Global Corporate Mobility & Talent Transfers', excerpt: 'How Fortune 500 enterprises are reshaping assignment policies for hybrid work and fast-track visas.', author: 'Elena Rostova', init: 'ER', color: '#1E3A8A', date: 'Oct 4, 2026', read: '9 min read',
+        h1: '1. The Shift Toward Managed Flexible Mobility', p1: 'Traditional 3-year expatriate packages are rapidly evolving into hybrid mobility models. HR departments are deploying project-based 6-month assignments and flexible commuter policies, supported by digital tracking portals.',
+        h2: '2. Compliance Automation as a Competitive Asset', p2: 'With host-nation governments enforcing tighter digital tax audits, enterprises can no longer rely on informal travel arrangements. Centralized document vaults and automated visa threshold tracking safeguard both employer duty of care and brand reputation.',
+        t1t: 'Rule 1: Standardize Policy Tiers', t1d: 'Define clear policy packages for executive transfers vs technical specialist assignments to maintain budget predictability.',
+        t2t: 'Rule 2: Prioritize Employee Mental Well-being', t2d: 'Providing spouse employment assistance and hosted destination orientation reduces early assignment failures by 40%.' }
+    };
+
+    var slug = new URLSearchParams(window.location.search).get('post');
+    if (!slug || !POSTS[slug]) return;
+    var p = POSTS[slug];
+
+    document.title = 'Mobiliti Blog | ' + p.title;
+    var badge = document.getElementById('bdBadge');
+    if (badge) { badge.textContent = p.badge; badge.className = 'badge ' + p.cls; }
+    var title = document.getElementById('bdTitle');
+    if (title) title.textContent = p.title;
+    var meta = document.getElementById('bdMeta');
+    if (meta) {
+      meta.innerHTML = '<span class="pg-byline"><span class="avatar" style="background:' + p.color + '">' + p.init +
+        '</span><span><strong>' + p.author + '</strong></span></span>' +
+        '<span><i class="ri-calendar-line"></i> ' + p.date + '</span>' +
+        '<span><i class="ri-time-line"></i> ' + p.read + '</span>';
+    }
+    var lede = document.getElementById('bdLede');
+    if (lede) lede.textContent = p.excerpt;
+
+    var secs = document.querySelectorAll('main section');
+    if (secs[2]) {
+      var h2s = secs[2].querySelectorAll('h2');
+      var ps = secs[2].querySelectorAll('p');
+      if (h2s[0]) h2s[0].textContent = p.h1;
+      if (ps[0]) ps[0].textContent = p.p1;
+      if (h2s[1]) h2s[1].textContent = p.h2;
+      if (ps[1]) ps[1].textContent = p.p2;
+    }
+    if (secs[3]) {
+      var cards = secs[3].querySelectorAll('.card');
+      if (cards[0]) {
+        var s = cards[0].querySelector('strong'); var d = cards[0].querySelector('p');
+        if (s) s.textContent = p.t1t; if (d) d.textContent = p.t1d;
+      }
+      if (cards[1]) {
+        var s2 = cards[1].querySelector('strong'); var d2 = cards[1].querySelector('p');
+        if (s2) s2.textContent = p.t2t; if (d2) d2.textContent = p.t2d;
+      }
+    }
+  })();
+  </script>
 </body>
 </html>
 

@@ -433,6 +433,7 @@ function initDocumentUploadModal() {
       const store = window.mobilitiStore;
       store.addDocument('MOB-8402', docName);
       showToast('Document uploaded successfully & sent for verification!', 'success');
+      form.reset();
       modal.classList.remove('active');
       renderPendingDocsTable();
     });

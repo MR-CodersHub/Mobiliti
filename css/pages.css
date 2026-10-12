@@ -345,6 +345,11 @@
   margin-top: auto;
 }
 
+/* Let the ribbon overlap the card edge (base .card clips overflow) */
+.pg-plan {
+  overflow: visible;
+}
+
 .pg-plan.pop {
   border: 2px solid var(--accent-blue);
   box-shadow: var(--card-shadow-hover);

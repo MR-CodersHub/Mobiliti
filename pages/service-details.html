@@ -330,6 +330,197 @@
 
   <script src="../js/store.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+  /* Service-specific content (?s=relocation|visa|destination|housing|settling|programs) */
+  (function () {
+    var SERVICES = {
+      relocation: {
+        doc: 'Employee Relocation Service Details', tag: 'Deep Dive Service',
+        title: 'Global Employee Relocation',
+        sub: 'End-to-end relocation management engineered for global HR teams and corporate executives. Door-to-door transit, customs assistance, and settling support.',
+        steps: [
+          ['Pre-Move Survey', '3D virtual home inventory audit'],
+          ['White-Glove Packing', 'Custom crates & fragile item wrap'],
+          ['Port & Transit', 'Real-time GPS container tracking'],
+          ['Customs Clearance', 'Diplomatic & tax duty filings'],
+          ['Home Delivery', 'Unpacking & assembly in new home']
+        ],
+        includes: [
+          ['ri-box-3-line', 'Full Inventory Packing', 'Professional packers wrap, box, and code every item with custom QR inventory tags for easy unpacking.'],
+          ['ri-shield-check-line', 'Comprehensive Insurance', 'Full replacement-value transit insurance covering ocean, air, and ground transport worldwide.'],
+          ['ri-temp-cold-line', 'Climate-Controlled Storage', 'Up to 60 days of complimentary secure storage in origin or destination transit hubs.'],
+          ['ri-file-shield-2-line', 'Customs Brokerage', 'Handling duty exemptions, pet relocation clearances, and vehicle import documentation.']
+        ],
+        faqs: [
+          ['How long does an international household move typically take?', 'Transit times range from 5–10 days for air freight to 3–6 weeks for sea container shipments depending on destination origin.'],
+          ['Can Mobiliti handle pet relocations and vehicle imports?', 'Yes! We provide specialized pet travel passports, veterinary quarantine clearances, and automotive customs filings.']
+        ]
+      },
+      visa: {
+        doc: 'Visa & Immigration Support Details', tag: 'Immigration Desk',
+        title: 'Visa & Immigration Support',
+        sub: 'Work authorizations, corporate sponsorships and consular filings handled by in-house counsel — with a 99.4% first-time approval record.',
+        steps: [
+          ['Eligibility Check', 'Skills, salary & quota assessment'],
+          ['Document Gathering', 'Passports, contracts & certificates verified'],
+          ['Attorney Review', 'In-house counsel checks every filing'],
+          ['Consular Filing', 'Embassy submission & biometrics'],
+          ['Visa Issued', 'Passport returned, ready to fly']
+        ],
+        includes: [
+          ['ri-passport-line', 'Work Permit Filings', 'Employer sponsorships and renewals managed across 140+ countries.'],
+          ['ri-file-text-line', 'Document Legalisation', 'Translations, apostilles and notarisation prepared to consulate standard.'],
+          ['ri-team-line', 'Dependent Visas', 'Spouse and child permits bundled with the primary application.'],
+          ['ri-calendar-check-line', 'Consular Appointments', 'Booking, interview preparation and representation included.']
+        ],
+        faqs: [
+          ['How long does a work visa take?', 'Most filings complete in 3–8 weeks from verified documents; consulate queues vary by country and season.'],
+          ['Do you guarantee visa approval?', 'No firm can guarantee government decisions — but our attorney-reviewed filings hold a 99.4% first-time approval record.']
+        ]
+      },
+      destination: {
+        doc: 'Destination Services Details', tag: 'Destination Services',
+        title: 'Destination & Home Search',
+        sub: 'Neighborhood tours, shortlisted homes, lease negotiation and school placement — settled before Day 1.',
+        steps: [
+          ['Needs Analysis', 'Budget, commute & family priorities'],
+          ['Area Orientation', 'Hosted neighborhood tours'],
+          ['Shortlist Viewings', 'Curated property visits'],
+          ['Lease Negotiation', 'Terms, protection & signing'],
+          ['Handover', 'Inventory check & key transfer']
+        ],
+        includes: [
+          ['ri-map-pin-line', 'Area Orientation', 'Hosted tours with local experts matched to lifestyle and commute.'],
+          ['ri-home-4-line', 'Property Shortlist', 'Curated viewings filtered by budget, schools and transport links.'],
+          ['ri-file-text-line', 'Lease Negotiation', 'Contract review, deposit protection and favorable terms secured.'],
+          ['ri-book-open-line', 'School Placement', 'International and bilingual admissions with campus tours.']
+        ],
+        faqs: [
+          ['How fast can we find a home?', 'Most families sign within 2–3 weeks of the first tour, supported by daily new listings.'],
+          ['Do you help with schools?', 'Yes — placement strategy, admissions paperwork and campus tours for accompanying children.']
+        ]
+      },
+      housing: {
+        doc: 'Temporary Accommodation Details', tag: 'Corporate Housing',
+        title: 'Temporary Accommodation',
+        sub: 'Furnished corporate apartments for the first 30–90 days — utilities, WiFi and housekeeping included.',
+        steps: [
+          ['Family Assessment', 'Size, dates & budget confirmed'],
+          ['Curated Selection', 'Vetted suites shortlisted in 48h'],
+          ['Lease Signing', 'Flexible corporate terms agreed'],
+          ['Check-In', 'Keys, WiFi & welcome pack ready'],
+          ['Ongoing Support', 'Housekeeping & extensions on demand']
+        ],
+        includes: [
+          ['ri-hotel-line', 'Furnished Suites', 'Homely, vetted apartments close to offices and schools.'],
+          ['ri-calendar-check-line', 'Flexible Terms', '30–90 day corporate leases with pro-rated extensions.'],
+          ['ri-wifi-line', 'All-Inclusive', 'Utilities, high-speed WiFi and housekeeping on one invoice.'],
+          ['ri-team-line', 'Family Options', 'Multi-bedroom units configured for accompanying dependents.']
+        ],
+        faqs: [
+          ["What's included in the rent?", 'Furniture, utilities, high-speed WiFi, housekeeping and local taxes — one consolidated invoice.'],
+          ['Can we extend the stay?', 'Yes — extensions are pro-rated weekly with just 7 days’ notice.']
+        ]
+      },
+      settling: {
+        doc: 'Settling-In Assistance Details', tag: 'Settling In',
+        title: 'Settling-In Assistance',
+        sub: 'Registration, banking, utilities and cultural orientation — handled with you, in person.',
+        steps: [
+          ['Document Review', 'Pre-appointment paperwork check'],
+          ['Municipal Registration', 'Fast-tracked local appointments'],
+          ['Banking Setup', 'Accounts, cards & mobile line'],
+          ['Utilities Live', 'Power, internet & transit passes'],
+          ['30-Day Check-In', 'Satisfaction review & extra help']
+        ],
+        includes: [
+          ['ri-file-text-line', 'Municipal Registration', 'Fast-tracked local appointments with forms pre-completed.'],
+          ['ri-bank-card-line', 'Banking Setup', 'Accounts, debit cards and mobile lines activated together.'],
+          ['ri-lightbulb-line', 'Utilities & Transit', 'Power, internet and travel passes live within days.'],
+          ['ri-earth-line', 'Cultural Orientation', 'Bilingual guidance for schools, healthcare and daily life.']
+        ],
+        faqs: [
+          ['Do you accompany us to appointments?', 'Yes — a bilingual specialist attends every municipal and banking visit with you.'],
+          ['How long does settling-in take?', 'Most employees complete registration, banking and utilities within 5 working days.']
+        ]
+      },
+      programs: {
+        doc: 'Managed Mobility Programs Details', tag: 'Enterprise Programs',
+        title: 'Managed Mobility Programs',
+        sub: 'Custom policy design, volume pricing and a dedicated executive for companies moving talent at scale.',
+        steps: [
+          ['Policy Audit', 'Review of current mobility spend'],
+          ['Program Design', 'Tiers, budgets & SLAs drafted'],
+          ['Portal Onboarding', 'Teams trained on custom workflows'],
+          ['Pilot Moves', 'First transfers with oversight'],
+          ['Scale & Optimize', 'Quarterly reviews & cost tuning']
+        ],
+        includes: [
+          ['ri-briefcase-line', 'Custom Policy Design', 'Mobility tiers matched to talent segments and budgets.'],
+          ['ri-line-chart-line', 'Volume Pricing', 'Bulk discounts across every service line from 10 moves up.'],
+          ['ri-user-star-line', 'Dedicated Executive', 'One accountable mobility leader for the whole account.'],
+          ['ri-dashboard-line', 'HR Analytics', 'Board-ready cost, SLA and satisfaction reporting.']
+        ],
+        faqs: [
+          ['What volumes qualify for enterprise terms?', 'Programs start at 10 moves per year, with deeper tiers above 50 annual transfers.'],
+          ['Can you integrate with our HRIS?', 'Yes — Workday, BambooHR and SAP SuccessFactors connectors plus a REST API.']
+        ]
+      }
+    };
+
+    var key = new URLSearchParams(window.location.search).get('s');
+    if (!key || !SERVICES[key]) return;
+    var d = SERVICES[key];
+
+    document.title = 'Mobiliti | ' + d.doc;
+    var h1 = document.querySelector('main h1');
+    if (h1) {
+      h1.textContent = d.title;
+      var tag = h1.parentElement.querySelector('.section-tag');
+      if (tag) tag.textContent = d.tag;
+      var sub = h1.parentElement.querySelector('.section-subtitle');
+      if (sub) sub.textContent = d.sub;
+    }
+
+    var stepper = document.querySelector('.timeline-stepper');
+    if (stepper) {
+      stepper.innerHTML = d.steps.map(function (s, i) {
+        var cls = i < 2 ? 'completed' : (i === 2 ? 'active' : '');
+        return '<div class="timeline-step ' + cls + '"><div class="step-node">' + (i + 1) +
+          '</div><div class="step-title">' + s[0] + '</div><div class="step-desc">' + s[1] + '</div></div>';
+      }).join('');
+    }
+
+    var incH = Array.from(document.querySelectorAll('main h2')).find(function (h) {
+      return h.textContent.indexOf("What's Included") !== -1;
+    });
+    if (incH) {
+      var grids = incH.closest('.container').querySelectorAll('div[style*="grid"]');
+      var g = grids[grids.length - 1];
+      if (g) {
+        g.innerHTML = d.includes.map(function (c) {
+          return '<div class="card reveal-on-scroll is-visible"><div class="card-icon"><i class="' + c[0] +
+            '"></i></div><h3 class="card-title">' + c[1] + '</h3><p class="card-desc">' + c[2] + '</p></div>';
+        }).join('');
+      }
+    }
+
+    var faqH = Array.from(document.querySelectorAll('main h2')).find(function (h) {
+      return h.textContent.indexOf('Frequently Asked Questions') !== -1;
+    });
+    if (faqH) {
+      var wrap = faqH.closest('.container').querySelector('div[style*="flex"]');
+      if (wrap) {
+        wrap.className = 'pg-faq reveal-on-scroll is-visible';
+        wrap.removeAttribute('style');
+        wrap.innerHTML = d.faqs.map(function (f, i) {
+          return '<details' + (i === 0 ? ' open' : '') + '><summary>' + f[0] +
+            ' <i class="ri-add-line"></i></summary><p>' + f[1] + '</p></details>';
+        }).join('');
+      }
+    }
+  })();
+  </script>
 </body>
 </html>
 

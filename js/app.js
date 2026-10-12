@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProfileMenu();
   initMobileMenu();
   initNewsletter();
+  initSocialLinks();
   initFooterTrust();
   initScrollEffects();
   initScrollReveal();
@@ -244,6 +245,24 @@ function initMobileMenu() {
   // Reset when resizing back to desktop so stale state never sticks
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1100 && isOpen()) setOpen(false);
+  });
+}
+
+/* Footer social links (auto-wired to brand profiles) */
+function initSocialLinks() {
+  const URLS = {
+    'Mobiliti on LinkedIn': 'https://www.linkedin.com/company/mobiliti',
+    'Mobiliti on X': 'https://x.com/mobiliti',
+    'Mobiliti on Facebook': 'https://www.facebook.com/mobiliti',
+    'Mobiliti on Instagram': 'https://www.instagram.com/mobiliti',
+    'Mobiliti on YouTube': 'https://www.youtube.com/@mobiliti'
+  };
+  document.querySelectorAll('a.social-btn').forEach((a) => {
+    const url = URLS[a.getAttribute('aria-label') || ''];
+    if (!url) return;
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
   });
 }
 

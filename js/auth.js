@@ -37,6 +37,23 @@ function initAuthForm() {
     });
   }
 
+  // Forgot password — no reload, success toast + clear the email field
+  const forgotLink = document.getElementById('forgotPasswordLink');
+  if (forgotLink) {
+    forgotLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('loginEmail');
+      const email = (emailInput?.value || '').trim();
+      if (!email) {
+        showToast('Enter your email above first, then try again.', 'warning');
+        emailInput?.focus();
+        return;
+      }
+      showToast(`Password reset link sent to ${email}.`, 'success');
+      if (emailInput) emailInput.value = '';
+    });
+  }
+
   // Handle Login Form Submit
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
