@@ -1229,3 +1229,113 @@ body.nav-open {
   right: auto;
   left: 2rem;
 }
+
+/* ==========================================================================
+   Viewport safety layer — explicit tuning for 1024 / 760 / 480 / 360 / 320.
+   Prevents horizontal overflow and keeps type/chrome usable on tiny screens.
+   ========================================================================== */
+
+/* Never allow page-level horizontal scroll; clip preserves sticky headers */
+html, body {
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+img, table, iframe {
+  max-width: 100%;
+}
+
+/* Long emails / URLs must wrap inside 320px columns */
+p, li {
+  overflow-wrap: break-word;
+}
+
+.footer-contact a,
+.pg-lead,
+.hm-lead,
+.ab-lead,
+.sv-lead {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- 1024px: small laptop / landscape tablet ---------- */
+@media (max-width: 1024px) {
+  .section-spacing {
+    padding: 4.25rem 0;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* ---------- 760px: portrait tablet / large phone ---------- */
+@media (max-width: 760px) {
+  .section-spacing {
+    padding: 3rem 0;
+  }
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- 480px: large phones ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.15rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .btn-lg {
+    padding: 0.95rem 1.5rem;
+    font-size: 0.98rem;
+  }
+}
+
+/* ---------- 360px: standard phones ---------- */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.9rem;
+  }
+  .section-spacing {
+    padding: 2.5rem 0;
+  }
+  .section-title {
+    font-size: 1.45rem;
+  }
+  .brand-logo {
+    font-size: 1.15rem;
+  }
+  .header-actions {
+    gap: 0.5rem;
+  }
+}
+
+/* ---------- 320px: compact phones ---------- */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.8rem;
+  }
+  .section-title {
+    font-size: 1.35rem;
+  }
+  .btn {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  .btn-lg {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.92rem;
+  }
+}

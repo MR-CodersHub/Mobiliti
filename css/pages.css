@@ -1171,3 +1171,20 @@ ul.pg-sitemap li a:hover i {
     gap: 1.25rem;
   }
 }
+
+/* ---------- Phones ≤480px: compact showcase banner ---------- */
+@media (max-width: 480px) {
+  .pax-showcase {
+    min-height: 0;
+    padding: 2.25rem 1.25rem;
+  }
+  .pax-title {
+    font-size: 1.9rem;
+  }
+  .pax-steps li {
+    padding: 0.8rem 0.9rem;
+  }
+  .pax-quote {
+    padding: 1rem 1.1rem;
+  }
+}

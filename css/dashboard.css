@@ -583,8 +583,7 @@ body.sidebar-locked {
   }
 }
 
-/* ---------- Compact phones ≤420px ---------- */
-@media (max-width: 420px) {
+/* ---------- Compact phones ≤420px ---------- */@media (max-width: 420px) {
   .dashboard-sidebar {
     width: min(260px, 84vw);
   }
@@ -617,6 +616,27 @@ body.sidebar-locked {
     width: 36px;
     height: 36px;
     font-size: 0.9rem;
+  }
+}
+
+/* ---------- Standard phones ≤360px: keep 2-col KPIs but scale type ---------- */
+@media (max-width: 360px) {
+  .kpi-val {
+    font-size: 1.35rem;
+  }
+  .kpi-title {
+    font-size: 0.7rem;
+  }
+  .kpi-icon-box {
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+  }
+  .dashboard-topbar {
+    gap: 0.5rem;
+  }
+  .sidebar-toggle-btn {
+    font-size: 1.1rem;
   }
 }
 

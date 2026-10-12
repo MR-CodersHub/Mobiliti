@@ -758,6 +758,15 @@
   .h2-roi-figures { grid-template-columns: 1fr; }
 }
 
+/* ---------- Standard / compact phones: tame the large serif display ---------- */
+@media (max-width: 360px) {
+  .h2-hero .h2-display { font-size: 2.15rem; }
+  .h2-hero { padding: 3.5rem 0 3rem; }
+  .h2-command { padding: 1.1rem; }
+  .h2-roi { padding: 1.5rem; }
+  .h2-panel { padding: 1.5rem; }
+}
+
 /* CTA section outer spacing (replaces the inline padding override) */
 .h2-cta-section {
   padding: 5rem 0 6rem;

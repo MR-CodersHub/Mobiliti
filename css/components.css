@@ -461,3 +461,34 @@ select.form-control {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
 }
+
+/* ---------- Small-viewport modal + table safety ---------- */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+  .modal-header {
+    padding: 1.1rem 1.25rem;
+  }
+  .modal-title {
+    font-size: 1.1rem;
+  }
+  .modal-body {
+    padding: 1.25rem;
+  }
+  .card {
+    padding: 1.25rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
