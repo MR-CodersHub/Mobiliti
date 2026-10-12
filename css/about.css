@@ -444,3 +444,24 @@
     animation: none;
   }
 }
+
+/* ---------- Hero background image (per-page via --hero-bg: url(...)) ---------- */
+.ab-hero.has-bg {
+  background-image:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.94) 0%, rgba(248, 250, 252, 0.86) 100%),
+    var(--hero-bg);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+[data-theme="dark"] .ab-hero.has-bg {
+  background-image:
+    linear-gradient(180deg, rgba(11, 19, 43, 0.92) 0%, rgba(11, 19, 43, 0.85) 100%),
+    var(--hero-bg);
+}
+
+.ab-hero.has-bg .container {
+  position: relative;
+  z-index: 1;
+}

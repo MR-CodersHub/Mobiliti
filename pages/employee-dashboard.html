@@ -91,7 +91,7 @@
           <button class="icon-btn rtl-toggle" title="Toggle RTL/LTR">RTL</button>
 
           <button class="btn btn-sm btn-primary open-emp-upload-btn">
-            <i class="ri-upload-cloud-line"></i> Upload Document
+            <i class="ri-upload-cloud-line"></i> <span class="btn-label">Upload Document</span>
           </button>
         </div>
       </header>
@@ -107,13 +107,13 @@
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
               <div>
                 <span class="badge badge-info" style="background: rgba(255,255,255,0.2); color: #FFFFFF; margin-bottom: 0.75rem;">Active Transition</span>
-                <h2 style="font-size: 2.25rem; color: #FFFFFF; margin-bottom: 0.5rem;">Welcome, Sarah!</h2>
+                <h2 class="dash-welcome-title" style="font-size: 2.25rem; color: #FFFFFF; margin-bottom: 0.5rem;">Welcome, Sarah!</h2>
                 <p style="color: var(--slate-300); font-size: 1.1rem;">
                   Destination: <strong id="empDestinationText" style="color: #FFFFFF;">London, UK</strong> â€¢ Target Arrival: <strong id="empTargetDateText" style="color: #FFFFFF;">2026-11-15</strong>
                 </p>
               </div>
 
-              <div style="background: rgba(255,255,255,0.1); padding: 1.25rem 1.75rem; border-radius: var(--radius-lg); text-align: center; min-width: 180px;">
+              <div class="dash-progress-box" style="background: rgba(255,255,255,0.1); padding: 1.25rem 1.75rem; border-radius: var(--radius-lg); text-align: center; min-width: 180px;">
                 <div style="font-size: 0.8rem; color: var(--slate-300); text-transform: uppercase;">Overall Progress</div>
                 <div id="empProgressPercentText" style="font-size: 2.25rem; font-weight: 800; color: #FFFFFF; margin: 0.25rem 0;">60%</div>
                 <div class="progress-bar-container" style="background: rgba(255,255,255,0.2);">
@@ -159,7 +159,7 @@
           </div>
 
           <!-- MY TASKS & UPCOMING MILESTONES GRID -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="dash-grid-1-1">
             
             <!-- CHECKABLE TASKS CARD -->
             <div class="card">
@@ -243,9 +243,9 @@
               </div>
             </div>
 
-            <div style="display: flex; gap: 0.75rem;">
+            <div class="dash-chat-input">
               <input type="text" id="empMessageInput" class="form-control" placeholder="Ask your mobility specialist a question...">
-              <button id="empSendMessageBtn" class="btn btn-primary"><i class="ri-send-plane-line"></i> Send</button>
+              <button id="empSendMessageBtn" class="btn btn-primary"><i class="ri-send-plane-line"></i> <span class="btn-label">Send</span></button>
             </div>
           </div>
         </div>
@@ -280,6 +280,7 @@
 
       </div>
     </main>
+    <div class="sidebar-backdrop" aria-hidden="true"></div>
   </div>
 
   <!-- UPLOAD MODAL FOR EMPLOYEE -->

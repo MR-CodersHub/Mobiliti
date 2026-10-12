@@ -104,7 +104,7 @@
           </div>
 
           <button class="btn btn-sm btn-primary open-new-request-btn">
-            <i class="ri-add-line"></i> Submit Relocation
+            <i class="ri-add-line"></i> <span class="btn-label">Submit Relocation</span>
           </button>
         </div>
       </header>
@@ -221,7 +221,7 @@
           </div>
 
           <!-- PENDING DOCUMENTS REVIEW TABLE & QUICK ACTIONS -->
-          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+          <div class="dash-grid-2-1">
             <div class="card">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                 <h3 style="font-size: 1.15rem;">Pending Document Verifications</h3>
@@ -315,14 +315,14 @@
 
         <!-- VIEW 5: MESSAGES -->
         <div id="view-messages" class="dashboard-view">
-          <div class="card" style="display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; min-height: 480px;">
-            <div style="border-right: 1px solid var(--border-color); padding-right: 1rem;">
+          <div class="card dash-chat-grid">
+            <div class="dash-chat-list">
               <h4 style="margin-bottom: 1rem;">Conversations</h4>
               <div style="padding: 0.75rem; background: rgba(37,99,235,0.08); border-radius: var(--radius-md); font-weight: 700; cursor: pointer;">
                 Marcus Vance (Specialist)
               </div>
             </div>
-            <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="dash-chat-thread">
               <div id="hrChatMessagesContainer" style="flex: 1; overflow-y: auto; padding: 1rem; background: var(--bg-primary); border-radius: var(--radius-md); margin-bottom: 1rem;">
                 <div style="margin-bottom: 1rem;">
                   <div style="display: inline-block; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 0.75rem 1.25rem; border-radius: 12px 12px 12px 0; max-width: 75%;">
@@ -331,9 +331,9 @@
                   </div>
                 </div>
               </div>
-              <div style="display: flex; gap: 0.75rem;">
+              <div class="dash-chat-input">
                 <input type="text" id="hrMessageInput" class="form-control" placeholder="Type message to mobility specialist...">
-                <button id="hrSendMessageBtn" class="btn btn-primary"><i class="ri-send-plane-line"></i> Send</button>
+                <button id="hrSendMessageBtn" class="btn btn-primary"><i class="ri-send-plane-line"></i> <span class="btn-label">Send</span></button>
               </div>
             </div>
           </div>
@@ -385,6 +385,7 @@
 
       </div>
     </main>
+    <div class="sidebar-backdrop" aria-hidden="true"></div>
   </div>
 
   <!-- MULTI-STEP NEW RELOCATION REQUEST MODAL WIZARD -->

@@ -65,6 +65,7 @@ function initProfileMenu() {
   // Auto-create the menu if a static one isn't in the markup, so all
   // pages sharing app.js get the icon without duplicated HTML edits.
   document.querySelectorAll('.header-actions').forEach((actions) => {
+    if (actions.closest('.auth-minimal')) return; // minimal auth header stays minimal
     if (!actions.querySelector('.profile-menu') && actions.querySelector('.theme-toggle')) {
       const inPagesDir = window.location.pathname.includes('/pages/');
       const userHref = inPagesDir ? 'employee-dashboard.html' : 'pages/employee-dashboard.html';

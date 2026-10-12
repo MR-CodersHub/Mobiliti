@@ -783,3 +783,18 @@
   .h2-marquee-track, .h2-chip, .h2-roi { animation: none; }
   .h2-meter i { transition: none; }
 }
+
+/* ---------- Hero background image (per-page via --hero-bg: url(...)) ---------- */
+.h2-hero.has-bg {
+  background-image:
+    linear-gradient(180deg, rgba(6, 12, 30, 0.91) 0%, rgba(6, 12, 30, 0.84) 100%),
+    var(--hero-bg);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.h2-hero.has-bg .container {
+  position: relative;
+  z-index: 1;
+}

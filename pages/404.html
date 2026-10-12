@@ -16,37 +16,24 @@
 </head>
 <body>
 
-  <!-- SITE HEADER -->
-  <header class="site-header">
+  <!-- MINIMAL BAR: logo + brand name + tagline | theme + RTL toggles only -->
+  <header class="site-header auth-minimal">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo">
         <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
         <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
-      <nav class="main-nav">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link">Home2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
       <div class="header-actions">
-        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
-        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
-        <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
   </header>
 
   <main>
     <!-- SECTION 1: 404 HERO -->
-    <section class="pg-hero center">
+    <section class="pg-hero center has-bg" style="--hero-bg: url('https://i.pinimg.com/1200x/76/08/a8/7608a8a5fb7b6504412db5b04b21c746.jpg');">
       <div class="container reveal-on-scroll" style="max-width: 720px;">
         <div class="pg-404num">404</div>
         <h1 style="margin-top: 0.5rem;">Destination Not Found</h1>
@@ -116,79 +103,6 @@
       </div>
     </section>
   </main>
-
-  <!-- SITE FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
-            <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
-            <span style="color: #FFFFFF;">Mobiliti</span>
-          </a>
-          <p class="brand-tagline">Move Talent Beyond Borders.</p>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
-          <div class="footer-social">
-            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Platform Navigation</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="home-2.html">Home2</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="service-details.html">Service Details</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Portals & Role Access</h4>
-          <ul>
-            <li><a href="hr-dashboard.html">HR Client Dashboard</a></li>
-            <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
-            <li><a href="login.html">Login/Register</a></li>
-            <li><a href="service-details.html">Employee Relocation</a></li>
-            <li><a href="pricing.html">Plans & Billing</a></li>
-            <li><a href="maintenance.html">System Status</a></li>
-            <li><a href="contact.html">Support Center</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul class="footer-contact">
-            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
-            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
-            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
-            <li><i class="ri-customer-service-2-line"></i> <a href="contact.html">Contact Us</a></li>
-          </ul>
-          <form class="newsletter-form compact" novalidate>
-            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
-            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
-          <a href="terms.html" style="color: var(--slate-400);">Terms of Service</a>
-          <a href="privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script src="../js/store.js"></script>
   <script src="../js/app.js"></script>

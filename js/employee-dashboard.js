@@ -28,7 +28,28 @@ function initSidebarToggle() {
     toggleBtn.addEventListener('click', () => {
       wrapper.classList.toggle('sidebar-collapsed');
       if (window.innerWidth <= 992) {
-        wrapper.classList.toggle('sidebar-mobile-open');
+        const open = wrapper.classList.toggle('sidebar-mobile-open');
+        document.body.classList.toggle('sidebar-locked', open);
+      }
+    });
+
+    // Backdrop tap closes the mobile sidebar
+    wrapper.querySelector('.sidebar-backdrop')?.addEventListener('click', () => {
+      wrapper.classList.remove('sidebar-mobile-open');
+      document.body.classList.remove('sidebar-locked');
+    });
+
+    // Escape closes it; resizing to desktop clears mobile state
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        wrapper.classList.remove('sidebar-mobile-open');
+        document.body.classList.remove('sidebar-locked');
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992) {
+        wrapper.classList.remove('sidebar-mobile-open');
+        document.body.classList.remove('sidebar-locked');
       }
     });
   }
@@ -61,6 +82,7 @@ function initViewSwitching() {
       }
 
       document.querySelector('.dashboard-wrapper')?.classList.remove('sidebar-mobile-open');
+      document.body.classList.remove('sidebar-locked');
     });
   });
 }

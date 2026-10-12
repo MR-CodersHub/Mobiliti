@@ -7,116 +7,219 @@
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <title>System Maintenance & Portal Upgrades | Mobiliti</title>
   <meta name="description" content="Mobiliti platform scheduled system maintenance and upcoming enterprise feature updates.">
-  
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <style>
+    /* Maintenance redesign: split vector hero + live status */
+    .mnt-hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .mnt-status { display: flex; flex-direction: column; gap: 0.6rem; margin: 1.5rem 0 0; }
+    .mnt-status li {
+      display: flex; align-items: center; gap: 0.7rem;
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md); padding: 0.7rem 1rem;
+      font-size: 0.9rem; font-weight: 600; color: var(--text-primary);
+      box-shadow: var(--card-shadow);
+    }
+    .mnt-status li small { margin-left: auto; color: var(--text-muted); font-weight: 600; }
+    [dir="rtl"] .mnt-status li small { margin-left: 0; margin-right: auto; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .dot.ok { background: #10B981; box-shadow: 0 0 10px #10B981; }
+    .dot.work { background: #F59E0B; box-shadow: 0 0 10px #F59E0B; animation: mntPulse 1.6s ease-in-out infinite; }
+    @keyframes mntPulse { 50% { opacity: 0.45; } }
+    .mnt-progress { margin-top: 1.5rem; }
+    .mnt-progress-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .mnt-progress-top span:last-child { color: var(--accent-blue); }
+    .mnt-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    /* Vector stage */
+    .mnt-visual { position: relative; }
+    .mnt-stage {
+      position: relative; overflow: hidden;
+      background: var(--bg-surface); border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl); box-shadow: var(--card-shadow-hover);
+      padding: 2.5rem 2rem 2rem;
+    }
+    .mnt-stage::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(420px 220px at 85% 0%, rgba(37, 99, 235, 0.14), transparent 60%),
+        radial-gradient(360px 220px at 10% 100%, rgba(13, 148, 136, 0.14), transparent 60%);
+      pointer-events: none;
+    }
+    .mnt-stage img { position: relative; width: 100%; height: auto; max-height: 360px; object-fit: contain; }
+    .mnt-chip {
+      position: absolute; display: inline-flex; align-items: center; gap: 0.55rem;
+      background: var(--bg-glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-color); border-radius: var(--radius-md);
+      box-shadow: var(--card-shadow-hover); padding: 0.65rem 1rem;
+      font-size: 0.78rem; font-weight: 700; color: var(--text-primary);
+      white-space: nowrap; z-index: 2; animation: floatSlow 5s ease-in-out infinite;
+    }
+    .mnt-chip i { font-size: 1rem; color: var(--teal-accent); }
+    .mnt-chip small { display: block; font-weight: 500; color: var(--text-muted); font-size: 0.7rem; }
+    .mnt-chip-a { top: 18px; right: -10px; }
+    .mnt-chip-b { bottom: 18px; left: -12px; animation-delay: 1.4s; }
+    .mnt-chip-b i { color: var(--warm-accent); }
+    /* Status + preview cards */
+    .mnt-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .mnt-pill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); margin-bottom: 0.75rem; }
+    .mnt-pill.ok { background: rgba(16, 185, 129, 0.12); color: #059669; }
+    .mnt-pill.work { background: rgba(245, 158, 11, 0.14); color: #D97706; }
+    @media (max-width: 1020px) {
+      .mnt-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mnt-stage img { max-height: 300px; }
+      .mnt-cards { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .mnt-cards { grid-template-columns: 1fr; }
+      .mnt-chip-a { right: 6px; }
+      .mnt-chip-b { left: 6px; }
+      .mnt-stage { padding: 1.75rem 1.25rem 1.5rem; }
+    }
+    @media (max-width: 460px) { .mnt-chip { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .mnt-chip, .dot.work { animation: none; } }
+  </style>
 </head>
 <body>
 
-  <!-- SITE HEADER -->
-  <header class="site-header">
+  <!-- MINIMAL BAR: logo + brand name + tagline | theme + RTL toggles only -->
+  <header class="site-header auth-minimal">
     <div class="container header-inner">
       <a href="../index.html" class="brand-logo">
         <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
         <span class="brand-lockup"><span class="brand-name">Mobiliti</span><small class="brand-tagline-header">Move Talent Beyond Borders.</small></span>
       </a>
 
-      <nav class="main-nav">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link">Home2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
       <div class="header-actions">
-        <div class="profile-menu"><button class="profile-toggle" aria-label="User profile menu" aria-expanded="false" aria-haspopup="true"><i class="ri-user-line"></i></button><div class="profile-dropdown" role="menu"><a href="employee-dashboard.html" role="menuitem"><i class="ri-user-line"></i> User Dashboard</a><a href="hr-dashboard.html" role="menuitem"><i class="ri-shield-user-line"></i> Admin Dashboard</a></div></div>
         <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="ri-moon-line"></i></button>
         <button class="rtl-toggle" aria-label="Toggle direction">RTL</button>
-        <a href="../index.html" class="btn btn-sm btn-outline">Back to Home</a>
-        <a href="login.html" class="btn btn-sm btn-primary">Portal Login</a>
-        <button class="mobile-menu-toggle" aria-label="Open navigation menu"><i class="ri-menu-line"></i></button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- SECTION 1: HERO -->
-    <section class="pg-hero center">
-      <div class="container reveal-on-scroll" style="max-width: 820px;">
-        <span class="badge badge-warning" style="margin-bottom: 1rem;"><i class="ri-tools-line"></i> Scheduled Upgrade</span>
-        <h1>System Maintenance & <span class="grad">Portal Enhancements</span></h1>
-        <p class="pg-lead">
-          Deploying our next-generation immigration engine and expanding partner connectivity. All active transfers remain secure.
-        </p>
-        <div style="margin: 2.5rem auto 0; max-width: 420px;">
-          <img src="https://illustrations.popsy.co/blue/server-woman.svg" alt="System Maintenance Vector" style="width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.05));">
+    <!-- REDESIGNED HERO: copy + live status beside vector stage -->
+    <section class="pg-hero has-bg" style="--hero-bg: url('https://i.pinimg.com/1200x/de/33/bc/de33bc3c3dbac7a80f9de68ff1a7b99d.jpg');">
+      <div class="container">
+        <div class="mnt-hero-grid">
+          <div class="reveal-on-scroll">
+            <span class="badge badge-warning" style="margin-bottom: 1rem;"><span class="dot work"></span> Scheduled Upgrade · v2.4 Deploy</span>
+            <h1>System Maintenance & <span class="grad">Portal Enhancements</span></h1>
+            <p class="pg-lead">
+              Deploying our next-generation immigration engine and expanding partner connectivity. All active transfers remain secure and fully tracked.
+            </p>
+
+            <ul class="mnt-status">
+              <li><span class="dot work"></span> Customer Portal <small>Read-only mode</small></li>
+              <li><span class="dot work"></span> Immigration Engine <small>Upgrading…</small></li>
+              <li><span class="dot ok"></span> Active Transfers <small>Secure &amp; tracked</small></li>
+            </ul>
+
+            <div class="mnt-progress">
+              <div class="mnt-progress-top"><span>Upgrade progress</span><span>85% · ETA 22:00 UTC</span></div>
+              <div class="progress-bar-container" style="height: 12px;">
+                <div class="progress-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="mnt-ctas">
+              <a href="#mnt-notify" class="btn btn-primary"><i class="ri-notification-line"></i> Notify Me When Live</a>
+              <a href="contact.html" class="btn btn-secondary"><i class="ri-customer-service-2-line"></i> Contact 24/7 Hotline</a>
+            </div>
+          </div>
+
+          <div class="mnt-visual reveal-on-scroll">
+            <div class="mnt-chip mnt-chip-a"><i class="ri-shield-check-line"></i><span>Transfers secure<small>25,000+ moves protected</small></span></div>
+            <div class="mnt-stage img-hover-zoom">
+              <img src="https://illustrations.popsy.co/blue/server-woman.svg" alt="Vector illustration of scheduled server maintenance">
+            </div>
+            <div class="mnt-chip mnt-chip-b"><i class="ri-time-line"></i><span>Back soon<small>Today · 22:00 UTC</small></span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: MAINTENANCE MESSAGE -->
-    <section class="section-spacing">
-      <div class="container reveal-on-scroll" style="max-width: 720px; text-align: center;">
-        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
-          We are currently deploying our next-generation immigration policy calculation engine and expanding local destination partner connectivity. All active relocation transfers remain secure.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 3: PROGRESS / STATUS -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
-      <div class="container reveal-on-scroll" style="max-width: 600px; text-align: center;">
-        <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Upgrade Progress: 85% Completed</h3>
-        <div class="progress-bar-container" style="height: 12px; margin-bottom: 1rem;">
-          <div class="progress-bar-fill" style="width: 85%;"></div>
+    <!-- LIVE SYSTEM STATUS -->
+    <section class="section-spacing" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Live Status</span>
+          <h2 class="section-title">What’s Working Right Now</h2>
+          <p class="section-subtitle">Real-time availability across the portal during the upgrade window.</p>
         </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Estimated completion time: Today at 22:00 UTC</p>
+
+        <div class="mnt-cards">
+          <div class="card reveal-on-scroll">
+            <span class="mnt-pill work"><span class="dot work"></span> Read-only</span>
+            <h4>Customer Portal</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">Browse moves and documents. Submits and uploads resume automatically at 22:00 UTC.</p>
+          </div>
+          <div class="card reveal-on-scroll">
+            <span class="mnt-pill work"><span class="dot work"></span> Upgrading</span>
+            <h4>Immigration Engine</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">New policy calculation engine deploying. Filed applications are unaffected.</p>
+          </div>
+          <div class="card reveal-on-scroll">
+            <span class="mnt-pill ok"><span class="dot ok"></span> Operational</span>
+            <h4>Partner Network</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">Movers, housing and specialist chat stay online across all 140+ countries.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 4: WHAT'S COMING -->
+    <!-- WHAT'S COMING -->
     <section class="section-spacing">
       <div class="container">
         <div class="section-header reveal-on-scroll">
           <span class="section-tag">Feature Preview</span>
-          <h2 class="section-title">What's Coming in Mobiliti v2.4</h2>
+          <h2 class="section-title">What’s Coming in Mobiliti v2.4</h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;" class="reveal-on-scroll">
+        <div class="mnt-cards reveal-on-scroll">
           <div class="card">
-            <i class="ri-cpu-line" style="font-size: 1.75rem; color: var(--accent-blue); margin-bottom: 0.5rem; display: block;"></i>
-            <h4>Automated Tax Residency Calculator</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Real-time threshold alerts for 183-day physical presence rules.</p>
+            <div class="card-icon"><i class="ri-cpu-line"></i></div>
+            <h4 class="card-title">Automated Tax Residency Calculator</h4>
+            <p class="card-desc">Real-time threshold alerts for 183-day physical presence rules.</p>
           </div>
-
           <div class="card">
-            <i class="ri-smartphone-line" style="font-size: 1.75rem; color: var(--teal-accent); margin-bottom: 0.5rem; display: block;"></i>
-            <h4>Enhanced Native Mobile Apps</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Instant push notifications for passport approval stages.</p>
+            <div class="card-icon"><i class="ri-smartphone-line"></i></div>
+            <h4 class="card-title">Enhanced Native Mobile Apps</h4>
+            <p class="card-desc">Instant push notifications for every passport approval stage.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-file-shield-2-line"></i></div>
+            <h4 class="card-title">Faster Document Checks</h4>
+            <p class="card-desc">Assisted verification clears passports and visas in hours, not days.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: EMAIL NOTIFICATION FORM -->
-    <section class="section-spacing" style="background-color: var(--bg-surface-elevated);">
+    <!-- EMAIL NOTIFICATION BAND -->
+    <section id="mnt-notify" class="section-spacing" style="background-color: var(--bg-surface-elevated); padding-top: 3.5rem;">
       <div class="container reveal-on-scroll" style="max-width: 600px; text-align: center;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Get Notified When Maintenance Concludes</h3>
-        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Enter your email to receive an instant ping when the portal is back online.</p>
+        <span class="section-tag">Stay Updated</span>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Get Notified When We’re Back</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Enter your email for an instant ping the moment the portal is fully live.</p>
         <form style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;" onsubmit="event.preventDefault(); showToast('Notification saved!', 'success'); this.reset();">
-          <input type="email" class="form-control" placeholder="Enter corporate email" required style="max-width: 360px; height: 46px;">
-          <button type="submit" class="btn btn-primary">Notify Me</button>
+          <input type="email" class="form-control" placeholder="Enter corporate email" required style="max-width: 360px; height: 46px; flex: 1 1 240px;">
+          <button type="submit" class="btn btn-primary"><i class="ri-send-plane-line"></i> Notify Me</button>
         </form>
       </div>
     </section>
 
-    <!-- SECTION 6: CONTACT / SUPPORT CTA -->
+    <!-- URGENT SUPPORT STRIP -->
     <section class="section-spacing" style="background: linear-gradient(135deg, var(--primary-navy), var(--accent-blue)); color: #FFFFFF; text-align: center;">
       <div class="container reveal-on-scroll">
         <h2 style="font-size: 2rem; color: #FFFFFF; margin-bottom: 1rem;">Have an Urgent Employee Airport Arrival?</h2>
@@ -126,81 +229,7 @@
     </section>
   </main>
 
-  <!-- SITE FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="brand-logo" style="color: #FFFFFF;">
-            <img class="logo-mark" src="../assets/logo.svg" alt="Mobiliti logo" width="40" height="40">
-            <span style="color: #FFFFFF;">Mobiliti</span>
-          </a>
-          <p class="brand-tagline">Move Talent Beyond Borders.</p>
-          <p>Enterprise-grade corporate relocation and global employee mobility platform. Simplifying international transfers for HR leaders with visa and immigration guidance across 140+ countries, vetted movers, housing and school placement in one portal, a named specialist on every file around the clock, and the trust of 500+ enterprises moving 25,000+ people.</p>
-          <div class="footer-social">
-            <a href="#" class="social-btn" aria-label="Mobiliti on LinkedIn"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on X"><i class="ri-twitter-x-line"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on Facebook"><i class="ri-facebook-fill"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on Instagram"><i class="ri-instagram-line"></i></a>
-            <a href="#" class="social-btn" aria-label="Mobiliti on YouTube"><i class="ri-youtube-fill"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Platform Navigation</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="home-2.html">Home2</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="service-details.html">Service Details</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Portals & Role Access</h4>
-          <ul>
-            <li><a href="hr-dashboard.html">HR Client Dashboard</a></li>
-            <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
-            <li><a href="login.html">Login/Register</a></li>
-            <li><a href="service-details.html">Employee Relocation</a></li>
-            <li><a href="pricing.html">Plans & Billing</a></li>
-            <li><a href="maintenance.html">System Status</a></li>
-            <li><a href="contact.html">Support Center</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul class="footer-contact">
-            <li><i class="ri-map-pin-line"></i> 548 Market St, San Francisco, CA</li>
-            <li><i class="ri-mail-line"></i> <a href="mailto:hello@mobiliti.com">hello@mobiliti.com</a></li>
-            <li><i class="ri-phone-line"></i> <a href="tel:+14155550132">+1 (415) 555-0132</a></li>
-            <li><i class="ri-customer-service-2-line"></i> <a href="contact.html">Contact Us</a></li>
-          </ul>
-          <form class="newsletter-form compact" novalidate>
-            <input type="email" name="email" placeholder="Work email address" aria-label="Email address" required>
-            <button type="submit" class="btn btn-sm btn-primary">Subscribe <i class="ri-send-plane-line"></i></button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>&copy; 2026 Mobiliti Inc. All Rights Reserved. HR Mobility System.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="privacy.html" style="color: var(--slate-400);">Privacy Policy</a>
-          <a href="terms.html" style="color: var(--slate-400);">Terms of Service</a>
-          <a href="privacy.html" style="color: var(--slate-400);">GDPR Compliance</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <script src="../js/store.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>
-
