@@ -380,11 +380,6 @@ ul, ol {
   white-space: nowrap;
 }
 
-/* Mobile tagline strip (injected by JS, visible ≤760px only) */
-.mobile-tagline {
-  display: none;
-}
-
 /* Logo image mark (replaces the generic icon everywhere) */
 img.logo-mark {
   width: 40px;
@@ -637,11 +632,6 @@ img.logo-mark {
   display: none;
 }
 
-/* Mobile-only display-options row (RTL toggle clone, injected by JS) */
-.mobile-nav-utils {
-  display: none;
-}
-
 body.nav-open {
   overflow: hidden;
 }
@@ -834,22 +824,6 @@ body.nav-open {
     width: 34px;
     height: 34px;
   }
-
-  /* Tagline lives on its own slim strip below the bar on mobile */
-  .mobile-tagline {
-    display: block;
-    text-align: center;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    padding: 0.45rem 1rem;
-    border-top: 1px solid var(--border-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 @media (max-width: 420px) {
@@ -878,15 +852,9 @@ body.nav-open {
   }
 }
 
-/* ---------- Compact phones ≤425px: tagline back under the brand name ---------- */
+/* ---------- Compact phones ≤425px: no tagline in the navbar ---------- */
 @media (max-width: 425px) {
   .brand-tagline-header {
-    display: block;
-    font-size: 0.5rem;
-    letter-spacing: 0.14em;
-  }
-  /* JS strip would duplicate the lockup tagline — keep only the lockup one */
-  .mobile-tagline {
     display: none;
   }
   .brand-logo {
@@ -900,33 +868,9 @@ body.nav-open {
 
 /* ---------- Standard phones ≤360px: shrink lockup further so bar never crowds */
 @media (max-width: 360px) {
-  .brand-tagline-header {
-    font-size: 0.42rem;
-    letter-spacing: 0.08em;
-  }
   img.logo-mark {
     width: 30px;
     height: 30px;
-  }
-  /* Header toggle yields to brand + essential actions on tiny bars —
-     scoped to drawer headers only: minimal (auth) headers keep theirs
-     since they have no nav drawer to host the clone. */
-  .site-header:not(.auth-minimal) .header-actions .rtl-toggle {
-    display: none;
-  }
-  /* RTL toggle clone lives in the open nav drawer instead */
-  .mobile-nav-utils {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.85rem 1rem 0.4rem;
-    margin-top: 0.5rem;
-    border-top: 1px solid var(--border-color);
-  }
-  .mobile-nav-utils-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-secondary);
   }
   /* Compact drawer contents so everything fits comfortably at 320px */
   .main-nav {
@@ -958,27 +902,6 @@ body.nav-open {
   }
   .mobile-nav-contact a i {
     font-size: 0.9rem;
-  }
-  .mobile-nav-utils {
-    padding: 0.7rem 0.85rem 0.3rem;
-  }
-  .mobile-nav-utils-label {
-    font-size: 0.8rem;
-  }
-}
-
-/* ---------- Small phones ≤375px: drop the lockup tagline entirely */
-@media (max-width: 375px) {
-  .brand-tagline-header {
-    display: none;
-  }
-  /* Tagline is gone so the bar has room — toggle back in the header */
-  .site-header:not(.auth-minimal) .header-actions .rtl-toggle {
-    display: flex;
-  }
-  /* ...and the drawer duplicate is no longer needed */
-  .mobile-nav-utils {
-    display: none;
   }
 }
 

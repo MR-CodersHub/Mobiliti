@@ -5,10 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initMobileMenu(); // injects nav clones first so toggle binding covers them
   initDirection();
   initProfileMenu();
-  initMobileTagline();
+  initMobileMenu();
   initNewsletter();
   initSocialLinks();
   initFooterTrust();
@@ -122,18 +121,6 @@ function initProfileMenu() {
   });
 }
 
-/* Mobile tagline strip — the header lockup tagline hides on small screens,
-   so re-surface it as a slim centered line below the bar (CSS shows ≤760px) */
-function initMobileTagline() {
-  document.querySelectorAll('.site-header').forEach((header) => {
-    if (header.querySelector('.mobile-tagline')) return;
-    const strip = document.createElement('div');
-    strip.className = 'mobile-tagline';
-    strip.textContent = 'Move Talent Beyond Borders.';
-    header.appendChild(strip);
-  });
-}
-
 /* Footer Newsletter Signup */
 function initNewsletter() {
   document.querySelectorAll('.newsletter-form').forEach((form) => {
@@ -180,26 +167,6 @@ function initMobileMenu() {
         wrapper.appendChild(clone);
       });
       mainNav.appendChild(wrapper);
-    }
-  }
-
-  // Clone the RTL toggle into the drawer so it stays reachable when the
-  // header hides it on tiny bars (≤360px). Created here — before
-  // initDirection() runs — so the clone gets a working click listener.
-  if (headerActions && !mainNav.querySelector('.mobile-nav-utils')) {
-    const rtl = headerActions.querySelector('.rtl-toggle');
-    if (rtl) {
-      const utils = document.createElement('div');
-      utils.className = 'mobile-nav-utils';
-      utils.setAttribute('aria-label', 'Display options');
-      const clone = rtl.cloneNode(true);
-      clone.removeAttribute('id');
-      const label = document.createElement('span');
-      label.className = 'mobile-nav-utils-label';
-      label.textContent = 'Toggle text direction';
-      utils.appendChild(clone);
-      utils.appendChild(label);
-      mainNav.appendChild(utils);
     }
   }
 
