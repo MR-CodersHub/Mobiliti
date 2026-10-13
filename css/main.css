@@ -389,16 +389,21 @@ img.logo-mark {
   flex-shrink: 0;
 }
 
-/* Brand tagline — footer brand block, directly under the logo.
-   Sized identically to the navbar tagline (.brand-tagline-header). */
-.brand-tagline {
-  font-size: 0.56rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.24em !important;
-  text-transform: uppercase !important;
-  color: #E7CE8F !important;
-  margin: 0.7rem 0 0.9rem 0 !important;
-  white-space: nowrap;
+/* Footer brand lockup — same structure and sizes as the navbar:
+   logo mark + name stacked over tagline. Only colors adapt to the
+   dark footer (white name, gold tagline). */
+.site-footer .brand-lockup {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+.site-footer .brand-name {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: #FFFFFF;
+}
+.site-footer .brand-tagline-header {
+  display: block;
+  color: #E7CE8F;
 }
 
 /* Inline tagline for minimal footers (404 / maintenance) */
