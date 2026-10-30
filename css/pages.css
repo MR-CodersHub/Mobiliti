@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(720px 380px at 88% -10%, rgba(37, 99, 235, 0.12), transparent 60%),
+    radial-gradient(720px 380px at 88% -10%, rgba(var(--primary-color-rgb), 0.12), transparent 60%),
     radial-gradient(600px 380px at -10% 110%, rgba(13, 148, 136, 0.10), transparent 60%),
     var(--bg-primary);
   padding: 4rem 0 3.5rem;
@@ -379,7 +379,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--accent-blue), #1D4ED8);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
   color: #fff;
   font-size: 0.7rem;
   font-weight: 800;
@@ -388,7 +388,7 @@
   padding: 0.3rem 1rem;
   border-radius: var(--radius-full);
   white-space: nowrap;
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 16px rgba(var(--primary-color-rgb), 0.4);
 }
 
 /* ---------- Legal articles ---------- */
@@ -483,7 +483,7 @@ ul.pg-sitemap li:last-child a {
 }
 
 ul.pg-sitemap li a:hover {
-  background: rgba(37, 99, 235, 0.05);
+  background: rgba(var(--primary-color-rgb), 0.05);
   padding-left: 1.6rem;
   color: var(--accent-blue);
 }
@@ -534,8 +534,8 @@ ul.pg-sitemap li a:hover i {
 
 .role-select-card.selected {
   border-color: var(--accent-blue);
-  background: rgba(37, 99, 235, 0.05);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+  background: rgba(var(--primary-color-rgb), 0.05);
+  box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.12);
 }
 
 .role-select-card.selected i {
@@ -657,7 +657,31 @@ ul.pg-sitemap li a:hover i {
   z-index: 1;
 }
 
-/* ==========================================================================
+[data-theme="dark"] #cMoveDate {
+  color-scheme: dark;
+}
+
+.contact-enquiry-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-page .main-nav .mobile-nav-actions {
+    display: none !important;
+  }
+
+  .contact-page .contact-enquiry-section {
+    padding: 4.5rem 0;
+  }
+
+  .contact-page .contact-enquiry-card {
+    margin-top: 1.5rem;
+  }
+}
+
+/* ========================================================================== 
    Premium auth split — login & signup. Dark image showcase + refined form.
    Per-page photo via --pax-bg: url(...). No navbar/footer on these pages.
    ========================================================================== */
@@ -815,7 +839,7 @@ ul.pg-sitemap li a:hover i {
   justify-content: center;
   padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
   background:
-    radial-gradient(640px 340px at 90% -5%, rgba(37, 99, 235, 0.1), transparent 60%),
+    radial-gradient(640px 340px at 90% -5%, rgba(var(--primary-color-rgb), 0.1), transparent 60%),
     radial-gradient(560px 340px at 0% 100%, rgba(13, 148, 136, 0.09), transparent 60%),
     var(--bg-primary);
   overflow: hidden;
@@ -842,6 +866,7 @@ ul.pg-sitemap li a:hover i {
 }
 
 .pax-kicker {
+  text-align: center;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.24em;
@@ -851,6 +876,7 @@ ul.pg-sitemap li a:hover i {
 }
 
 .pax-heading {
+  text-align: center;
   font-size: clamp(1.6rem, 2.6vw, 2.1rem);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
@@ -864,6 +890,7 @@ ul.pg-sitemap li a:hover i {
 }
 
 .pax-intro {
+  text-align: center;
   font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
@@ -1045,6 +1072,39 @@ ul.pg-sitemap li a:hover i {
   flex: 1;
   height: 1px;
   background: var(--border-color);
+}
+
+.pax-social {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.pax-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.pax-social-btn:hover {
+  border-color: var(--accent-blue);
+  background: var(--bg-surface-elevated);
+}
+
+.pax-social-btn i {
+  font-size: 1.1rem;
 }
 
 .pax-demo {

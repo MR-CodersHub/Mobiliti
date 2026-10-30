@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(760px 400px at 88% -10%, rgba(37, 99, 235, 0.13), transparent 60%),
+    radial-gradient(760px 400px at 88% -10%, rgba(var(--primary-color-rgb), 0.13), transparent 60%),
     radial-gradient(620px 400px at -10% 110%, rgba(13, 148, 136, 0.11), transparent 60%),
     var(--bg-primary);
   padding: 4.5rem 0 3.5rem;
@@ -268,7 +268,7 @@
 }
 
 .bg-trend li a:hover {
-  background: rgba(37, 99, 235, 0.04);
+  background: rgba(var(--primary-color-rgb), 0.04);
 }
 
 .bg-trend .num {

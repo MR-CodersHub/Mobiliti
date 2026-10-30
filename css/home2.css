@@ -162,7 +162,7 @@
   overflow: hidden;
   background:
     radial-gradient(900px 480px at 85% -10%, rgba(201, 162, 75, 0.22), transparent 60%),
-    radial-gradient(760px 520px at -10% 110%, rgba(37, 99, 235, 0.22), transparent 60%),
+    radial-gradient(760px 520px at -10% 110%, rgba(var(--primary-color-rgb), 0.22), transparent 60%),
     linear-gradient(180deg, #080F26 0%, var(--h2-ink) 100%);
   padding: 5.5rem 0 4.5rem;
 }
@@ -750,12 +750,26 @@
   .h2-roi { padding: 2rem; }
   .h2-panel { padding: 1.75rem; }
 }
+
+@media (max-width: 768px) {
+  .home2-page .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home2-page .footer-brand {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+}
+
 @media (max-width: 460px) {
   .h2-kpis { grid-template-columns: 1fr; }
   .h2-stats { grid-template-columns: 1fr; }
   .h2-stat { border-left: none; padding-left: 0; }
   .h2-chip { display: none; }
   .h2-roi-figures { grid-template-columns: 1fr; }
+  .home2-page .footer-grid { grid-template-columns: minmax(0, 1fr); }
+  .home2-page .footer-brand { grid-column: auto; }
 }
 
 /* ---------- Standard / compact phones: tame the large serif display ---------- */

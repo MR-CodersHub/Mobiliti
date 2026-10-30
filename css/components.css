@@ -16,7 +16,7 @@
 }
 
 .card:hover {
-  border-color: rgba(37, 99, 235, 0.3);
+  border-color: rgba(var(--primary-color-rgb), 0.3);
   box-shadow: var(--card-shadow-hover);
   transform: translateY(-4px);
 }
@@ -36,7 +36,7 @@
 }
 
 [data-theme="dark"] .card-icon {
-  background: rgba(37, 99, 235, 0.15);
+  background: rgba(var(--primary-color-rgb), 0.15);
 }
 
 .card:hover .card-icon {
@@ -108,7 +108,7 @@
   background-color: var(--accent-blue);
   border-color: var(--accent-blue);
   color: #FFFFFF;
-  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 6px rgba(var(--primary-color-rgb), 0.2);
 }
 
 .step-title {
@@ -167,7 +167,7 @@
 }
 
 .badge-info {
-  background-color: rgba(37, 99, 235, 0.12);
+  background-color: rgba(var(--primary-color-rgb), 0.12);
   color: var(--accent-blue);
 }
 
@@ -252,7 +252,7 @@
 }
 
 .data-table tbody tr:hover {
-  background-color: rgba(37, 99, 235, 0.03);
+  background-color: rgba(var(--primary-color-rgb), 0.03);
 }
 
 /* Document Checklist Items */
@@ -438,7 +438,7 @@
 
 .form-control:focus {
   border-color: var(--accent-blue);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.15);
 }
 
 select.form-control {
